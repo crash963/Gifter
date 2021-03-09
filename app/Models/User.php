@@ -17,9 +17,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
+        'nickname',
         'email',
         'password',
+        "first_name",
+        "last_name",
+        "address",
+        "photo",
+        "birthday"
     ];
 
     /**
@@ -40,4 +45,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function wishes()
+    {
+        return $this->hasMany(Wish::class);
+    }
+
+    public function filling_wishes ()
+    {
+        return $this->belongsToMany(Wish::class);
+    }
+
+    public function friends()
+    {
+        return $this->belongsToMany(User::class, "friendships");
+    }
+
+    
 }

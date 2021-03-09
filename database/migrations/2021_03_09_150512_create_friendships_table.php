@@ -16,10 +16,11 @@ class CreateFriendshipsTable extends Migration
         Schema::create('friendships', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId("user1_id");
-            $table->foreignId("user2_id");
-
-            $table->unique(["user1_id", "user2_id"]);
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('friend_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('friend_id')->references('id')->on('users');
+            $table->unique(["user_id", "friend_id"]);
 
             $table->timestamps();
         });
