@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +13,6 @@
 </head>
 <body>
     <h1>Testing</h1>
+    <h2>{{ $users[2]->friends[0]->nickname }}</h2>
 </body>
 </html>

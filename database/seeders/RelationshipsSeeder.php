@@ -40,10 +40,6 @@ class RelationshipsSeeder extends Seeder
                 'friend_id'=> 2,
             ],
             [
-                "user_id" => 2,
-                "friend_id" => 1,
-            ],
-            [
                 'user_id'=> 1,
                 'friend_id'=> 3,
             ],
@@ -52,6 +48,11 @@ class RelationshipsSeeder extends Seeder
         foreach($friendships as $relationship){
             $user = User::find($relationship["user_id"]);
             $friend = Wish::find($relationship["friend_id"]);
+
+            $user2 = User::find($relationship["friend_id"]);
+            $friend2 = User::find($relationship["user_id"]);
+
+            $user2->friends()->attach($friend2);
             $user->friends()->attach($friend);
         }
     }
