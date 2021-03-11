@@ -56,15 +56,16 @@ class User extends Authenticatable
         return $this->hasMany(Wish::class);
     }
 
-    public function filling_wishes ()
+    public function fulfilling_wishes()
     {
         return $this->belongsToMany(Wish::class);
     }
 
     public function friends()
     {
-        return $this->belongsToMany(User::class, "friendships");
+        return $this->belongsToMany(User::class, "friendships", 'user_id', 'friend_id');
     }
 
+    
     
 }
