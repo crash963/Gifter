@@ -11,17 +11,18 @@ const items = [
     {
         id: 1,
         altText: "Slide 1",
-        caption: "Slide 1",
+        caption: "This site is aboslutely amazing. Love it very much.",
     },
     {
         id: 2,
         altText: "Slide 2",
-        caption: "Slide 2",
+        caption:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis deserunt quia voluptatem, beatae illum dolorem sapiente ea architecto fugiat, eos quasi, quibusdam iste nulla repellendus autem fuga possimus. Neque illo mollitia doloremque distinctio. Facilis animi quisquam culpa, repudiandae aut voluptates expedita deserunt hic iste. Accusamus architecto consectetur laudantium aliquam cumque?",
     },
     {
         id: 3,
         altText: "Slide 3",
-        caption: "Slide 3",
+        caption: "Slide 3a",
     },
 ];
 
@@ -56,11 +57,15 @@ const ReviewSlider = (props) => {
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
             >
-                <img src="" alt="placeholder image" className="carousel-img" />
+                <img
+                    src="../images/sarah-brown-tTdC88_6a_I-unsplash.jpg"
+                    alt="placeholder image"
+                    className="carousel-img"
+                />
                 <CarouselCaption
                     className="text"
                     captionText={item.caption}
-                    captionHeader={item.caption}
+                    // captionHeader={item.caption}
                 />
             </CarouselItem>
         );
@@ -69,17 +74,14 @@ const ReviewSlider = (props) => {
     return (
         <div>
             <style>
-                {`.custom-tag {
-              max-width: 100vw;
-              height: 150px;
-              background: grey;
+                {`
             }`}
             </style>
             <Carousel
-                className="gifter-carousel"
                 activeIndex={activeIndex}
                 next={next}
                 previous={previous}
+                interval="6500"
             >
                 <CarouselIndicators
                     items={items}
