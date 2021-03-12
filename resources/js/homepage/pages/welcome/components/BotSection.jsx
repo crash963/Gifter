@@ -6,7 +6,7 @@ function BotSection() {
                     <img src="" alt="placeholder" />
                 </div>
                 <div className="promo__tile--text">
-                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!</h3>
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!</h4>
                 </div>
             </div>
 
@@ -15,7 +15,7 @@ function BotSection() {
                     <img src="" alt="placeholder" />
                 </div>
                 <div className="promo__tile--text">
-                    <h3>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!</h3>
+                    <h4>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!</h4>
                 </div>
             </div>
 
@@ -24,7 +24,7 @@ function BotSection() {
                     <img src="" alt="placeholder" />
                 </div>
                 <div className="promo__tile--text">
-                    <h3>3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!</h3>
+                    <h4>3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!</h4>
                 </div>
             </div>
             

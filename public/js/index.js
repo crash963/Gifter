@@ -324,7 +324,7 @@ function BotSection() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "promo__tile--text",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
           children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!"
         })
       })]
@@ -338,7 +338,7 @@ function BotSection() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "promo__tile--text",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
           children: "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!"
         })
       })]
@@ -352,7 +352,7 @@ function BotSection() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
         className: "promo__tile--text",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
           children: "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!"
         })
       })]
