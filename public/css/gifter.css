@@ -3,7 +3,7 @@
   margin: 0%;
 }
 
-.promo__tile {
+.welcome__page--bot--section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -14,11 +14,15 @@
 }
 
 .promo__tile--image {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
   background-color: rgba(230, 228, 219, 0.8);
   border-radius: 0.9rem;
   margin-bottom: 10em;
   padding: 1rem;
-  width: 30vw;
+  width: 30vh;
+  height: 25vh;
 }
 
 /*# sourceMappingURL=gifter.css.map*/
