@@ -1,4 +1,4 @@
 function BotSection() {
-    return <div className="welcome__page--bot--section"></div>;
+    return <div className="welcome__page--bot-section"></div>;
 }
 export default BotSection;
