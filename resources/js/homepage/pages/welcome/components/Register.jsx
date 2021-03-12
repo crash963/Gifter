@@ -11,12 +11,14 @@ function Register() {
         password_confirmation: "",
     });
 
+    const [message, setMessage] = useState("");
+
     async function register() {
         let request_data = {
-            nickname: "Slavo",
-            email: "slavo@kozar.sk",
-            password: "secretSecret",
-            password_confirmation: "secretSecret",
+            nickname: nickname,
+            email: email,
+            password: password,
+            password_confirmation: password_confirmation,
         };
 
         const response = await fetch("/register", {
@@ -32,7 +34,7 @@ function Register() {
         });
         const response_data = await response.json();
 
-        console.log(response_data);
+        setMessage(response_data.errors);
     }
 
     const handleChange = (event) => {
@@ -53,32 +55,45 @@ function Register() {
         console.log(nickname, email, password);
     };
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        register();
+    }
+
     return (
-        <form method="post">
-            <label for="nickname">nickname: </label>
-            <input type="text" name="nickname" onChange={handleChange} />
+        <div className="register__form">
+            <form method="post" onSubmit={handleSubmit}>
+                <label for="nickname">nickname: </label>
+                <input type="text" name="nickname" onChange={handleChange} />
+                {message.nickname && <p>{message.nickname}</p>}
 
-            <label for="email">email: </label>
-            <input type="email" name="email" onChange={handleChange} />
+                <label for="email">email: </label>
+                <input type="email" name="email" onChange={handleChange} />
+                {message.email && <p>{message.email}</p>}
 
-            <label for="password">password: </label>
-            <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-            />
+                <label for="password">password: </label>
+                <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={handleChange}
+                />
+                {message.password && <p>{message.password}</p>}
 
-            <label for="password_confirmation">confirm password</label>
-            <input
-                type="password"
-                name="password_confirmation"
-                value={password_confirmation}
-                onChange={handleChange}
-            />
+                <label for="password_confirmation">confirm password</label>
+                <input
+                    type="password"
+                    name="password_confirmation"
+                    value={password_confirmation}
+                    onChange={handleChange}
+                />
+                {message.password_confirmation && (
+                    <p>{message.password_confirmation}</p>
+                )}
 
-            <input type="submit" value="register" />
-        </form>
+                <input type="submit" value="register" />
+            </form>
+        </div>
     );
 }
 
