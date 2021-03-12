@@ -6,6 +6,7 @@ function Welcome() {
         <section class="welcome__page">
             <TopSection />
             <BotSection />
+            <ReviewSlider />
         </section>
     );
 }
