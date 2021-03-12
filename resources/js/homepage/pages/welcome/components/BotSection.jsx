@@ -11,12 +11,13 @@ function BotSection() {
             </div>
 
             <div className="promo__tile">
-                <div className="promo__tile--image">
-                    <img src="" alt="placeholder" />
-                </div>
                 <div className="promo__tile--text">
                     <h4>2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolores numquam, eius ipsam doloribus odio quos!</h4>
                 </div>
+                <div className="promo__tile--image">
+                    <img src="" alt="placeholder" />
+                </div>
+                
             </div>
 
             <div className="promo__tile">
