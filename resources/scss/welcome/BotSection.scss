@@ -1,0 +1,21 @@
+.welcome__page--bot--section {
+    padding: 0%;
+    margin: 0%;
+}
+
+.promo__tile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.promo__tile--image {
+    background-color: rgba(230, 228, 219, 0.8);
+    border-radius: 0.9rem;
+    margin-bottom: 10em;
+    padding: 1rem;
+    width: 30vw;
+}
