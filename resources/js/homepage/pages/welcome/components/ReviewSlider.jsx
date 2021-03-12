@@ -52,13 +52,13 @@ const ReviewSlider = (props) => {
         return (
             <CarouselItem
                 className="custom-tag"
-                tag="span"
                 key={item.id}
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
             >
+                <img src="" alt="placeholder image" className="carousel-img" />
                 <CarouselCaption
-                    className="text-warning"
+                    className="text"
                     captionText={item.caption}
                     captionHeader={item.caption}
                 />
@@ -75,7 +75,12 @@ const ReviewSlider = (props) => {
               background: grey;
             }`}
             </style>
-            <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+            <Carousel
+                className="gifter-carousel"
+                activeIndex={activeIndex}
+                next={next}
+                previous={previous}
+            >
                 <CarouselIndicators
                     items={items}
                     activeIndex={activeIndex}
