@@ -12,10 +12,8 @@ class TestController extends Controller
 {
     public function index()
     {
-        $comments = Comment::get();
-        $users = User::get();
-        $wishes = User::get();
 
-        return view("tests.main", compact(["comments", "users", "wishes"]));
+
+        return view("react.app");
     }
 }
