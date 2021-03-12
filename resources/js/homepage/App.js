@@ -1,6 +1,6 @@
-import { Route, Router, Switch } from "react-router";
 import "./App.css";
 import Welcome from "./pages/welcome/welcome";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
     async function register() {
