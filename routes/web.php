@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get("/home", "TestController@index");
+
+Route::view('/welcome', 'react/app')->name('welcome');

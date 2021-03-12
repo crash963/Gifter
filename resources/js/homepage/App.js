@@ -1,6 +1,6 @@
 import "./App.css";
 import Welcome from "./pages/welcome/welcome.jsx";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
 function App() {
     async function register() {
@@ -27,7 +27,13 @@ function App() {
         console.log(response_data);
     }
 
-    return <Welcome />;
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route path="/welcome" children={<Welcome />} />
+            </Switch>
+        </BrowserRouter>
+    );
 }
 
 export default App;
