@@ -244,7 +244,14 @@ __webpack_require__.r(__webpack_exports__);
 
 function BotSection() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "welcome__page--bot-section"
+    className: "welcome__page--bot--section",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+      className: "promo__images",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+        src: "",
+        alt: "placeholder"
+      })
+    })
   });
 }
 
