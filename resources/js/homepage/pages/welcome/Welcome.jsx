@@ -1,6 +1,6 @@
 import BotSection from "./components/BotSection";
 import TopSection from "./components/TopSection";
-import ReviewSlider from "./components/ReviewSlider";
+import ReviewSlider from "./components/TopSection";
 
 function Welcome() {
     return (
