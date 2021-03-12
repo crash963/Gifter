@@ -21,6 +21,8 @@ function Register() {
             password_confirmation: password_confirmation,
         };
 
+        console.log(request_data);
+
         const response = await fetch("/register", {
             method: "POST",
             body: JSON.stringify(request_data),
@@ -30,11 +32,12 @@ function Register() {
                 "X-CSRF-TOKEN": document
                     .querySelector('meta[name="csrf-token"]')
                     .getAttribute("content"),
+                "X-Requested-With": "XMLHttpRequest",
             },
         });
+        console.log(response);
         const response_data = await response.json();
-
-        setMessage(response_data.errors);
+        if (response_data.errors) setMessage(response_data.errors);
     }
 
     const handleChange = (event) => {
@@ -52,7 +55,6 @@ function Register() {
                 return { ...prev_values, [name]: value };
             });
         }
-        console.log(nickname, email, password);
     };
 
     function handleSubmit(event) {
