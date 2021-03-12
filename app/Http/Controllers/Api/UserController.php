@@ -10,9 +10,7 @@ class UserController extends Controller
 {
     public function user()
     {
-        $user = Auth::id();
-
-        dd($user);
+        $user = Auth::user();
 
         return [
             'user' => $user
