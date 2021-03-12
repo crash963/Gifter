@@ -78,10 +78,6 @@ const ReviewSlider = (props) => {
 
     return (
         <div>
-            <style>
-                {`
-            }`}
-            </style>
             <Carousel
                 activeIndex={activeIndex}
                 next={next}
