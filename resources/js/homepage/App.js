@@ -1,5 +1,5 @@
 import "./App.css";
-import Welcome from "./pages/welcome/welcome";
+import Welcome from "./pages/welcome/welcome.jsx";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -27,13 +27,7 @@ function App() {
         console.log(response_data);
     }
 
-    return (
-        <Router>
-            <Switch>
-                <Route path="/welcome" children={<Welcome />} />
-            </Switch>
-        </Router>
-    );
+    return <Welcome />;
 }
 
 export default App;
