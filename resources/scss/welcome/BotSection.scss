@@ -1,32 +1,29 @@
 .welcome__page--bot--section {
-    padding: 0%;
-    margin: 0%;
-}
-
-.welcome__page--bot--section {
+    background-color: #9cacbf;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 75%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .promo__tile {
     display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .promo__tile--text {
     display: flex;
+    align-items: center;
     overflow: hidden;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 0.9rem;
-    margin-bottom: 0em;
+    margin-left: 1rem;
     padding: 0rem;
-    width: 30rem;
-    height: 25rem;
 }
 
 .promo__tile--image {
@@ -35,8 +32,8 @@
     flex-wrap: wrap;
     background-color: rgba(230, 228, 219, 0.8);
     border-radius: 0.9rem;
-    margin-bottom: 10em;
     padding: 1rem;
-    width: 30vh;
-    height: 25vh;
+    width: 20%;
+    height: 35%;
+    margin-bottom: 2rem;
 }
