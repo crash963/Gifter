@@ -4,7 +4,7 @@ function BotSection() {
             <div className="promo__tile">
                 <img
                     className="promo__tile--image"
-                    src="../images/placeholder.png"
+                    src="../images/welcome_tile1.jpg"
                     alt="placeholder"
                 />
                 <div className="promo__tile--text">
@@ -26,7 +26,7 @@ function BotSection() {
                 </div>
                 <img
                     className="promo__tile--image"
-                    src="../images/placeholder.png"
+                    src="../images/welcome_tile2.jpg"
                     alt="placeholder"
                 />
             </div>
@@ -34,7 +34,7 @@ function BotSection() {
             <div className="promo__tile">
                 <img
                     className="promo__tile--image"
-                    src="../images/placeholder.png"
+                    src="../images/welcome_tile3.jpg"
                     alt="placeholder"
                 />
                 <div className="promo__tile--text">
