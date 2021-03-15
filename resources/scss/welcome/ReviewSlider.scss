@@ -3,7 +3,7 @@
     margin: 0 auto;
     &-item {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-between;
         max-width: 100vw;
         height: 300px;
@@ -12,13 +12,27 @@
     &-inside {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
+
+        justify-content: space-around;
     }
     &-img {
-        height: 100px;
+        margin-top: 4rem;
+        margin-right: 45rem;
+        display: inline-block;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        img {
+            width: auto;
+            height: 100%;
+            margin-left: -35px;
+        }
     }
-    &-caption {
-        position: relative !important;
+    &-text {
+        position: relative;
+        width: 60%;
+        padding-left: 15rem;
     }
 }
