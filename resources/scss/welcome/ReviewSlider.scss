@@ -1,9 +1,12 @@
 .carousel {
     width: 79vw;
     margin: 0 auto;
-    border-radius: 0.2rem;
     &-section {
         background-color: #9cacbf;
+        padding-bottom: 1rem;
+    }
+    &-inner {
+        border-radius: 0.9rem;
     }
     &-item {
         display: flex;
