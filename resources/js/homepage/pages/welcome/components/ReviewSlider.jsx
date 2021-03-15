@@ -74,7 +74,7 @@ const ReviewSlider = (props) => {
     });
 
     return (
-        <div>
+        <div className="carousel-section">
             <Carousel
                 activeIndex={activeIndex}
                 next={next}

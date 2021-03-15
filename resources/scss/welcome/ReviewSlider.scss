@@ -1,13 +1,17 @@
 .carousel {
-    width: 75vw;
+    width: 79vw;
     margin: 0 auto;
+    border-radius: 0.2rem;
+    &-section {
+        background-color: #9cacbf;
+    }
     &-item {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         max-width: 100vw;
         height: 300px;
-        background: rgba($color: #012e67, $alpha: 0.8);
+        background: rgba($color: #012e67, $alpha: 0.65);
     }
     &-inside {
         display: flex;
@@ -24,7 +28,7 @@
         height: 100px;
         overflow: hidden;
         border-radius: 50%;
-        border: #012e67 solid 2px;
+        border: #0a1417 solid 2px;
         img {
             width: auto;
             height: 100%;
@@ -35,5 +39,6 @@
         position: relative;
         // width: 60%;
         // padding-left: 15rem;
+        color: #9cacbf !important;
     }
 }
