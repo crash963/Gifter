@@ -7,6 +7,16 @@
     font-family: "Raleway", sans-serif;
 }
 
+.logo {
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    font-family: "Monoton", cursive;
+    color: #9cacbf;
+    font-weight: 1000;
+    font-size: 60px;
+}
+
 @import "./welcome/BotSection.scss";
 @import "./welcome/ReviewSlider.scss";
 @import "./welcome/TopSection.scss";

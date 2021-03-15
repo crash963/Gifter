@@ -16,6 +16,7 @@ function TopSection() {
 
     return (
         <div className="welcome__page--top-section">
+            <h1 className="logo">Gifter</h1>
             <div className="btn__container">
                 <button onClick={handleLogin}>Login</button>
                 <button onClick={handleRegister}>Register</button>
