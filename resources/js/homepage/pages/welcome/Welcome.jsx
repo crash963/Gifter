@@ -4,7 +4,7 @@ import ReviewSlider from "./components/ReviewSlider";
 
 function Welcome() {
     return (
-        <section class="welcome__page">
+        <section className="welcome__page">
             <TopSection />
             <BotSection />
             <ReviewSlider />

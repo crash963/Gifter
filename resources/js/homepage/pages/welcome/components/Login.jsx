@@ -47,7 +47,7 @@ function Login() {
     }
 
     return (
-        <div className="register__form">
+        <div className="login__form">
             <form method="post" onSubmit={handleSubmit}>
                 <label for="email">email: </label>
                 <input type="email" name="email" onChange={handleChange} />
@@ -62,7 +62,7 @@ function Login() {
                 />
                 {message.password && <p>{message.password}</p>}
 
-                <input type="submit" value="register" />
+                <button>Register</button>
             </form>
         </div>
     );

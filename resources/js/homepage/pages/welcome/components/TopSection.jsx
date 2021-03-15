@@ -19,7 +19,16 @@ function TopSection() {
                 <button onClick={handleLogin}>Login</button>
                 <button onClick={handleRegister}>Register</button>
             </div>
-            <div>{window && window}</div>
+            {window && (
+                <div
+                    onClick={() => {
+                        setWindow(null);
+                    }}
+                    className="overlay"
+                >
+                    <div>{window}</div>
+                </div>
+            )}
         </div>
     );
 }

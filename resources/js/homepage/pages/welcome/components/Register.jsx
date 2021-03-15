@@ -93,7 +93,7 @@ function Register() {
                     <p>{message.password_confirmation}</p>
                 )}
 
-                <input type="submit" value="register" />
+                <button>Register</button>
             </form>
         </div>
     );
