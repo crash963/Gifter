@@ -1,6 +1,22 @@
 @import "./TopSectionForms.scss";
 
 .welcome__page--top-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 60vh;
     background-color: #012e67;
+
+    .btn__container {
+        width: 40%;
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        button {
+            border: none;
+            border-radius: 2rem;
+            width: 20rem;
+            background-color: #9cacbf;
+        }
+    }
 }

@@ -3,6 +3,9 @@
 //color-3 = #2b6684
 //color-4 = #032e42
 //color-5 = #0a1417
+* {
+    font-family: "Raleway", sans-serif;
+}
 
 @import "./welcome/BotSection.scss";
 @import "./welcome/ReviewSlider.scss";
