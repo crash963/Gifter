@@ -1,33 +1,6 @@
-.overlay {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(3px);
-    z-index: 5;
+@import "./TopSectionForms.scss";
 
-    .register__form,
-    .login__form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 15rem;
-        height: 30rem;
-        width: 40rem;
-        padding: 2rem;
-        background-color: rgba($color: #000000, $alpha: 0.3);
-        form {
-            color: white;
-            display: flex;
-            flex-direction: column;
-            width: 55%;
-            button {
-                margin-top: 1rem;
-            }
-        }
-    }
+.welcome__page--top-section {
+    height: 60vh;
+    background-color: salmon;
 }
