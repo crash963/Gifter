@@ -1,3 +1,4 @@
+import { Input } from "postcss";
 import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
@@ -21,8 +22,10 @@ function TopSection() {
             </div>
             {window && (
                 <div
-                    onClick={() => {
-                        setWindow(null);
+                    onClick={(event) => {
+                        if (event.target.className === "overlay") {
+                            setWindow(null);
+                        }
                     }}
                     className="overlay"
                 >
