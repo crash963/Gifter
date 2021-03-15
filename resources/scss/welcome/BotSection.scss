@@ -7,12 +7,16 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 10rem;
 }
 
 .promo__tile {
     display: flex;
+    justify-content: space-between;
+
     padding-left: 10%;
     padding-right: 10%;
+    margin-bottom: 15rem;
 }
 
 .promo__tile--text {
@@ -22,18 +26,12 @@
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 0.9rem;
-    margin-left: 1rem;
-    padding: 0rem;
+    width: 50%;
+    padding: 1rem;
 }
 
 .promo__tile--image {
-    display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
     background-color: rgba(230, 228, 219, 0.8);
     border-radius: 0.9rem;
-    padding: 1rem;
-    width: 20%;
-    height: 35%;
-    margin-bottom: 2rem;
+    width: 40rem;
 }
