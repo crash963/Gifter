@@ -24,3 +24,5 @@ Route::get('/user/{user_id}/wishes', 'Api\UserController@wishes');
 Route::get('/current-user', 'Api\UserController@currentUser');
 
 Route::get('/comment/{comment_id}/author', 'Api\CommentController@author');
+
+Route::get('/wish/{wish_id}', 'Api\WishController@wish');
