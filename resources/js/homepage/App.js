@@ -31,7 +31,7 @@ function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" children={<Welcome />} />
+                <Route exact path="/" children={<Welcome />} />
                 <Route path="/profile" children={<Profile />} />
             </Switch>
         </BrowserRouter>
