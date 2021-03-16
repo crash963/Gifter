@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::get('/user/{user_id}/friends', 'Api\UserController@friends');
 Route::get('/user/{user_id}/wishes', 'Api\UserController@wishes');
 
-Route::get('/current-user', 'Api\UserController@currentUser');
+Route::get('/current-user', 'Api\UserController@currentUser')->middleware('auth:sanctum');
 
 Route::get('/comment/{comment_id}', 'Api\CommentController@comment');
 Route::get('/comment/{comment_id}/author', 'Api\CommentController@author');
