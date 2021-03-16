@@ -5,7 +5,7 @@ function UserBox() {
     const currentUser = useContext(CurrentUserContext).user;
 
     return (
-        <div className="user__box">
+        <div className="user__box box" >
             <img
                 src="../images/test-user-photo.jpg"
                 alt="user-img"
