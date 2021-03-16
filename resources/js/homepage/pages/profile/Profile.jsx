@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import UserBox from "./components/UserBox";
 import UserDetail from "./components/UserDetail";
+import Wishes from "./components/Wishes";
 
 export const CurrentUserContext = React.createContext(null);
 
@@ -27,9 +28,10 @@ function Profile() {
         <CurrentUserContext.Provider value={currentUser}>
             {currentUser && (
                 <section className="profile">
+                    {!isNameSet && <UserDetail />}
                     <div className="box__container">
                         <UserBox />
-                        {!isNameSet && <UserDetail />}
+                        <Wishes isNameSet={isNameSet} />
                     </div>
                 </section>
             )}
