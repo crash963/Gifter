@@ -18,7 +18,7 @@ function Profile() {
 
     useEffect(() => {
         fetchCurrentUser();
-        if (currentUser.first_name && currentUser.last_name) {
+        if (currentUser && currentUser.first_name && currentUser.last_name) {
             setIsNameSet(true);
         }
     }, []);
