@@ -18,6 +18,13 @@ class UserController extends Controller
         ];
     }
 
+    public function show($user_id)
+    {
+        $user = User::findOrFail($user_id);
+
+        return $user;
+    }
+
     public function friends($user_id)
     {
         $user = User::findOrFail($user_id);
