@@ -28,3 +28,4 @@ Route::get('/comment/{comment_id}', 'Api\CommentController@comment');
 Route::get('/comment/{comment_id}/author', 'Api\CommentController@author');
 
 Route::get('/wish/{wish_id}', 'Api\WishController@wish');
+Route::get('/wish/{wish_id}/fulfillers', 'Api\WishController@fulfillers');
