@@ -18,7 +18,7 @@ class CreateCommentsTable extends Migration
 
             $table->foreignId("wish_id");
             $table->foreignId("user_id");
-            $table->foreignId("comment_id");
+            $table->foreignId("comment_id")->nullable;
             $table->longText("text");
 
             $table->timestamps();
