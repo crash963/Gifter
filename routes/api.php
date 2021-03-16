@@ -19,9 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/user/{user_id}/update', 'Api\UserController@update');
 Route::get('/user/{user_id}/friends', 'Api\UserController@friends');
 Route::get('/user/{user_id}/wishes', 'Api\UserController@wishes');
+Route::post('/user/{user_id}/update', 'Api\UserController@update');
 
 Route::get('/current-user', 'Api\UserController@currentUser')->middleware('auth:sanctum');
 
