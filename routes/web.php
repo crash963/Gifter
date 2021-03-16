@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('react.app');
 });
 
 Route::get("/home", "TestController@index");
 
 Route::view('/welcome', 'react/app')->name('welcome');
+Route::view('/profile', 'react/app')->name('profile');

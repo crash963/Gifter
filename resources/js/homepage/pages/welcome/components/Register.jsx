@@ -67,11 +67,15 @@ function Register() {
             <form method="post" onSubmit={handleSubmit}>
                 <label for="nickname">nickname: </label>
                 <input type="text" name="nickname" onChange={handleChange} />
-                {message.nickname && <p>{message.nickname}</p>}
+                {message.nickname && (
+                    <p className="warning__message">{message.nickname}</p>
+                )}
 
                 <label for="email">email: </label>
                 <input type="email" name="email" onChange={handleChange} />
-                {message.email && <p>{message.email}</p>}
+                {message.email && (
+                    <p className="warning__message">{message.email}</p>
+                )}
 
                 <label for="password">password: </label>
                 <input
@@ -80,7 +84,9 @@ function Register() {
                     value={password}
                     onChange={handleChange}
                 />
-                {message.password && <p>{message.password}</p>}
+                {message.password && (
+                    <p className="warning__message">{message.password}</p>
+                )}
 
                 <label for="password_confirmation">confirm password</label>
                 <input
@@ -90,7 +96,9 @@ function Register() {
                     onChange={handleChange}
                 />
                 {message.password_confirmation && (
-                    <p>{message.password_confirmation}</p>
+                    <p className="warning__message">
+                        {message.password_confirmation}
+                    </p>
                 )}
 
                 <button>Register</button>

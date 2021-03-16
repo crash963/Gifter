@@ -51,7 +51,9 @@ function Login() {
             <form method="post" onSubmit={handleSubmit}>
                 <label for="email">email: </label>
                 <input type="email" name="email" onChange={handleChange} />
-                {message.email && <p>{message.email}</p>}
+                {message.email && (
+                    <p className="warning__message">{message.email}</p>
+                )}
 
                 <label for="password">password: </label>
                 <input
@@ -60,7 +62,9 @@ function Login() {
                     value={password}
                     onChange={handleChange}
                 />
-                {message.password && <p>{message.password}</p>}
+                {message.password && (
+                    <p className="warning__message">{message.password}</p>
+                )}
 
                 <button>Register</button>
             </form>

@@ -23,11 +23,15 @@
         width: 40rem;
         padding: 2rem;
         background-color: rgba($color: #012e67, $alpha: 0.3);
+
         form {
             color: white;
             display: flex;
             flex-direction: column;
             width: 55%;
+            .warning__message {
+                color: red;
+            }
             input {
                 border: none;
                 border-radius: 0.9rem;
