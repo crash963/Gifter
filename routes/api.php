@@ -30,5 +30,7 @@ Route::post('/comment/save', 'Api\CommentController@save');
 Route::get('/comment/{comment_id}/children', 'Api\CommentController@children');
 Route::get('/comment/{comment_id}', 'Api\CommentController@comment');
 
-Route::get('/wish/{wish_id}', 'Api\WishController@wish');
+
+Route::get('/wish/{wish_id}/author', 'Api\WishController@author');
 Route::get('/wish/{wish_id}/fulfillers', 'Api\WishController@fulfillers');
+Route::get('/wish/{wish_id}', 'Api\WishController@wish');

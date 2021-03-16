@@ -11,7 +11,7 @@ class WishController extends Controller
 {
     public function wish($wish_id)
     {
-        $wish = Wish::findOrFail($wish_id);
+        $wish = Wish::with("comments")->findOrFail($wish_id);
 
         return $wish;
     }
@@ -22,4 +22,13 @@ class WishController extends Controller
 
         return $user_wish->fulfillers()->get();
     }
+
+    public function author($wish_id)
+    {
+        $wish = Wish::findOrFail($wish_id);
+
+        return $wish->user;
+    }
+
+    
 };
