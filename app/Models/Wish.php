@@ -9,7 +9,7 @@ class Wish extends Model
 {
     use HasFactory;
 
-    public function author()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
