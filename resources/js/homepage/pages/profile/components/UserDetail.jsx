@@ -1,5 +1,9 @@
+import { CurrentUserContext } from "../Profile.jsx";
+
 function UserDetail() {
-    return null;
+    const currentUser = useContext(CurrentUserContext).user;
+
+    return <div className="overlay"></div>;
 }
 
 export default UserDetail;
