@@ -2,8 +2,13 @@ import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
 function UserBox() {
-    const value = useContext(CurrentUserContext);
-    return <div>user box</div>;
+    const currentUser = useContext(CurrentUserContext).user;
+
+    return (
+        <div className="user__box">
+            <div></div>
+        </div>
+    );
 }
 
 export default UserBox;

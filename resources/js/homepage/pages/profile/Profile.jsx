@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import UserBox from "./components/UserBox";
-import { createContext } from "react";
+
+export const CurrentUserContext = React.createContext(null);
 
 function Profile() {
-    const CurrentUserContext = React.createContext(null);
     const [currentUser, setCurrentUser] = useState(null);
 
     async function fetchCurrentUser() {
@@ -22,11 +22,10 @@ function Profile() {
         <CurrentUserContext.Provider value={currentUser}>
             <section className="profile">
                 <div className="box__container">
-                    <UserBox />
+                    {currentUser && <UserBox />}
                 </div>
             </section>
         </CurrentUserContext.Provider>
     );
 }
-
 export default Profile;
