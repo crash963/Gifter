@@ -19,12 +19,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/user/{user_id}/update', 'Api\UserController@update');
 Route::get('/user/{user_id}/friends', 'Api\UserController@friends');
 Route::get('/user/{user_id}/wishes', 'Api\UserController@wishes');
 
 Route::get('/current-user', 'Api\UserController@currentUser')->middleware('auth:sanctum');
 
+
+Route::post('/comment/save', 'Api\CommentController@save');
+Route::get('/comment/{comment_id}/children', 'Api\CommentController@children');
 Route::get('/comment/{comment_id}', 'Api\CommentController@comment');
-Route::get('/comment/{comment_id}/author', 'Api\CommentController@author');
 
 Route::get('/wish/{wish_id}', 'Api\WishController@wish');

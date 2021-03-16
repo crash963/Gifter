@@ -31,4 +31,8 @@ class UserController extends Controller
 
         return $user->wishes;
     }
+    public function update(Request $request, $user_id)
+    {
+        $user = User::update($request->all());
+    }
 }
