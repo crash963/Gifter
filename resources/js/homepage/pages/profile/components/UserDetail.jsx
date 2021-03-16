@@ -14,6 +14,8 @@ function UserDetail() {
         birthday: currentUser.birthday,
     });
 
+    const [message, setMessage] = useState("");
+
     async function updateUser() {
         let request_data = {
             first_name: first_name,
@@ -34,8 +36,8 @@ function UserDetail() {
                 "X-Requested-With": "XMLHttpRequest",
             },
         });
-        // const response_data = await response.json();
-        // if (response_data.errors) setMessage(response_data.errors);
+        const response_data = await response.json();
+        if (response_data.errors) setMessage(response_data.errors);
     }
 
     const handleChange = (event) => {
@@ -66,20 +68,26 @@ function UserDetail() {
             <div className="register__form" onSubmit={handleSubmit}>
                 <form method="post">
                     <div>{currentUser.nickname}</div>
-                    <label htmlFor="first_name">First name: </label>
+                    <label htmlFor="first_name">First name*: </label>
                     <input
                         type="text"
                         name="first_name"
                         value={first_name ? first_name : ""}
                         onChange={handleChange}
                     />
-                    <label htmlFor="last_name">Last name: </label>
+                    {message.first_name && (
+                        <p className="warning__message">{message.first_name}</p>
+                    )}
+                    <label htmlFor="last_name">Last name*: </label>
                     <input
                         type="text"
                         name="last_name"
                         value={last_name ? last_name : ""}
                         onChange={handleChange}
                     />
+                    {message.last_name && (
+                        <p className="warning__message">{message.last_name}</p>
+                    )}
                     <label htmlFor="address">Address: </label>
                     <input
                         type="text"
@@ -94,13 +102,16 @@ function UserDetail() {
                         value={photo ? photo : ""}
                         onChange={handleChange}
                     />
-                    <label htmlFor="birthday">Birthday: </label>
+                    <label htmlFor="birthday">Date of birth*: </label>
                     <input
                         type="date"
                         name="birthday"
                         value={birthday ? birthday : ""}
                         onChange={handleChange}
                     />
+                    {message.birthday && (
+                        <p className="warning__message">{message.birthday}</p>
+                    )}
                     <button type="submit">Update user</button>
                 </form>
             </div>
