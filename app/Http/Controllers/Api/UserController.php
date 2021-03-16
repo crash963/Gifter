@@ -35,5 +35,10 @@ class UserController extends Controller
     {
         $user = User::findOrFail($user_id);
         $user->update($request->all());
+
+        return [
+            'status' => 'success',
+            'message' => 'User info was successfully updated'
+        ];
     }
 }
