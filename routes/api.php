@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,6 @@ Route::get('/user/{user_id}/wishes', 'Api\UserController@wishes');
 Route::get('/current-user', 'Api\UserController@currentUser');
 
 Route::get('/comment/{comment_id}', 'Api\CommentController@comment');
+Route::get('/comment/{comment_id}/author', 'Api\CommentController@author');
+
+Route::get('/wish/{wish_id}', 'Api\WishController@wish');

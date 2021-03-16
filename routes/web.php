@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/login-test', function () {
+    return view('welcome');
+});
+
 Route::get('/', function () {
     return view('react.app');
 });
