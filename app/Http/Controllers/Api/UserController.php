@@ -20,8 +20,8 @@ class UserController extends Controller
 
     public function friends($user_id)
     {
-        $user = User::with('friends')->findOrFail($user_id);
+        $user = User::findOrFail($user_id);
 
-        return $user->friends();
+        return $user->friends;
     }
 }
