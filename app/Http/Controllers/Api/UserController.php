@@ -35,6 +35,5 @@ class UserController extends Controller
     {
         $user = User::findOrFail($user_id);
         $user->update($request->all());
-        
     }
 }
