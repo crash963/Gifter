@@ -1,0 +1,31 @@
+
+body {
+    background-color: #9cacbf
+
+}
+.box {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2b6684;
+    border-radius: 0.9rem;
+    width: 20rem;
+    box-shadow: 5px 10px #888888;
+    color: #0a1417;
+    
+
+        &:hover {
+            box-shadow: 10px 15px #574141;
+        }
+   
+
+}
+
+.wish__profile__img {
+    border-radius: 15%;
+    width: 100%;
+    padding: 2rem;
+}
+
