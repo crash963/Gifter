@@ -19,5 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/user/{user_id}/friends', 'Api\UserController@friends');
+Route::get('/user/{user_id}/wishes', 'Api\UserController@wishes');
 
 Route::get('/current-user', 'Api\UserController@currentUser');
+
+Route::get('/comment/{comment_id}/author', 'Api\CommentController@author');

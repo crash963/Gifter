@@ -24,4 +24,11 @@ class UserController extends Controller
 
         return $user->friends;
     }
+
+    public function wishes($user_id)
+    {
+        $user = User::findOrFail($user_id);
+
+        return $user->wishes;
+    }
 }
