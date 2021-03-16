@@ -14,4 +14,27 @@ class CommentController extends Controller
 
         return $comment;
     }
+
+    public function children($comment_id)
+    {
+        $comment = Comment::findOrFail($comment_id);
+
+        return $comment->children()->get();
+    }
+
+    public function save(Request $request)
+    {
+        $this->validate($request, [
+            'wish_id' => 'required',
+            'user_id' => 'required',
+            'text' => 'required'
+        ]);
+        
+        $comment = Comment::create($request->all());
+
+        return [
+            'status' => 'success',
+            'message' => 'Comment was successfully added'
+        ];
+    }
 }

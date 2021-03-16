@@ -15,4 +15,11 @@ class WishController extends Controller
 
         return $wish;
     }
+
+    public function fulfillers($wish_id)
+    {
+        $user_wish = Wish::findOrFail($wish_id);
+
+        return $user_wish->fulfillers()->get();
+    }
 };
