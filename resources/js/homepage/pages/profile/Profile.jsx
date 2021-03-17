@@ -14,21 +14,27 @@ function Profile() {
         const response = await fetch("/api/current-user");
         const data = await response.json();
         console.log(data);
-        setCurrentUser(data);
+        setCurrentUser(data.user);
+        checkName(data);
+    }
+
+    function checkName(data) {
+        if (data.user && data.user.first_name && data.user.last_name) {
+            setIsNameSet(true);
+        }
     }
 
     useEffect(() => {
         fetchCurrentUser();
-        if (currentUser && currentUser.first_name && currentUser.last_name) {
-            setIsNameSet(true);
-        }
     }, []);
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
             {currentUser && (
                 <section className="profile">
-                    {!isNameSet && <UserDetail />}
+                    {!isNameSet && (
+                        <UserDetail fetchCurrentUser={fetchCurrentUser} />
+                    )}
                     <div className="box__container">
                         <UserBox />
                         <Wishes isNameSet={isNameSet} />

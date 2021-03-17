@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
 function WishBox(props) {
-    const currentUser = useContext(CurrentUserContext).user;
+    const currentUser = useContext(CurrentUserContext);
     const wish = props.wish;
 
     return (

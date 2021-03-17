@@ -3,7 +3,7 @@ import { CurrentUserContext } from "../Profile.jsx";
 import WishBox from "./WishBox.jsx";
 
 function Wishes() {
-    const currentUser = useContext(CurrentUserContext).user;
+    const currentUser = useContext(CurrentUserContext);
     const [wishes, setWishes] = useState(null);
 
     async function fetchWishes() {

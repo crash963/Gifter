@@ -27,8 +27,11 @@ function Login() {
             },
         });
         const response_data = await response.json();
-        if (response_data.errors) setMessage(response_data.errors);
-        window.location.href = "/profile";
+        if (response_data.errors) {
+            setMessage(response_data.errors);
+        } else {
+            window.location.href = "/profile";
+        }
     }
 
     const handleChange = (event) => {

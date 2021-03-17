@@ -1,8 +1,9 @@
+import PreviousMap from "postcss/lib/previous-map";
 import { useContext, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
-function UserDetail() {
-    const currentUser = useContext(CurrentUserContext).user;
+function UserDetail(props) {
+    const currentUser = useContext(CurrentUserContext);
     const [
         { first_name, last_name, address, photo, birthday },
         setValues,
@@ -38,6 +39,7 @@ function UserDetail() {
         });
         const response_data = await response.json();
         if (response_data.errors) setMessage(response_data.errors);
+        props.fetchCurrentUser();
     }
 
     const handleChange = (event) => {

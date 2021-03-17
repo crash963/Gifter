@@ -2,10 +2,10 @@ import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
 function UserBox() {
-    const currentUser = useContext(CurrentUserContext).user;
+    const currentUser = useContext(CurrentUserContext);
 
     return (
-        <div className="user__box box" >
+        <div className="user__box box">
             <img
                 src="../images/test-user-photo.jpg"
                 alt="user-img"
