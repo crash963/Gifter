@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
     const [{ email, password }, setValues] = useState({
@@ -27,6 +28,7 @@ function Login() {
         });
         const response_data = await response.json();
         if (response_data.errors) setMessage(response_data.errors);
+        window.location.href = "/profile";
     }
 
     const handleChange = (event) => {
@@ -66,7 +68,7 @@ function Login() {
                     <p className="warning__message">{message.password}</p>
                 )}
 
-                <button>Register</button>
+                <button>Login</button>
             </form>
         </div>
     );
