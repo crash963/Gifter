@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import AddWishBox from "./components/AddWishBox";
+import Logout from "./components/Logout";
 import UserBox from "./components/UserBox";
 import UserDetail from "./components/UserDetail";
 import Wishes from "./components/Wishes";
@@ -14,7 +15,7 @@ function Profile() {
     async function fetchCurrentUser() {
         const response = await fetch("/api/current-user");
         const data = await response.json();
-        console.log(data);
+
         setCurrentUser(data.user);
         checkName(data);
     }
@@ -33,8 +34,8 @@ function Profile() {
         <CurrentUserContext.Provider value={currentUser}>
             {currentUser && (
                 <section className="profile">
-                    <UserDetail fetchCurrentUser={fetchCurrentUser} />
-
+                    {/* <UserDetail fetchCurrentUser={fetchCurrentUser} /> */}
+                    <Logout />
                     <div className="box__container">
                         <UserBox />
                         <Wishes isNameSet={isNameSet} />
