@@ -67,7 +67,7 @@ function UserDetail(props) {
 
     return (
         <div className="overlay">
-            <div className="register__form" onSubmit={handleSubmit}>
+            <div className="update__form" onSubmit={handleSubmit}>
                 <form method="post">
                     <div>{currentUser.nickname}</div>
                     <label htmlFor="first_name">First name*: </label>
