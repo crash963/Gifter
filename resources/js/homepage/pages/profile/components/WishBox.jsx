@@ -20,6 +20,7 @@ function WishBox(props) {
                 <p>{wish.name}</p>
                 {wish.link && <p>{wish.link}</p>}
             </div>
+            
         </div>
     );
 }

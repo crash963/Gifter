@@ -1,37 +1,38 @@
-.wish__box {
-    margin: 2rem;
-
+.box__container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.wish__box {
     background-color: #2b6684;
-    border-radius: 0.9rem;
-    width: 20rem;
     box-shadow: 5px 10px #888888;
-    color: #0a1417;
     font-weight: 700;
+    font-style: oblique;
+    color: #0a1417;
     font-style: oblique;
 
     &:hover {
-        box-shadow: 10px 15px #195f70;
+        box-shadow: 10px 15px #457581;
     }
 
     & img {
-        border-radius: 30%;
-        width: 50%;
-        padding: 2rem;
+        width: 100%;
     }
 }
 
 .wish__user__info {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    padding: 0%;
 }
 
 .wish__user__info img {
-    border-radius: 2.9rem;
-    width: 50%;
+    border-radius: 30%;
+    width: 30%;
     padding: 2rem;
 }

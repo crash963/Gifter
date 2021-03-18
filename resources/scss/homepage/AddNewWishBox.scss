@@ -1,0 +1,17 @@
+.add__wish__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b6684;
+    box-shadow: 5px 10px #888888;
+    font-weight: 700;
+    font-style: oblique;
+
+    &:hover {
+        box-shadow: 10px 15px #457581;
+    }
+}
+
+.add__wish__box img {
+    width: 80%;
+}
