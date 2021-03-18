@@ -32,6 +32,8 @@ function Profile() {
         <CurrentUserContext.Provider value={currentUser}>
             {currentUser && (
                 <section className="profile">
+                    {/* <UserDetail fetchCurrentUser={fetchCurrentUser} /> */}
+
                     <div className="box__container">
                         <UserBox />
                         <Wishes isNameSet={isNameSet} />
