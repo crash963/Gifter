@@ -14,10 +14,33 @@ function UserDetail(props) {
         photo: currentUser.photo,
         birthday: currentUser.birthday,
     });
-
+    const [file, setFile] = useState(null);
     const [message, setMessage] = useState("");
 
-    async function updateUser() {
+    async function uploadPhoto() {
+        const uploadData = new FormData();
+        uploadData.append("picture", file);
+
+        const response = await fetch("/api/upload/profile-picture", {
+            method: "POST",
+            body: uploadData,
+            headers: {
+                Accept: "application/json",
+                "X-CSRF-TOKEN": document
+                    .querySelector('meta[name="csrf-token"]')
+                    .getAttribute("content"),
+            },
+        });
+
+        const response_data = await response.text();
+        console.log(response_data);
+        setValues((prev_values) => {
+            return { ...prev_values, photo: response_data };
+        });
+        return response_data;
+    }
+
+    async function updateUser(photo) {
         let request_data = {
             first_name: first_name,
             last_name: last_name,
@@ -34,7 +57,6 @@ function UserDetail(props) {
                 "X-CSRF-TOKEN": document
                     .querySelector('meta[name="csrf-token"]')
                     .getAttribute("content"),
-                "X-Requested-With": "XMLHttpRequest",
             },
         });
         const response_data = await response.json();
@@ -60,9 +82,10 @@ function UserDetail(props) {
         }
     };
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
-        updateUser();
+        let photo = await uploadPhoto();
+        updateUser(photo);
     }
 
     return (
@@ -97,12 +120,20 @@ function UserDetail(props) {
                         value={address ? address : ""}
                         onChange={handleChange}
                     />
-                    <label htmlFor="photo">Photo url: </label>
+                    <label htmlFor="photo" hidden>
+                        Photo url:{" "}
+                    </label>
                     <input
                         type="text"
                         name="photo"
                         value={photo ? photo : ""}
                         onChange={handleChange}
+                        hidden
+                    />
+                    <label htmlFor="file">Profile photo:</label>
+                    <input
+                        type="file"
+                        onChange={(e) => setFile(e.target.files[0])}
                     />
                     <label htmlFor="birthday">Date of birth*: </label>
                     <input
