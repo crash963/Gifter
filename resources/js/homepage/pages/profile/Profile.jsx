@@ -32,6 +32,11 @@ function Profile() {
         <CurrentUserContext.Provider value={currentUser}>
             {currentUser && (
                 <section className="profile">
+                    <form action="{{ route('logout') }}" method="post">
+                        <button class="text-sm text-gray-700 underline">
+                            Logout
+                        </button>
+                    </form>
                     {!isNameSet && (
                         <UserDetail fetchCurrentUser={fetchCurrentUser} />
                     )}
