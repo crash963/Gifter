@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import AddWishBox from "./components/AddWishBox";
 import UserBox from "./components/UserBox";
 import UserDetail from "./components/UserDetail";
 import Wishes from "./components/Wishes";
@@ -37,6 +38,7 @@ function Profile() {
                     <div className="box__container">
                         <UserBox />
                         <Wishes isNameSet={isNameSet} />
+                        <AddWishBox />
                     </div>
                 </section>
             )}
