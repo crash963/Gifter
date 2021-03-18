@@ -1,11 +1,7 @@
-
 body {
-    background-color: #2066bd
-
+    background-color: #9cacbf;
 }
-.user__box {
-    margin: 2rem;
-
+.box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,15 +11,10 @@ body {
     width: 20rem;
     box-shadow: 5px 10px #888888;
     color: #0a1417;
-    font-weight: 700;
-    font-style: oblique;
-    
 
-        &:hover {
-            box-shadow: 10px 15px #195f70;
-        }
-   
-
+    &:hover {
+        box-shadow: 10px 15px #574141;
+    }
 }
 
 .wish__profile__img {
@@ -32,3 +23,42 @@ body {
     padding: 2rem;
 }
 
+.update__form {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.9rem;
+    top: 15rem;
+    // margin-left: -20rem;
+    // height: 35rem;
+    width: 40rem;
+    padding: 2rem;
+    background-color: rgba($color: #012e67, $alpha: 0.3);
+
+    form {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        .warning__message {
+            color: red;
+        }
+        input {
+            border: none;
+            border-radius: 0.9rem;
+            padding: 0.5rem;
+        }
+        button {
+            margin-top: 1rem;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border: none;
+            border-radius: 2rem;
+            width: 20rem;
+            background-color: #9cacbf;
+            color: #032e42;
+            font-weight: 700;
+        }
+    }
+}
