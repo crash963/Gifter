@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AddWishForm from "./AddWishForm";
 
 function AddWishBox() {
     const [isClicked, setIsClicked] = useState(false);
@@ -13,8 +14,10 @@ function AddWishBox() {
                 setIsClicked(true);
             }}
         >
-            {!isClicked && (
+            {!isClicked ? (
                 <img src="/images/icons/plus.svg" alt="plus_icon-img" />
+            ) : (
+                <AddWishForm />
             )}
         </div>
     );
