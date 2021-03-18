@@ -1,9 +1,10 @@
 
 body {
-    background-color: #9cacbf
+    background-color: #2066bd
 
 }
-.box {
+.user__box {
+    margin: 2rem;
 
     display: flex;
     justify-content: center;
@@ -14,10 +15,12 @@ body {
     width: 20rem;
     box-shadow: 5px 10px #888888;
     color: #0a1417;
+    font-weight: 700;
+    font-style: oblique;
     
 
         &:hover {
-            box-shadow: 10px 15px #574141;
+            box-shadow: 10px 15px #195f70;
         }
    
 

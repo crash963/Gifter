@@ -12,13 +12,13 @@ function WishBox(props) {
                 <p>
                     {props.isNameSet
                         ? `${currentUser.first_name} ${currentUser.last_name}`
-                        : currentUser.nickname}
+                        :  currentUser.nickname}
                 </p>
             </div>
             <img src="../images/test-wish-photo.jpg" alt="wish-img" />
-            <div>
+            <div className="wish__box--wish">
                 <p>{wish.name}</p>
-                {wish.link && <p>{wish.link}</p>}gi
+                {wish.link && <p>{wish.link}</p>}
             </div>
         </div>
     );
