@@ -140,7 +140,7 @@ function AddWishForm() {
             <div className="form__box--right">
                 <label htmlFor="description">Description:</label>
                 <br />
-                <textarea name="description" cols="30" rows="10"></textarea>
+                <textarea name="description" cols="45" rows="20"></textarea>
             </div>
         </form>
     );
