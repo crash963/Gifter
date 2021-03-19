@@ -93,7 +93,7 @@ function AddWishForm() {
     }
 
     return (
-        <form method="post" className="form__box">
+        <form method="post" className="form__box" onSubmit={handleSubmit}>
             <div className="form__box--left">
                 <div>
                     <label htmlFor="name">Product name:</label>
