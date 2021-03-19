@@ -64,10 +64,14 @@ function UserDetail(props) {
         const response_data = await response.json();
         if (response_data.errors) {
             setMessage(response_data.errors);
+            props.fetchCurrentUser();
         } else {
             props.setUserBoxClicked(false);
+            props.fetchCurrentUser();
+            if (newPhoto) {
+                window.location.reload(false);
+            }
         }
-        props.fetchCurrentUser();
     }
 
     const handleChange = (event) => {

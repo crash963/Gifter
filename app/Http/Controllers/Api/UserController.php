@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Wish;
 
 class UserController extends Controller
 {
@@ -38,6 +39,7 @@ class UserController extends Controller
 
         return $user->wishes;
     }
+
     public function update(Request $request, $user_id)
     {
         $this->validate($request, [
@@ -53,5 +55,22 @@ class UserController extends Controller
             'status' => 'success',
             'message' => 'User info was successfully updated'
         ];
+    }
+
+    public function friendsWishes($user_id)
+    {
+        $user = User::findOrFail($user_id);
+        $friends = $user->friends()->get();
+
+        $friends_ids = [];
+
+        foreach ($friends as $friend) {
+            array_push($friends_ids, $friend->id);
+        }
+
+
+        $wishes = Wish::whereIn('user_id', $friends_ids)->orderBy('created_at', 'desc')->limit(30)->get();
+
+        return $wishes;
     }
 }

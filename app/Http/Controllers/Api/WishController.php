@@ -37,7 +37,7 @@ class WishController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'resolve_date' => 'required'
+            'resolve_date' => 'nullable'
         ]);
 
         $wish = Wish::create($request->all());

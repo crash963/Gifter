@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { CurrentUserContext } from "../Profile.jsx";
+// import { useContext, useEffect, useState } from "react";
+// import { CurrentUserContext } from "../Profile.jsx";
 import WishBox from "./WishBox.jsx";
 
 function Wishes(props) {
-    const currentUser = useContext(CurrentUserContext);
-    const [wishes, setWishes] = useState(null);
+    // const currentUser = useContext(CurrentUserContext);
+    /* const [wishes, setWishes] = useState(null);
 
     async function fetchWishes() {
         const response = await fetch(`/api/user/${currentUser.id}/wishes`);
@@ -16,11 +16,11 @@ function Wishes(props) {
     useEffect(() => {
         fetchWishes();
     }, []);
-
+ */
     return (
         <>
-            {wishes &&
-                wishes.map((wish) => (
+            {props.wishes &&
+                props.wishes.map((wish) => (
                     <WishBox
                         key={wish.name}
                         wish={wish}

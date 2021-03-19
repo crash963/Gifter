@@ -2,7 +2,9 @@ import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
 function UserBox(props) {
-    const currentUser = useContext(CurrentUserContext);
+    const currentUser = props.user
+        ? props.user
+        : useContext(CurrentUserContext);
     //setUserBoxClicked
 
     function handleClick(e) {

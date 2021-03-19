@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddWishForm from "./AddWishForm";
 
-function AddWishBox() {
+function AddWishBox(props) {
     const [isClicked, setIsClicked] = useState(false);
 
     return (
@@ -9,14 +9,14 @@ function AddWishBox() {
             className={`add__wish__box box ${
                 isClicked && "add__wish__box__form"
             }`}
-            onClick={(e) => {
+            onClick={() => {
                 setIsClicked(true);
             }}
         >
             {!isClicked ? (
                 <img src="/images/icons/plus.svg" alt="plus_icon-img" />
             ) : (
-                <AddWishForm />
+                <AddWishForm fetchWishes={props.fetchWishes} />
             )}
         </div>
     );
