@@ -12,6 +12,10 @@ class UploadController extends Controller
 {
     public function uploadProfilePic(Request $request){
 
+        if(!$request->file("picture")){
+            return;
+        }
+
         $user = Auth::user();
         
         //    $filename = $request->file('picture')->store('profile_pictures', 'uploads');
