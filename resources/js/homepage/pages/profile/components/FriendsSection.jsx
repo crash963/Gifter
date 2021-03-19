@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
+import AddFriendBox from "./AddFriendBox.jsx";
 import UserBox from "./UserBox.jsx";
 
 function FriendsSection() {
@@ -14,6 +15,10 @@ function FriendsSection() {
         console.log(data);
     }
 
+    function findFriend() {
+        setShowFindNewFriend(true);
+    }
+
     useEffect(() => {
         fetchCurrentUserFriends();
     }, []);
@@ -21,6 +26,7 @@ function FriendsSection() {
     return (
         <div>
             {friends && friends.map((friend) => <UserBox user={friend} />)}
+            <AddFriendBox />
         </div>
     );
 }
