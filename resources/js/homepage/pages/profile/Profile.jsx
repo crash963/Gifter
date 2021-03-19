@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import AddWishBox from "./components/AddWishBox";
-import Logout from "./components/Logout";
-import UserBox from "./components/UserBox";
-import UserDetail from "./components/UserDetail";
-import Wishes from "./components/Wishes";
+import MyProfile from "./components/MyProfile";
 
 export const CurrentUserContext = React.createContext(null);
 
@@ -12,6 +8,9 @@ function Profile() {
     const [currentUser, setCurrentUser] = useState(null);
     const [isNameSet, setIsNameSet] = useState(false);
     const [userBoxClicked, setUserBoxClicked] = useState(false);
+    const [currentPage, setCurrentPage] = useState("myProfile");
+
+    const [alza, setAlza] = useState("");
 
     async function fetchCurrentUser() {
         const response = await fetch("/api/current-user");
@@ -33,20 +32,14 @@ function Profile() {
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
-            {currentUser && (
+            {currentUser && currentPage === "myProfile" && (
                 <section className="profile">
-                    {(!isNameSet || userBoxClicked) && (
-                        <UserDetail
-                            fetchCurrentUser={fetchCurrentUser}
-                            setUserBoxClicked={setUserBoxClicked}
-                        />
-                    )}
-                    <Logout />
-                    <div className="box__container">
-                        <UserBox setUserBoxClicked={setUserBoxClicked} />
-                        <Wishes isNameSet={isNameSet} />
-                        <AddWishBox />
-                    </div>
+                    <MyProfile
+                        isNameSet={isNameSet}
+                        setUserBoxClicked={setUserBoxClicked}
+                        fetchCurrentUser={fetchCurrentUser}
+                        userBoxClicked={userBoxClicked}
+                    />
                 </section>
             )}
         </CurrentUserContext.Provider>
