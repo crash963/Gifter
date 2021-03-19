@@ -10,7 +10,6 @@ function AddWishBox() {
                 isClicked && "add__wish__box__form"
             }`}
             onClick={(e) => {
-                e.preventDefault();
                 setIsClicked(true);
             }}
         >

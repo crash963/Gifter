@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Wish;
 
 class UploadController extends Controller
 {
@@ -30,4 +31,17 @@ class UploadController extends Controller
             return $filename;
         
         }
+
+        public function uploadWishPic(Request $request){
+
+            // $user = Auth::user();
+            
+                $filename = $request->file('picture')->storeAs('wish_pictures',
+                $request->file('picture')->getClientOriginalName(),
+                    'uploads'
+                );
+            
+                return $filename;
+            
+            }
 }
