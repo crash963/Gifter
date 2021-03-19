@@ -8,7 +8,14 @@ function WishBox(props) {
     return (
         <div className="wish__box box">
             <div className="wish__user__info">
-                <img src="../images/test-user-photo.jpg" alt="user-img" />
+                <img
+                    src={
+                        currentUser.photo
+                            ? `../images/${currentUser.photo}`
+                            : `../images/profile_pictures/placeholder-profile-pic.jpg`
+                    }
+                    alt={`${currentUser.nickname}'s Profile Picture`}
+                />
                 <p>
                     {props.isNameSet
                         ? `${currentUser.first_name} ${currentUser.last_name}`
@@ -17,10 +24,11 @@ function WishBox(props) {
             </div>
             <img src="../images/test-wish-photo.jpg" alt="wish-img" />
             <div className="wish__box--wish">
-                <p>{wish.name}  {""} 
-                {wish.link && <a href={wish.link}>Buy NOW</a>}</p>
+                <p>
+                    {wish.name} {""}
+                    {wish.link && <a href={wish.link}>Buy NOW</a>}
+                </p>
             </div>
-            
         </div>
     );
 }

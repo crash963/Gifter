@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
-function AddWishForm() {
+function AddWishForm(props) {
     const currentUser = useContext(CurrentUserContext);
 
     const [
@@ -13,11 +13,12 @@ function AddWishForm() {
         link: "",
         photo: "",
         description: "",
-        resolve_date: "",
+        resolve_date: null,
         is_resolved: false,
     });
-
-    /*   const [file, setFile] = useState(null);
+    console.log(description);
+    const [message, setMessage] = useState("");
+    const [file, setFile] = useState(null);
 
     async function uploadPhoto() {
         const uploadData = new FormData();
@@ -40,10 +41,11 @@ function AddWishForm() {
             return { ...prev_values, photo: response_data };
         });
         return response_data;
-    } */
+    }
 
-    async function addWish() {
+    async function addWish(photo) {
         let request_data = {
+            user_id: currentUser.id,
             name: name,
             link: link,
             photo: photo,
@@ -63,9 +65,9 @@ function AddWishForm() {
             },
         });
         const response_data = await response.json();
-        console.log(response);
+        console.log(response_data);
         if (response_data.errors) setMessage(response_data.errors);
-        //props.fetchCurrentUser();
+        props.fetchWishes();
     }
 
     const handleChange = (event) => {
@@ -85,11 +87,11 @@ function AddWishForm() {
             });
         }
     };
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
-        console.log("hello");
-        // let photo = await uploadPhoto();
-        addWish();
+        // console.log("hello");
+        let photo = await uploadPhoto();
+        addWish(photo);
     }
 
     return (
@@ -99,6 +101,9 @@ function AddWishForm() {
                     <label htmlFor="name">Product name:</label>
                     <br />
                     <input type="text" name="name" onChange={handleChange} />
+                    {message.name && (
+                        <p className="warning__message">{message.name}</p>
+                    )}
                 </div>
                 <div>
                     <label htmlFor="link">URL link (optional):</label>
@@ -122,7 +127,9 @@ function AddWishForm() {
                             Birthday
                         </option>
                         <option value="other_date">Other Date</option>
-                        <option value={null}>No Specific Date</option>
+                        <option value={null} selected>
+                            No Specific Date
+                        </option>
                     </select>
                 </div>
                 {resolve_date === "other_date" && (
@@ -140,7 +147,15 @@ function AddWishForm() {
             <div className="form__box--right">
                 <label htmlFor="description">Description:</label>
                 <br />
-                <textarea name="description" cols="45" rows="20"></textarea>
+                <textarea
+                    name="description"
+                    cols="45"
+                    rows="20"
+                    onChange={handleChange}
+                ></textarea>
+                {message.description && (
+                    <p className="warning__message">{message.description}</p>
+                )}
             </div>
         </form>
     );

@@ -9,6 +9,16 @@ class Wish extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'name',
+        "link",
+        "photo",
+        'description',
+        'resolve_date',
+        'is_resolved'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
