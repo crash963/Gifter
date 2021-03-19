@@ -36,7 +36,10 @@ function Profile() {
             {currentUser && (
                 <section className="profile">
                     {(!isNameSet || userBoxClicked) && (
-                        <UserDetail fetchCurrentUser={fetchCurrentUser} />
+                        <UserDetail
+                            fetchCurrentUser={fetchCurrentUser}
+                            setUserBoxClicked={setUserBoxClicked}
+                        />
                     )}
                     <Logout />
                     <div className="box__container">

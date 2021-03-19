@@ -34,18 +34,20 @@ function UserDetail(props) {
 
         const response_data = await response.text();
         console.log(response_data);
-        setValues((prev_values) => {
-            return { ...prev_values, photo: response_data };
-        });
+        if (response_data) {
+            setValues((prev_values) => {
+                return { ...prev_values, photo: response_data };
+            });
+        }
         return response_data;
     }
 
-    async function updateUser(photo) {
+    async function updateUser(newPhoto) {
         let request_data = {
             first_name: first_name,
             last_name: last_name,
             address: address,
-            photo: photo,
+            photo: newPhoto ? newPhoto : photo,
             birthday: birthday,
         };
         const response = await fetch(`/api/user/${currentUser.id}/update`, {
@@ -60,7 +62,11 @@ function UserDetail(props) {
             },
         });
         const response_data = await response.json();
-        if (response_data.errors) setMessage(response_data.errors);
+        if (response_data.errors) {
+            setMessage(response_data.errors);
+        } else {
+            props.setUserBoxClicked(false);
+        }
         props.fetchCurrentUser();
     }
 
@@ -88,8 +94,15 @@ function UserDetail(props) {
         updateUser(photo);
     }
 
+    function closeWindow(event) {
+        console.log(event.target);
+        if (event.target.className === "overlay") {
+            props.setUserBoxClicked(false);
+        }
+    }
+
     return (
-        <div className="overlay">
+        <div className="overlay" onClick={closeWindow}>
             <div className="update__form" onSubmit={handleSubmit}>
                 <form method="post">
                     <div>{currentUser.nickname}</div>

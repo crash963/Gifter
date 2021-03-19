@@ -1,11 +1,17 @@
 import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
-function UserBox() {
+function UserBox(props) {
     const currentUser = useContext(CurrentUserContext);
+    //setUserBoxClicked
+
+    function handleClick(e) {
+        e.preventDefault();
+        props.setUserBoxClicked(true);
+    }
 
     return (
-        <div className="user__box box">
+        <div className="user__box box" onClick={handleClick}>
             <img
                 src={
                     currentUser.photo
