@@ -17,8 +17,8 @@ function WishBox(props) {
             </div>
             <img src="../images/test-wish-photo.jpg" alt="wish-img" />
             <div className="wish__box--wish">
-                <p>{wish.name}</p>
-                {wish.link && <p>{wish.link}</p>}
+                <p>{wish.name}  {""} 
+                {wish.link && <a href={wish.link}>Buy NOW</a>}</p>
             </div>
             
         </div>

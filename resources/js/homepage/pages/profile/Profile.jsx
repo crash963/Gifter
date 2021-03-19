@@ -11,6 +11,7 @@ export const CurrentUserContext = React.createContext(null);
 function Profile() {
     const [currentUser, setCurrentUser] = useState(null);
     const [isNameSet, setIsNameSet] = useState(false);
+    const [userBoxClicked, setUserBoxClicked] = useState(false);
 
     async function fetchCurrentUser() {
         const response = await fetch("/api/current-user");
@@ -34,10 +35,12 @@ function Profile() {
         <CurrentUserContext.Provider value={currentUser}>
             {currentUser && (
                 <section className="profile">
-                    {/* <UserDetail fetchCurrentUser={fetchCurrentUser} /> */}
+                    {(!isNameSet || userBoxClicked) && (
+                        <UserDetail fetchCurrentUser={fetchCurrentUser} />
+                    )}
                     <Logout />
                     <div className="box__container">
-                        <UserBox />
+                        <UserBox setUserBoxClicked={setUserBoxClicked} />
                         <Wishes isNameSet={isNameSet} />
                         <AddWishBox />
                     </div>

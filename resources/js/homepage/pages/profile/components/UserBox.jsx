@@ -7,7 +7,11 @@ function UserBox() {
     return (
         <div className="user__box box">
             <img
-                src="../images/test-user-photo.jpg"
+                src={
+                    currentUser.photo
+                        ? `/images/${currentUser.photo}`
+                        : "/images/profile_pictures/placeholder-profile-pic.jpg"
+                }
                 alt="user-img"
                 className="wish__profile__img"
             />
