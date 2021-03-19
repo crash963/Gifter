@@ -30,5 +30,19 @@ class WishController extends Controller
         return $wish->user;
     }
 
-    
+    public function addWish(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'resolve_date' => 'required'
+        ]);
+
+        $wish = Wish::create($request->all());
+
+        return [
+            'status' => 'success',
+            'message' => 'Wish was successfully added'
+        ];
+    }
 };
