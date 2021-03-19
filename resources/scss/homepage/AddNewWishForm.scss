@@ -17,6 +17,10 @@
     border-radius: 0.9rem;
     width: 44.7%;
     height: 43rem;
+    form {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 input[type="text"] {
