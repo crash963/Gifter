@@ -37,34 +37,50 @@ function AddWishForm() {
 
     return (
         <>
-            <form action="post">
-                <label htmlFor="name"></label>
-                <input type="text" name="name" onChange={handleChange} />
-                <label htmlFor="link"></label>
-                <input type="url" name="link" onChange={handleChange} />
-                <label htmlFor="description"></label>
-                <textarea name="description" cols="30" rows="10"></textarea>
-                <label htmlFor="photo"></label>
-                <input type="text" name="photo" onChange={handleChange} />
-                <label htmlFor="resolve_date"></label>
-                <select name="resolve_date" onChange={handleChange}>
-                    <option value={currentUser.birthday.slice(5)}>
-                        Birthday
-                    </option>
-                    <option value="other_date">Other Date</option>
-                    <option value={null}>No Specific Date</option>
-                </select>
-                {resolve_date === "other_date" && (
-                    <>
-                        <label htmlFor="date"></label>
-                        <input
-                            type="date"
-                            name="resolve_date"
-                            onChange={handleChange}
-                        />
-                    </>
-                )}
-                <input type="submit" value="Add Wish" />
+            <form action="post" className="form__box">
+                <div className="form__box--left">
+                    <div>
+                        <label htmlFor="name">Product name:</label>
+                        <br/>
+                        <input type="text" name="name" onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="link">URL link (optional):</label>
+                        <br/>
+                        <input type="url" name="link" onChange={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="photo">Photo (optional):</label>
+                        <br/>
+                        <input type="text" name="photo" onChange={handleChange} />
+                    </div>
+                    <div>
+                    <label htmlFor="resolve_date"></label>
+                    <select name="resolve_date" onChange={handleChange}>
+                        <option value={currentUser.birthday.slice(5)}>
+                            Birthday
+                        </option>
+                        <option value="other_date">Other Date</option>
+                        <option value={null}>No Specific Date</option>
+                    </select>
+                    </div>
+                    {resolve_date === "other_date" && (
+                        <>
+                            <label htmlFor="date"></label>
+                            <input
+                                type="date"
+                                name="resolve_date"
+                                onChange={handleChange}
+                            />
+                        </>
+                    )}
+                    <input type="submit" value="Add Wish" />
+                </div>
+                <div className="form__box--right">
+                    <label htmlFor="description">Description:</label>
+                    <br/>
+                    <textarea name="description" cols="30" rows="10"></textarea>
+                </div>
             </form>
         </>
     );
