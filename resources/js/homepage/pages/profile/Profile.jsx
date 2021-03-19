@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
+import FriendsSection from "./components/FriendsSection";
 import MyProfile from "./components/MyProfile";
-import Logout from "./components/Logout";
+
+import TopBar from "./components/TopBar";
+import WallSection from "./components/WallSection";
 
 export const CurrentUserContext = React.createContext(null);
 
@@ -9,7 +12,7 @@ function Profile() {
     const [currentUser, setCurrentUser] = useState(null);
     const [isNameSet, setIsNameSet] = useState(false);
     const [userBoxClicked, setUserBoxClicked] = useState(false);
-    const [currentPage, setCurrentPage] = useState("myProfile");
+    const [currentPage, setCurrentPage] = useState("my profile");
 
     const [alza, setAlza] = useState("");
 
@@ -31,19 +34,14 @@ function Profile() {
         fetchCurrentUser();
     }, []);
 
+    useEffect(() => {
+        console.log(currentPage);
+    }, [currentPage]);
+
     return (
         <CurrentUserContext.Provider value={currentUser}>
-            <div className="profile__top__section">
-                <Logout />
-                <div className="profile__navigation">
-                    <div className="navigation__profile navigation__profile--active">
-                        My Profile
-                    </div>
-                    <div className="navigation__friends">Friends</div>
-                    <div className="navigation__wall">Wall</div>
-                </div>
-            </div>
-            {currentUser && currentPage === "myProfile" && (
+            <TopBar setCurrentPage={setCurrentPage} />
+            {currentUser && currentPage === "my profile" && (
                 <section className="profile">
                     <MyProfile
                         isNameSet={isNameSet}
@@ -53,6 +51,8 @@ function Profile() {
                     />
                 </section>
             )}
+            {currentUser && currentPage === "friends" && <FriendsSection />}
+            {currentUser && currentPage === "wall" && <WallSection />}
         </CurrentUserContext.Provider>
     );
 }
