@@ -34,9 +34,7 @@ function Profile() {
         fetchCurrentUser();
     }, []);
 
-    useEffect(() => {
-        console.log(currentPage);
-    }, [currentPage]);
+    useEffect(() => {}, [currentPage]);
 
     return (
         <CurrentUserContext.Provider value={currentUser}>

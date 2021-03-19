@@ -2,7 +2,6 @@ import Logout from "./Logout";
 
 function TopBar(props) {
     function changePage(e) {
-        console.log(e.target);
         props.setCurrentPage(e.target.textContent.toLowerCase());
     }
 
