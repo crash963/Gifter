@@ -37,9 +37,11 @@ function AddWishForm(props) {
 
         const response_data = await response.text();
         console.log(response_data);
-        setValues((prev_values) => {
-            return { ...prev_values, photo: response_data };
-        });
+        if (response_data) {
+            setValues((prev_values) => {
+                return { ...prev_values, photo: response_data };
+            });
+        }
         return response_data;
     }
 

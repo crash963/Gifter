@@ -38,7 +38,10 @@ class UploadController extends Controller
 
         public function uploadWishPic(Request $request){
 
-                       
+            if(!$request->file("picture")){
+                return;
+            }    
+            
                 $filename = $request->file('picture')->storeAs('wish_pictures',
                 $request->file('picture')->getClientOriginalName(),
                     'uploads'
