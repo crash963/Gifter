@@ -1,5 +1,4 @@
 import AddWishBox from "./AddWishBox";
-import Logout from "./Logout";
 import UserBox from "./UserBox";
 import UserDetail from "./UserDetail";
 import Wishes from "./Wishes";
@@ -13,7 +12,6 @@ function MyProfile(props) {
                     setUserBoxClicked={props.setUserBoxClicked}
                 />
             )}
-            <Logout />
             <div className="box__container">
                 <UserBox setUserBoxClicked={props.setUserBoxClicked} />
                 <Wishes isNameSet={props.isNameSet} />

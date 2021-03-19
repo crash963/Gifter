@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import MyProfile from "./components/MyProfile";
+import Logout from "./components/Logout";
 
 export const CurrentUserContext = React.createContext(null);
 
@@ -32,6 +33,16 @@ function Profile() {
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
+            <div className="profile__top__section">
+                <Logout />
+                <div className="profile__navigation">
+                    <div className="navigation__profile navigation__profile--active">
+                        My Profile
+                    </div>
+                    <div className="navigation__friends">Friends</div>
+                    <div className="navigation__wall">Wall</div>
+                </div>
+            </div>
             {currentUser && currentPage === "myProfile" && (
                 <section className="profile">
                     <MyProfile
