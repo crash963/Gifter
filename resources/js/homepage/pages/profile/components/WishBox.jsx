@@ -22,7 +22,14 @@ function WishBox(props) {
                         : currentUser.nickname}
                 </p>
             </div>
-            <img src="../images/test-wish-photo.jpg" alt="wish-img" />
+            <img
+                src={
+                    wish.photo
+                        ? `../images/${wish.photo}`
+                        : `../images/test-wish-photo.jpg`
+                }
+                alt="wish-img"
+            />
             <div className="wish__box--wish">
                 <p>
                     {wish.name} {""}

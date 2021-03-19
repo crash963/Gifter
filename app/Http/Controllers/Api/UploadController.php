@@ -38,8 +38,7 @@ class UploadController extends Controller
 
         public function uploadWishPic(Request $request){
 
-            // $user = Auth::user();
-            
+                       
                 $filename = $request->file('picture')->storeAs('wish_pictures',
                 $request->file('picture')->getClientOriginalName(),
                     'uploads'
