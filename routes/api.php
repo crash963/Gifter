@@ -40,3 +40,5 @@ Route::post('/add-wish', 'Api\WishController@addWish');
 
 Route::post('/upload/profile-picture', 'Api\UploadController@uploadProfilePic');
 Route::post('/upload/wish-picture', 'Api\UploadController@uploadWishPic');
+
+Route::get('/scrape/url', 'Api\WishController@scrapeUrl');

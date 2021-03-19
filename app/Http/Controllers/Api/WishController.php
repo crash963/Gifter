@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Wish;
+use DiDom\Document;
+use DiDom\Query;
 
 class WishController extends Controller
 {
@@ -44,5 +46,15 @@ class WishController extends Controller
             'status' => 'success',
             'message' => 'Wish was successfully added'
         ];
+    }
+
+    public function scrapeUrl()
+    {
+        $document = new Document('https://www.alza.cz/pro-ject-t1-bt-walnut-om5e-d5715535.htm', true);
+        
+        $posts = $document->find('h1');
+        // dd($posts);
+
+        return $document;
     }
 };
