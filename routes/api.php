@@ -35,6 +35,7 @@ Route::get('/comment/{comment_id}', 'Api\CommentController@comment');
 Route::get('/wish/{wish_id}/author', 'Api\WishController@author');
 Route::get('/wish/{wish_id}/fulfillers', 'Api\WishController@fulfillers');
 Route::get('/wish/{wish_id}', 'Api\WishController@wish');
-
+Route::post('/add-wish', 'Api\WishController@addWish');
 
 Route::post('/upload/profile-picture', 'Api\UploadController@uploadProfilePic');
+Route::post('/upload/wish-picture', 'Api\UploadController@uploadWishPic');
