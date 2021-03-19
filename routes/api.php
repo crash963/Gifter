@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/user/{user_id}/friends-wishes', 'Api\UserController@friendsWishes');
 Route::get('/user/{user_id}/friends', 'Api\UserController@friends');
 Route::get('/user/{user_id}/wishes', 'Api\UserController@wishes');
 Route::get('/user/{user_id}', 'Api\UserController@show');
