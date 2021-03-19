@@ -68,7 +68,9 @@ class UserController extends Controller
             array_push($friends_ids, $friend->id);
         }
 
+
         $wishes = Wish::whereIn('user_id', $friends_ids)->orderBy('created_at', 'desc')->limit(30)->get();
 
         return $wishes;
+    }
 }
