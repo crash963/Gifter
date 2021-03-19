@@ -5,18 +5,21 @@
 }
 
 .form__box--right {
+    margin-left: 70%;
 }
 
 .add__wish__box__form {
+    align-items: flex-start;
+    justify-content: flex-start;
     background-color: #e3648d;
     margin: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     padding: 2rem;
     border-radius: 0.9rem;
     width: 44.7%;
     height: 43rem;
+    overflow: auto;
     form {
         display: flex;
         flex-direction: row;
@@ -24,9 +27,10 @@
 }
 
 input[type="text"] {
-    width: 170%;
+    width: 300%;
+    height: 800%;
 }
 
 input[type="url"] {
-    width: 170%;
+    width: 300%;
 }

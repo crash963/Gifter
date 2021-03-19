@@ -77,9 +77,9 @@ function AddWishForm() {
                     <input type="submit" value="Add Wish" />
                 </div>
                 <div className="form__box--right">
-                    <label htmlFor="description">Description:</label>
+                    <label htmlFor="description">You can tell your friends anything about this item here:</label>
                     <br/>
-                    <textarea name="description" cols="30" rows="10"></textarea>
+                    <textarea name="description" cols="50" rows="20"></textarea>
                 </div>
             </form>
         </>
