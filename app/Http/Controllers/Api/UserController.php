@@ -78,7 +78,7 @@ class UserController extends Controller
 
         // dd($string);
 
-        $users = User::where('nickname', 'like', "%{$string}%")->orderByRaw("nickname LIKE '$string%' DESC")->get();
+        $users = User::where('nickname', 'like', "%{$string}%")->orderByRaw("nickname LIKE '$string' DESC")->orderByRaw("nickname LIKE '$string%' DESC")->get();
 
         // $users = User::where('nickname', 'like', '%$string%')->orderBy('nickname', '$string', 'desc')->orderBy('nickname', '$string%', 'desc')->get();
         
