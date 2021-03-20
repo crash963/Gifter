@@ -73,4 +73,15 @@ class UserController extends Controller
 
         return $wishes;
     }
+
+    public function searchUsersByName($string) {
+
+        // dd($string);
+
+        $users = User::where('nickname', 'like', "%{$string}%")->orderByRaw("nickname LIKE '$string%' DESC")->get();
+
+        // $users = User::where('nickname', 'like', '%$string%')->orderBy('nickname', '$string', 'desc')->orderBy('nickname', '$string%', 'desc')->get();
+        
+        return $users;
+    }
 }
