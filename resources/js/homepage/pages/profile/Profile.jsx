@@ -18,7 +18,14 @@ function Profile() {
 
     async function fetchCurrentUser() {
         const response = await fetch("/api/current-user");
-        const data = await response.json();
+        let data = null;
+        try {
+            data = await response.json();
+        } catch (err) {
+            window.location.href = "/";
+            console.error(err);
+            return;
+        }
 
         setCurrentUser(data.user);
         checkName(data);
@@ -34,23 +41,27 @@ function Profile() {
         fetchCurrentUser();
     }, []);
 
-    useEffect(() => {}, [currentPage]);
-
     return (
         <CurrentUserContext.Provider value={currentUser}>
-            <TopBar setCurrentPage={setCurrentPage} />
-            {currentUser && currentPage === "my profile" && (
-                <section className="profile">
-                    <MyProfile
-                        isNameSet={isNameSet}
-                        setUserBoxClicked={setUserBoxClicked}
-                        fetchCurrentUser={fetchCurrentUser}
-                        userBoxClicked={userBoxClicked}
-                    />
-                </section>
+            {currentUser && (
+                <>
+                    <TopBar setCurrentPage={setCurrentPage} />
+                    {currentUser && currentPage === "my profile" && (
+                        <section className="profile">
+                            <MyProfile
+                                isNameSet={isNameSet}
+                                setUserBoxClicked={setUserBoxClicked}
+                                fetchCurrentUser={fetchCurrentUser}
+                                userBoxClicked={userBoxClicked}
+                            />
+                        </section>
+                    )}
+                    {currentUser && currentPage === "friends" && (
+                        <FriendsSection />
+                    )}
+                    {currentUser && currentPage === "wall" && <WallSection />}
+                </>
             )}
-            {currentUser && currentPage === "friends" && <FriendsSection />}
-            {currentUser && currentPage === "wall" && <WallSection />}
         </CurrentUserContext.Provider>
     );
 }

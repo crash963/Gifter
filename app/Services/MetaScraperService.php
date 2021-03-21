@@ -42,15 +42,31 @@ class MetaScraperService
 
         $document = new Document($html);
 
-        // DO YOUR PARSING HERE
 
-        // EXAMPLE:
-        $h1s = $document->find('h1');
+        // getting and saving name
+        $h1 = $document->find('h1');
+        $data["name"] = trim($h1[0]->text());
 
-        foreach ($h1s as $h1) {
-            dump(trim($h1->text()));
-        }
+        // geting and saving description
+        $description = $document->find(".nameextc span");
+        $data["description"] = $description[0]->text();
 
+        // getting image
+        $image_array = $document->find("#imgMain");
+        $image_url = $image_array[0]->getAttribute("data-src");
+        $image = file_get_contents($image_url);
+        
+        // creating image path
+        $img_name = str_replace(' ', '-', $data["name"]); // Replaces all spaces with hyphens.
+        $img_name = preg_replace('/[^A-Za-z0-9\-]/', '', $img_name);
+        $image_path = "../public/images/wish_pictures/" . $img_name . ".jpg";
+
+        // adding image url to return data object
+        $data["photo"] = substr($image_path, 16);
+
+        //saving image to public/images/wish_pictures/....
+        file_put_contents($image_path, $image);
+        
         return $data;
     }
 

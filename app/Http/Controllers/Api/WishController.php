@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Facades\App\Services\MetaScraperService;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,11 +51,14 @@ class WishController extends Controller
 
     public function scrapeUrl()
     {
-        $document = new Document('https://www.alza.cz/pro-ject-t1-bt-walnut-om5e-d5715535.htm', true);
-        
-        $posts = $document->find('h1');
-        // dd($posts);
 
-        return $document;
+        $url = "https://www.alza.cz/65-lg-65nano91-d6251417.htm";
+        
+        $posts = MetaScraperService::scrape($url);
+        // dd($posts);
+        $posts["link"] = $url;
+
+
+        return $posts;
     }
 };

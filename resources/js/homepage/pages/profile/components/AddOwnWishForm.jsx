@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
-function AddWishForm(props) {
+function AddOwnWishForm(props) {
     const currentUser = useContext(CurrentUserContext);
 
     const [
@@ -163,4 +163,4 @@ function AddWishForm(props) {
     );
 }
 
-export default AddWishForm;
+export default AddOwnWishForm;
