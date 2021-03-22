@@ -44,3 +44,5 @@ Route::post('/upload/profile-picture', 'Api\UploadController@uploadProfilePic');
 Route::post('/upload/wish-picture', 'Api\UploadController@uploadWishPic');
 
 Route::post('/scrape/url', 'Api\WishController@scrapeUrl');
+
+Route::get('friendship/{friend_id}', 'Api\FriendshipController@friendship');

@@ -17,7 +17,8 @@
     border-radius: 0.9rem;
     padding: 1rem;
     align-items: center;
-    width: 35%;
+    min-width: 35%;
+    max-width: 45%;
 
     &__heading {
         display: flex;
@@ -25,6 +26,7 @@
         justify-content: center;
         align-items: flex-start;
         width: 45%;
+        margin-right: 1rem;
     }
 
     &__photo {
@@ -37,16 +39,12 @@
     }
 
     &__content {
-        position: relative;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
     }
 
     &__add {
-        position: absolute;
-        top: 0;
-        right: 0;
         font-size: 1.5rem;
         cursor: pointer;
         &:hover {

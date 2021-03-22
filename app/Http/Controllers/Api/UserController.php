@@ -76,30 +76,25 @@ class UserController extends Controller
 
     public function searchUsersByName($string) {
 
-        // dd($string);
+        $users_to_exclude = [];
+        $current_user = Auth::user();
 
-        // $users = User::where('nickname', 'like', "%{$string}%")->orderByRaw("nickname LIKE '$string' asc")->orderByRaw("nickname LIKE '$string%' asc")->get();
-
-        /* $current_user = Auth::user();
-
+        if ($current_user)  {
+            
+        array_push($users_to_exclude, $current_user->id);
         $current_user_id = $current_user->id;
-
-        
         $current_user_friends = $current_user->friends;
-        $current_user_friends_ids = [];
 
         foreach ($current_user_friends as $friend) {
-            array_push($current_user_friends_ids, $friend->id);
-        }
-        
-        dd($current_user_friends_ids); */
+            array_push($users_to_exclude, $friend->id);
+        }}
+
+        // dd($users_to_exclude);
 
 
-        $users = User::where('nickname', 'like', "%{$string}%")->whereNotNull('first_name')->whereNotNull('last_name')->whereNotNull('birthday')->orderByRaw("CASE WHEN nickname LIKE '$string' THEN 1 WHEN nickname LIKE '$string%' THEN 2 ELSE 3 END")->get();
+        $users = User::where('nickname', 'like', "%{$string}%")->whereNotNull('first_name')->whereNotNull('last_name')->whereNotNull('birthday')->whereNotIn('id', $users_to_exclude)->orderByRaw("CASE WHEN nickname LIKE '$string' THEN 1 WHEN nickname LIKE '$string%' THEN 2 ELSE 3 END")->get();
 
         // dd($users);
-
-        // $users = User::where('nickname', 'like', '%$string%')->orderBy('nickname', '$string', 'desc')->orderBy('nickname', '$string%', 'desc')->get();
         
         return $users;
     }
