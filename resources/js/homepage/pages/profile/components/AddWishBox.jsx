@@ -38,9 +38,9 @@ function AddWishBox(props) {
                         </div>
                     </div>
                     {wayToAddWish === "link" ? (
-                        <AddLinkWishForm />
+                        <AddLinkWishForm fetchWishes={props.fetchWishes} />
                     ) : (
-                        <AddOwnWishForm />
+                        <AddOwnWishForm fetchWishes={props.fetchWishes} />
                     )}
                 </>
             )}

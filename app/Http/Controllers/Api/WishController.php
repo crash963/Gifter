@@ -49,16 +49,34 @@ class WishController extends Controller
         ];
     }
 
-    public function scrapeUrl()
+    public function scrapeUrl(Request $request)
     {
+        $this->validate($request, [
+            'link' => 'required',
+            'resolve_date' => 'nullable'
+        ]);
 
-        $url = "https://www.alza.cz/65-lg-65nano91-d6251417.htm";
+        $url = $request->input("link");
         
         $posts = MetaScraperService::scrape($url);
         // dd($posts);
-        $posts["link"] = $url;
 
 
-        return $posts;
+        $new_wish = new Wish();
+
+        $new_wish->user_id = $request->input("user_id");
+        $new_wish->link = $url;
+        $new_wish->resolve_date = $request->input("resolve_date");
+        $new_wish->is_resolved = $request->input("is_resolved");
+        $new_wish->name = $posts["name"];
+        $new_wish->description = $posts["description"];
+        $new_wish->photo = $posts["photo"];
+        $new_wish->save();
+
+
+        return [
+            'status' => 'success',
+            'message' => 'Wish was successfully added'
+        ];
     }
 };
