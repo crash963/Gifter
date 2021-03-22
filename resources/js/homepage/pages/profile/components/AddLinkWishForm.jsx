@@ -52,9 +52,10 @@ function AddLinkWishForm(props) {
     };
 
     return (
-        <form method="get" onSubmit={addLinkWish}>
+        <form method="get" onSubmit={addLinkWish} className="wish_link__box">
             <label htmlFor="link">Link: </label>
-            <input type="url" name="link" onChange={handleChange} />
+            <input type="url" name="link" onChange={handleChange} className="url_link__box"/>
+            <div>
             <label htmlFor="resolve_date"></label>
             <select name="resolve_date" onChange={handleChange}>
                 <option value={null} selected>
@@ -73,7 +74,9 @@ function AddLinkWishForm(props) {
                     />
                 </>
             )}
-            <input type="submit" />
+            </div>
+
+            <input type="submit" value="Add Wish"/>
         </form>
     );
 }
