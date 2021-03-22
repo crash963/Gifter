@@ -52,7 +52,7 @@ function AddLinkWishForm(props) {
     };
 
     return (
-        <form method="get" onSubmit={addLinkWish}>
+        <form onSubmit={addLinkWish}>
             <label htmlFor="link">Link: </label>
             <input type="url" name="link" onChange={handleChange} />
             <label htmlFor="resolve_date"></label>
