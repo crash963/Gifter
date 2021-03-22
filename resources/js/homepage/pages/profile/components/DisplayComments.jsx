@@ -1,28 +1,8 @@
-import { useEffect, useState } from "react";
-
 function DisplayComments(props) {
-    const [comments, setComments] = useState(null);
-
-    async function fetchComments() {
-        const response = await fetch(`/api/comments/${props.wish.id}`);
-        const data = await response.json();
-
-        if (response.status === 200) {
-            setComments(data);
-            console.log(data);
-        } else {
-            console.log("no comments");
-        }
-    }
-
-    useEffect(() => {
-        fetchComments();
-    }, []);
-
     return (
         <div className="comments__container">
-            {comments != null &&
-                comments.map((comment) => {
+            {props.comments != null &&
+                props.comments.map((comment) => {
                     const user = comment.user;
                     return (
                         <div key={comment.id}>
