@@ -39,13 +39,18 @@ function AddFriendBox() {
                         fetchUsers={fetchUsers}
                         setNickname={setNickname}
                     />
-                    {searchResults &&
-                        searchResults.map((friendSearchResult, index) => (
-                            <FriendSearchResults
-                                friend={friendSearchResult}
-                                key={index}
-                            />
-                        ))}
+                    <div className="search-result-container">
+                        {searchResults && searchResults.length != 0 ? (
+                            searchResults.map((friendSearchResult, index) => (
+                                <FriendSearchResults
+                                    friend={friendSearchResult}
+                                    key={index}
+                                />
+                            ))
+                        ) : (
+                            <div>No results</div>
+                        )}
+                    </div>
                 </div>
             )}
         </div>

@@ -1,6 +1,6 @@
 function FriendSearchResults(props) {
     console.log(props.friend);
-    const { photo, first_name, last_name, nickname } = props.friend;
+    const { photo, first_name, last_name, nickname, id } = props.friend;
 
     return (
         <div className="user__box friend-search-result">
@@ -16,9 +16,12 @@ function FriendSearchResults(props) {
                 />
                 <p className="friend-search-result__nickname">{nickname}</p>
             </div>
-            <p lassName="friend-search-result__name">
-                {first_name && last_name && `${first_name} ${last_name}`}
-            </p>
+            <div className="friend-search-result__content">
+                <div className="friend-search-result__add">+</div>
+                <p className="friend-search-result__name">
+                    {first_name && last_name && `${first_name} ${last_name}`}
+                </p>
+            </div>
         </div>
     );
 }
