@@ -27,7 +27,8 @@ class CommentController extends Controller
         $this->validate($request, [
             'wish_id' => 'required',
             'user_id' => 'required',
-            'text' => 'required'
+            'text' => 'required',
+            "comment_id" => "nullable",
         ]);
         
         $comment = Comment::create($request->all());

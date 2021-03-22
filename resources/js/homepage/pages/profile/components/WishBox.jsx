@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
+import Comments from "./Comments.jsx";
 
 function WishBox(props) {
     const currentUser = useContext(CurrentUserContext);
@@ -81,17 +82,7 @@ function WishBox(props) {
                             </>
                         )}
                         {!isUserAuthor && isBoxClicked && (
-                            <div className="comments__container">
-                                <form>
-                                    <textarea
-                                        name="text"
-                                        cols="30"
-                                        rows="8"
-                                        placeholder="Your comment"
-                                    ></textarea>
-                                    <input type="submit" value="comment" />
-                                </form>
-                            </div>
+                            <Comments wish={wish} />
                         )}
                     </div>
                 </div>

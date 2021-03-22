@@ -11,7 +11,7 @@ function AddLinkWishForm(props) {
     });
     const [message, setMessage] = useState("");
 
-    async function addLinkWish(photo) {
+    async function addLinkWish() {
         let request_data = {
             user_id: user_id,
             link: link,
@@ -35,6 +35,11 @@ function AddLinkWishForm(props) {
         props.fetchWishes();
     }
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        addLinkWish();
+    }
+
     useEffect(() => {
         console.log(message.errors);
     }, []);
@@ -52,7 +57,7 @@ function AddLinkWishForm(props) {
     };
 
     return (
-        <form onSubmit={addLinkWish} className="wish_link__box">
+        <form method="post" onSubmit={handleSubmit} className="wish_link__box">
             <label htmlFor="link">Link: </label>
             <input
                 type="url"
