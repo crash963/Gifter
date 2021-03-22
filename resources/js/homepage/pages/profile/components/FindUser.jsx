@@ -18,10 +18,10 @@ function FindUser(props) {
     }, [searchResults]); */
 
     return (
-        <form action="" method="post" onSubmit={handleSubmit}>
+        <form method="post" onSubmit={handleSubmit}>
             <label htmlFor="nickname">Nickname: </label>
             <input type="text" name="nickname" onChange={handleChange} />
-            <input type="submit" value="find" />
+            <input type="submit" value="Find friends" />
         </form>
     );
 }

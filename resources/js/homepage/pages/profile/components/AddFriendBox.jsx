@@ -13,12 +13,16 @@ function AddFriendBox() {
         const response = await fetch(`/api/users/search/${nickname}`);
         const searchData = await response.json();
         setSearchResults(searchData);
-        console.log(searchData);
+        // console.log(searchData);
     }
 
     function handleClick() {
         setIsClicked(true);
     }
+
+    /* useEffect(() => {
+        console.log(searchResults);
+    }, [searchResults]); */
 
     return (
         <div
@@ -30,13 +34,19 @@ function AddFriendBox() {
             {!isClicked ? (
                 <img src="/images/icons/plus.svg" alt="plus_icon-img" />
             ) : (
-                <>
+                <div className="search-result-section">
                     <FindUser
                         fetchUsers={fetchUsers}
                         setNickname={setNickname}
                     />
-                    <FriendSearchResults />
-                </>
+                    {searchResults &&
+                        searchResults.map((friendSearchResult, index) => (
+                            <FriendSearchResults
+                                friend={friendSearchResult}
+                                key={index}
+                            />
+                        ))}
+                </div>
             )}
         </div>
     );

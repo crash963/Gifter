@@ -15,9 +15,9 @@ function FriendsSection() {
         console.log(data);
     }
 
-    function findFriend() {
+    /*  function findFriend() {
         setShowFindNewFriend(true);
-    }
+    } */
 
     useEffect(() => {
         fetchCurrentUserFriends();
@@ -25,7 +25,10 @@ function FriendsSection() {
 
     return (
         <div className="friends__box box">
-            {friends && friends.map((friend) => <UserBox user={friend} />)}
+            {friends &&
+                friends.map((friend, index) => (
+                    <UserBox user={friend} key={index} />
+                ))}
             <AddFriendBox />
         </div>
     );
