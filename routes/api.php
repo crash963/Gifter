@@ -32,6 +32,7 @@ Route::get('/current-user', 'Api\UserController@currentUser')->middleware('auth:
 Route::post('/comment/save', 'Api\CommentController@save');
 Route::get('/comment/{comment_id}/children', 'Api\CommentController@children');
 Route::get('/comment/{comment_id}', 'Api\CommentController@comment');
+Route::get("/comments/{wish_id}", "Api\CommentController@comments");
 
 
 Route::get('/wish/{wish_id}/author', 'Api\WishController@author');

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
-function CommentsForm() {
+function CommentsForm(props) {
     const currentUser = useContext(CurrentUserContext);
     const [commentText, setCommentText] = useState("");
 

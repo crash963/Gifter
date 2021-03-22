@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use App\Models\Wish;
 
 class CommentController extends Controller
 {
@@ -37,5 +38,10 @@ class CommentController extends Controller
             'status' => 'success',
             'message' => 'Comment was successfully added'
         ];
+    }
+
+    public function comments($wish_id){
+        $comment_user = Comment::where("wish_id", $wish_id)->with("user")->get();
+        return $comment_user;
     }
 }
