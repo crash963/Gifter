@@ -80,6 +80,21 @@ class UserController extends Controller
 
         // $users = User::where('nickname', 'like', "%{$string}%")->orderByRaw("nickname LIKE '$string' asc")->orderByRaw("nickname LIKE '$string%' asc")->get();
 
+        /* $current_user = Auth::user();
+
+        $current_user_id = $current_user->id;
+
+        
+        $current_user_friends = $current_user->friends;
+        $current_user_friends_ids = [];
+
+        foreach ($current_user_friends as $friend) {
+            array_push($current_user_friends_ids, $friend->id);
+        }
+        
+        dd($current_user_friends_ids); */
+
+
         $users = User::where('nickname', 'like', "%{$string}%")->whereNotNull('first_name')->whereNotNull('last_name')->whereNotNull('birthday')->orderByRaw("CASE WHEN nickname LIKE '$string' THEN 1 WHEN nickname LIKE '$string%' THEN 2 ELSE 3 END")->get();
 
         // dd($users);
