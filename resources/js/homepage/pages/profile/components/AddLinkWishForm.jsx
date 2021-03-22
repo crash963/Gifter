@@ -52,28 +52,38 @@ function AddLinkWishForm(props) {
     };
 
     return (
-        <form onSubmit={addLinkWish}>
+        <form onSubmit={addLinkWish} className="wish_link__box">
             <label htmlFor="link">Link: </label>
-            <input type="url" name="link" onChange={handleChange} />
-            <label htmlFor="resolve_date"></label>
-            <select name="resolve_date" onChange={handleChange}>
-                <option value={null} selected>
-                    No Specific Date
-                </option>
-                <option value={currentUser.birthday.slice(5)}>Birthday</option>
-                <option value="other_date">Other Date</option>
-            </select>
-            {resolve_date === "other_date" && (
-                <>
-                    <label htmlFor="date"></label>
-                    <input
-                        type="date"
-                        name="resolve_date"
-                        onChange={handleChange}
-                    />
-                </>
-            )}
-            <input type="submit" />
+            <input
+                type="url"
+                name="link"
+                onChange={handleChange}
+                className="url_link__box"
+            />
+            <div>
+                <label htmlFor="resolve_date"></label>
+                <select name="resolve_date" onChange={handleChange}>
+                    <option value={null} selected>
+                        No Specific Date
+                    </option>
+                    <option value={currentUser.birthday.slice(5)}>
+                        Birthday
+                    </option>
+                    <option value="other_date">Other Date</option>
+                </select>
+                {resolve_date === "other_date" && (
+                    <>
+                        <label htmlFor="date"></label>
+                        <input
+                            type="date"
+                            name="resolve_date"
+                            onChange={handleChange}
+                        />
+                    </>
+                )}
+            </div>
+
+            <input type="submit" value="Add Wish" />
         </form>
     );
 }
