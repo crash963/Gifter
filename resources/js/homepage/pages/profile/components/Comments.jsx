@@ -1,10 +1,11 @@
 import CommentsForm from "./CommentsForm";
+import DisplayComments from "./DisplayComments";
 
 function Comments(props) {
     return (
         <>
             <CommentsForm wish={props.wish} />
-            <div className="comments__container"></div>
+            <DisplayComments wish={props.wish} />
         </>
     );
 }
