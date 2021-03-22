@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CurrentUserContext } from "../Profile.jsx";
 
-function FindUser() {
-    const [nickname, setNickname] = useState("");
-
-    async function fetchUsers() {}
+function FindUser(props) {
+    const currentUser = useContext(CurrentUserContext);
 
     function handleSubmit(e) {
         e.preventDefault();
+        props.fetchUsers();
     }
 
     function handleChange(e) {
-        setNickname(e.target.value);
+        props.setNickname(e.target.value);
     }
+
+    /* useEffect(() => {
+        console.log(searchResults);
+    }, [searchResults]); */
 
     return (
         <form action="" method="post" onSubmit={handleSubmit}>
