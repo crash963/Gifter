@@ -1,0 +1,17 @@
+.search-result-section {
+    display: flex;
+    flex-direction: column;
+    form {
+        margin-bottom: 0.6rem;
+    }
+}
+.friend-search-result {
+    display: flex;
+    border-radius: 0.9rem;
+    padding: 1rem;
+    &__photo {
+        border-radius: 50%;
+        width: 50%;
+        justify-content: space-around;
+    }
+}
