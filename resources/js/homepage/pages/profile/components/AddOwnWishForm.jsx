@@ -97,12 +97,12 @@ function AddOwnWishForm(props) {
     }
 
     return (
-        <form method="post" className="form__box" onSubmit={handleSubmit}>
+        <form method="post" className="wish_form__box" onSubmit={handleSubmit}>
             <div className="form__box--left">
                 <div>
                     <label htmlFor="name">Product name:</label>
                     <br />
-                    <input type="text" name="name" onChange={handleChange} />
+                    <input type="text" name="name" onChange={handleChange} className="product_name__box"/>
                     {message.name && (
                         <p className="warning__message">{message.name}</p>
                     )}
@@ -110,18 +110,15 @@ function AddOwnWishForm(props) {
                 <div>
                     <label htmlFor="link">URL link (optional):</label>
                     <br />
-                    <input type="url" name="link" onChange={handleChange} />
+                    <input type="url" name="link" onChange={handleChange} className="product_link__box"/>
                 </div>
                 <div>
-                    <label htmlFor="photo">Photo (optional):</label>
-                    <br />
-                    <input type="text" name="photo" onChange={handleChange} />
-                </div>
-                <label htmlFor="file">Add photo of the wish:</label>
+                <label htmlFor="file">Add photo of the wish (optional):</label>
                 <input
                     type="file"
                     onChange={(e) => setFile(e.target.files[0])}
                 />
+                </div>
                 <div>
                     <label htmlFor="resolve_date"></label>
                     <select name="resolve_date" onChange={handleChange}>

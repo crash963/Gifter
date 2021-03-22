@@ -1,4 +1,4 @@
-.form__box {
+.wish_form__box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,10 +26,10 @@
     }
 }
 
-input[type="text"] {
+.product_name__box {
     width: 120%;
 }
 
-input[type="url"] {
+.product_link__box {
     width: 120%;
 }

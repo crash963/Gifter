@@ -19,14 +19,14 @@ function AddWishBox(props) {
                 <img src="/images/icons/plus.svg" alt="plus_icon-img" />
             ) : (
                 <>
-                    <div>
+                    <div className="wish_method__switch">
                         <div
                             className="add__wish__from__link"
                             onClick={() => {
                                 setWayToAddWish("link");
                             }}
                         >
-                            Create wish from link
+                           <button> Create wish from link </button>
                         </div>
                         <div
                             className="add__my__own__wish"
@@ -34,7 +34,7 @@ function AddWishBox(props) {
                                 setWayToAddWish("own");
                             }}
                         >
-                            Create my own wish
+                           <button> Create my own wish   </button>
                         </div>
                     </div>
                     {wayToAddWish === "link" ? (

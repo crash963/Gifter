@@ -24,7 +24,7 @@ function FriendsSection() {
     }, []);
 
     return (
-        <div>
+        <div className="friends__box box">
             {friends && friends.map((friend) => <UserBox user={friend} />)}
             <AddFriendBox />
         </div>
