@@ -37,7 +37,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($user_id);
 
-        return $user->wishes;
+        return $user->wishes()->orderBy('created_at', 'desc')->get();
     }
 
     public function update(Request $request, $user_id)

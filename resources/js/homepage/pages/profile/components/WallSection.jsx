@@ -19,7 +19,7 @@ function WallSection() {
         fetchFriendsWishes();
     }, []);
 
-    return <> {wishes && <Wishes wishes={wishes} />} </>;
+    return <div className="wall_wishes__box box"> {wishes && <Wishes wishes={wishes} />} </div>;
 }
 
 export default WallSection;

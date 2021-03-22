@@ -11,7 +11,8 @@ function Wishes(props) {
         <>
             {props.wishes &&
                 props.wishes.map((wish) => (
-                    <WishBox
+                    
+                    <WishBox 
                         key={wish.name}
                         wish={wish}
                         isNameSet={props.isNameSet}
