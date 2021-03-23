@@ -52,8 +52,12 @@ class MetaScraperService
         $data["description"] = $description[0]->text();
 
         // getting image
+        // $image_array = $document->find("#imgMain");
+        // $image_url = $image_array[0]->getAttribute("data-src");
+        // $image = file_get_contents($image_url);
+        
         $image_array = $document->find("#imgMain");
-        $image_url = $image_array[0]->getAttribute("data-src");
+        $image_url = $image_array[0]->getAttribute("src") ?? $image_array[0]->getAttribute("data-src");
         $image = file_get_contents($image_url);
         
         // creating image path

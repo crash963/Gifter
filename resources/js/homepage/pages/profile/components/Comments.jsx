@@ -22,7 +22,7 @@ function Comments(props) {
     }, []);
 
     return (
-        <>
+        <div>
             <CommentsForm wish={props.wish} fetchComments={fetchComments} />
             {comments && (
                 <DisplayComments
@@ -31,7 +31,7 @@ function Comments(props) {
                     comments={comments}
                 />
             )}
-        </>
+        </div>
     );
 }
 
