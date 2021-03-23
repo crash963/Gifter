@@ -74,7 +74,8 @@ class UserController extends Controller
         return $wishes;
     }
 
-    public function searchUsersByName($string) {
+    public function searchUsersByName($string)
+    {
 
         $users_to_exclude = [];
         $current_user = Auth::user();
@@ -97,5 +98,23 @@ class UserController extends Controller
         // dd($users);
         
         return $users;
+    }
+
+    public function selectedfriendsWishes($user_id, $string)
+    {
+
+        $user = User::findOrFail($user_id);
+        $friends = $user->friends()->where('nickname', 'like', "%{$string}%")->get();
+        
+        $friends_ids = [];
+
+        foreach ($friends as $friend) {
+            array_push($friends_ids, $friend->id);
+        }
+
+
+        $wishes = Wish::whereIn('user_id', $friends_ids)->orderBy('created_at', 'desc')->get();
+
+        return $wishes;
     }
 }
