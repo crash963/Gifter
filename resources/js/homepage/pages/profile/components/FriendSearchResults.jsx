@@ -3,14 +3,24 @@ function FriendSearchResults(props) {
     const { photo, first_name, last_name, nickname, id } = props.friend;
 
     async function addFriend() {
-        const response = await fetch(`/api/friendship/${id}`);
+        const response = await fetch(`/api/friendship/${id}`, {
+            method: "POST",
+            // body: JSON.stringify(id),
+            headers: {
+                Accept: "application/json",
+                "X-CSRF-TOKEN": document
+                    .querySelector('meta[name="csrf-token"]')
+                    .getAttribute("content"),
+            },
+        });
         const data = await response.json();
         console.log(data);
     }
 
-    function handleClick(event) {
+    function handleClick() {
         console.log(id);
         addFriend();
+        props.fetchCurrentUserFriends();
         props.fetchUsers();
     }
 

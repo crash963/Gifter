@@ -29,7 +29,7 @@ function FriendsSection() {
                 friends.map((friend, index) => (
                     <UserBox user={friend} key={index} />
                 ))}
-            <AddFriendBox />
+            <AddFriendBox fetchCurrentUserFriends={fetchCurrentUserFriends} />
         </div>
     );
 }

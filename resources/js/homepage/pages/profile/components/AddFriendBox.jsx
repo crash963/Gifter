@@ -3,7 +3,7 @@ import { CurrentUserContext } from "../Profile.jsx";
 import FindUser from "./FindUser";
 import FriendSearchResults from "./FriendSearchResults";
 
-function AddFriendBox() {
+function AddFriendBox(props) {
     const currentUser = useContext(CurrentUserContext);
     const [isClicked, setIsClicked] = useState(false);
     const [nickname, setNickname] = useState("");
@@ -46,6 +46,9 @@ function AddFriendBox() {
                                     friend={friendSearchResult}
                                     key={index}
                                     fetchUsers={fetchUsers}
+                                    fetchCurrentUserFriends={
+                                        props.fetchCurrentUserFriends
+                                    }
                                 />
                             ))
                         ) : (
