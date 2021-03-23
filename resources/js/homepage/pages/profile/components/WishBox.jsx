@@ -58,7 +58,7 @@ function WishBox(props) {
                                 : author.nickname}
                         </p>
                     </div>
-                    <button onClick={handleClick}>
+                    <button onClick={handleClick} className="hide_detail_toggle">
                         {isBoxClicked ? "hide" : "detail"}
                     </button>
                     {!isBoxClicked && (
