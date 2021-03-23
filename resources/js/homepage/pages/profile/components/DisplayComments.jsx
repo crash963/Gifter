@@ -12,15 +12,15 @@ function DisplayComments(props) {
                                         ? `/images/${comment.user.photo}`
                                         : `/images/profile_pictures/placeholder-profile-pic.jpg`
                                 }
-                            />
-                            <p>
+                            className="comment_photo"/>
+                            <p className="comment_user_id">
                                 <strong>
                                     {user.first_name && user.last_name
                                         ? `${user.first_name} ${user.last_name}`
                                         : `${user.nickname}`}
                                 </strong>
                             </p>
-                            <p>{comment.text}</p>
+                            <p className="comment_text">{comment.text}</p>
                         </div>
                     );
                 })}

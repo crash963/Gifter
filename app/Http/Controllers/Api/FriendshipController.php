@@ -17,5 +17,10 @@ class FriendshipController extends Controller
         
         $user->friends()->attach($friend_id);
         $friend->friends()->attach($user->id);
+
+        return [
+            'status' => 'success',
+            'message' => 'Friend was successfully added'
+        ];
     }
 }
