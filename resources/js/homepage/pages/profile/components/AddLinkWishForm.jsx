@@ -18,6 +18,7 @@ function AddLinkWishForm(props) {
             resolve_date: resolve_date,
             is_resolved: is_resolved,
         };
+
         const response = await fetch(`/api/scrape/url`, {
             method: "POST",
             body: JSON.stringify(request_data),
@@ -29,6 +30,8 @@ function AddLinkWishForm(props) {
                     .getAttribute("content"),
             },
         });
+
+        console.log(response);
         const response_data = await response.json();
         console.log(response_data);
         if (response_data.errors) setMessage(response_data.errors);

@@ -42,7 +42,6 @@ class MetaScraperService
 
         $document = new Document($html);
 
-
         // getting and saving name
         $h1 = $document->find('h1');
         $data["name"] = trim($h1[0]->text());
@@ -53,7 +52,7 @@ class MetaScraperService
 
         // getting image
         $image_array = $document->find("#imgMain");
-        $image_url = $image_array[0]->getAttribute("data-src");
+        $image_url = $image_array[0]->getAttribute("src") ?? $image_array[0]->getAttribute("data-src");
         $image = file_get_contents($image_url);
         
         // creating image path
@@ -66,7 +65,6 @@ class MetaScraperService
 
         //saving image to public/images/wish_pictures/....
         file_put_contents($image_path, $image);
-        
         return $data;
     }
 

@@ -63,7 +63,8 @@ class WishController extends Controller
 
 
         $new_wish = new Wish();
-
+        
+        dd($request->input());
         $new_wish->user_id = $request->input("user_id");
         $new_wish->link = $url;
         $new_wish->resolve_date = $request->input("resolve_date");
