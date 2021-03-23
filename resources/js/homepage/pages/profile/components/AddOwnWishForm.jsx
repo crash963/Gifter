@@ -102,7 +102,12 @@ function AddOwnWishForm(props) {
                 <div>
                     <label htmlFor="name">Product name:</label>
                     <br />
-                    <input type="text" name="name" onChange={handleChange} className="product_name__box"/>
+                    <input
+                        type="text"
+                        name="name"
+                        onChange={handleChange}
+                        className="product_name__box"
+                    />
                     {message.name && (
                         <p className="warning__message">{message.name}</p>
                     )}
@@ -110,21 +115,26 @@ function AddOwnWishForm(props) {
                 <div>
                     <label htmlFor="link">URL link (optional):</label>
                     <br />
-                    <input type="url" name="link" onChange={handleChange} className="product_link__box"/>
+                    <input
+                        type="url"
+                        name="link"
+                        onChange={handleChange}
+                        className="product_link__box"
+                    />
                 </div>
                 <div>
-                <label htmlFor="file">Add photo of the wish (optional):</label>
-                <input
-                    type="file"
-                    onChange={(e) => setFile(e.target.files[0])}
-                />
+                    <label htmlFor="file">
+                        Add photo of the wish (optional):
+                    </label>
+                    <input
+                        type="file"
+                        onChange={(e) => setFile(e.target.files[0])}
+                    />
                 </div>
                 <div>
                     <label htmlFor="resolve_date"></label>
                     <select name="resolve_date" onChange={handleChange}>
-                        <option value={currentUser.birthday.slice(5)}>
-                            Birthday
-                        </option>
+                        <option value={currentUser.birthday}>Birthday</option>
                         <option value="other_date">Other Date</option>
                         <option value={null} selected>
                             No Specific Date
