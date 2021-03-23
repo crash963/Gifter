@@ -58,6 +58,9 @@ function WishBox(props) {
                                 ? `${author.first_name} ${author.last_name}`
                                 : author.nickname}
                         </p>
+                        {wish.fulfillers.length !== 0 && (
+                            <div class="wish__fulfilled__mark">Fulfilled</div>
+                        )}
                     </div>
                     <button onClick={handleClick}>
                         {isBoxClicked ? "hide" : "detail"}
@@ -81,14 +84,16 @@ function WishBox(props) {
                             <>
                                 <p>{wish.description && wish.description}</p>
 
-                                {wish.resolve_date && (
-                                    <p>date: {wish.resolve_date}</p>
+                                {wish.resolve_date && !isUserAuthor && (
+                                    <p>date: {wish.resolve_date.slice(5)}</p>
                                 )}
                             </>
                         )}
                         {!isUserAuthor && isBoxClicked && (
                             <>
-                                <GonnaBuyBtn wish={wish} />
+                                {wish.fulfillers.length === 0 && (
+                                    <GonnaBuyBtn wish={wish} author={author} />
+                                )}
                                 <Comments wish={wish} />
                             </>
                         )}

@@ -11,7 +11,7 @@ function WallSection() {
             `/api/user/${currentUser.id}/friends-wishes`
         );
         const data = await response.json();
-
+        console.log(data);
         setWishes(data);
     }
 
@@ -19,7 +19,12 @@ function WallSection() {
         fetchFriendsWishes();
     }, []);
 
-    return <div className="box__container"> {wishes && <Wishes wishes={wishes} />} </div>;
+    return (
+        <div className="box__container">
+            {" "}
+            {wishes && <Wishes wishes={wishes} />}{" "}
+        </div>
+    );
 }
 
 export default WallSection;
