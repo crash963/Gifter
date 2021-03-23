@@ -2,35 +2,35 @@ import { useContext, useEffect } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
 function UserBox(props) {
-    const currentUser = props.user
-        ? props.user
-        : useContext(CurrentUserContext);
+    const user = props.user ? props.user : useContext(CurrentUserContext);
+    const currentUser = useContext(CurrentUserContext);
     //setUserBoxClicked
 
     function handleClick(e) {
         e.preventDefault();
-        props.setUserBoxClicked(true);
+        if (currentUser === user) {
+            props.setUserBoxClicked(true);
+        }
     }
 
     return (
         <div className="user__box box" onClick={handleClick}>
             <img
                 src={
-                    currentUser.photo
-                        ? `/images/${currentUser.photo}`
+                    user.photo
+                        ? `/images/${user.photo}`
                         : "/images/profile_pictures/placeholder-profile-pic.jpg"
                 }
                 alt="user-img"
                 className="wish__profile__img"
             />
             <p className="user__box--name">
-                {currentUser.first_name && currentUser.last_name
-                    ? `${currentUser.first_name} ${currentUser.last_name}`
-                    : currentUser.nickname}
+                {user.first_name && user.last_name
+                    ? `${user.first_name} ${user.last_name}`
+                    : user.nickname}
             </p>
             <p className="user__box--birthday">
-                {currentUser.birthday &&
-                    `Birthday: ${currentUser.birthday.slice(5)}`}
+                {user.birthday && `Birthday: ${user.birthday.slice(5)}`}
             </p>
         </div>
     );
