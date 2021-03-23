@@ -21,7 +21,6 @@ function WallSection() {
 
     return (
         <div className="box__container">
-            {" "}
             {wishes && <Wishes wishes={wishes} />}{" "}
         </div>
     );
