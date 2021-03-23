@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 import Comments from "./Comments.jsx";
+import GonnaBuyBtn from "./GonnaBuyBtn.jsx";
 
 function WishBox(props) {
     const currentUser = useContext(CurrentUserContext);
@@ -86,7 +87,10 @@ function WishBox(props) {
                             </>
                         )}
                         {!isUserAuthor && isBoxClicked && (
-                            <Comments wish={wish} />
+                            <>
+                                <GonnaBuyBtn wish={wish} />
+                                <Comments wish={wish} />
+                            </>
                         )}
                     </div>
                 </div>
