@@ -77,7 +77,7 @@ function WishBox(props) {
                                 <p>{wish.description && wish.description}</p>
 
                                 {wish.resolve_date && (
-                                    <p>date: {wish.resolve_date}</p>
+                                    <p>date: {wish.resolve_date.slice(5)}</p>
                                 )}
                             </>
                         )}

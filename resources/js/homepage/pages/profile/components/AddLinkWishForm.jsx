@@ -74,9 +74,7 @@ function AddLinkWishForm(props) {
                     <option value={null} selected>
                         No Specific Date
                     </option>
-                    <option value={currentUser.birthday.slice(5)}>
-                        Birthday
-                    </option>
+                    <option value={currentUser.birthday}>Birthday</option>
                     <option value="other_date">Other Date</option>
                 </select>
                 {resolve_date === "other_date" && (
