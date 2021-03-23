@@ -35,7 +35,11 @@ function WishBox(props) {
                 <div
                     className={`wish__box box ${
                         isBoxClicked && "wish__box--clicked"
-                    } ${!isUserAuthor && "wish__box__with__comments"}`}
+                    } ${
+                        isBoxClicked &&
+                        !isUserAuthor &&
+                        "wish__box__with__comments"
+                    }`}
                 >
                     <div className="wish__user__info">
                         {
@@ -77,7 +81,7 @@ function WishBox(props) {
                                 <p>{wish.description && wish.description}</p>
 
                                 {wish.resolve_date && (
-                                    <p>date: {wish.resolve_date.slice(5)}</p>
+                                    <p>date: {wish.resolve_date}</p>
                                 )}
                             </>
                         )}
