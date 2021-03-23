@@ -12,7 +12,6 @@ function MyProfile(props) {
     async function fetchWishes() {
         const response = await fetch(`/api/user/${currentUser.id}/wishes`);
         const data = await response.json();
-
         setWishes(data);
     }
 

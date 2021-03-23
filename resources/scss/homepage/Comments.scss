@@ -6,10 +6,42 @@
 
 .comment_photo {
     border-radius: 85%;
-    width: 100%;
+    width: 10rem;
     padding: 2rem;
 }
 
 .comments__container {
     display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.wish__box__with__comments {
+    // align-items: flex-start;
+    // justify-content: flex-start;
+    // background-color: #457581;
+    // margin: 2rem;
+    // display: flex;
+    // flex-direction: column;
+    // padding: 2rem;
+    // border-radius: 0.9rem;
+    width: 44.7%;
+    // height: 43rem;
+    // overflow: auto;
+    // form {
+    //     display: flex;
+    //     flex-direction: row;
+    // }
+}
+
+.hide_detail_toggle {
+    align-self: flex-start;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

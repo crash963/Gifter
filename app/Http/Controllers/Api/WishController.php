@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Wish;
+use App\Models\User;
 use DiDom\Document;
 use DiDom\Query;
 
@@ -78,5 +79,15 @@ class WishController extends Controller
             'status' => 'success',
             'message' => 'Wish was successfully added'
         ];
+    }
+
+    public function addFulfiller(Request $request ,$wish_id, $user_id){
+        $wish = Wish::findOrFail($wish_id);
+
+        $wish->fulfillers()->attach($user_id);
+        $wish->resolve_date = $request->input("resolve_date");
+        $wish->save();
+        
+        return "fulfiller added";
     }
 };

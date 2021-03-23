@@ -5,7 +5,7 @@ function DisplayComments(props) {
                 props.comments.map((comment) => {
                     const user = comment.user;
                     return (
-                        <div key={comment.id}>
+                        <div key={comment.id} className="comments">
                             <img
                                 src={
                                     comment.user.photo

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 import Comments from "./Comments.jsx";
+import GonnaBuyBtn from "./GonnaBuyBtn.jsx";
 
 function WishBox(props) {
     const currentUser = useContext(CurrentUserContext);
@@ -57,8 +58,11 @@ function WishBox(props) {
                                 ? `${author.first_name} ${author.last_name}`
                                 : author.nickname}
                         </p>
+                        {wish.fulfillers.length !== 0 && (
+                            <div class="wish__fulfilled__mark">Fulfilled</div>
+                        )}
                     </div>
-                    <button onClick={handleClick}>
+                    <button onClick={handleClick} className="hide_detail_toggle">
                         {isBoxClicked ? "hide" : "detail"}
                     </button>
                     {!isBoxClicked && (
@@ -80,13 +84,18 @@ function WishBox(props) {
                             <>
                                 <p>{wish.description && wish.description}</p>
 
-                                {wish.resolve_date && (
-                                    <p>date: {wish.resolve_date}</p>
+                                {wish.resolve_date && !isUserAuthor && (
+                                    <p>date: {wish.resolve_date.slice(5)}</p>
                                 )}
                             </>
                         )}
                         {!isUserAuthor && isBoxClicked && (
-                            <Comments wish={wish} />
+                            <>
+                                {wish.fulfillers.length === 0 && (
+                                    <GonnaBuyBtn wish={wish} author={author} />
+                                )}
+                                <Comments wish={wish} />
+                            </>
                         )}
                     </div>
                 </div>

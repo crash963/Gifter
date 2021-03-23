@@ -11,7 +11,7 @@ function WallSection() {
             `/api/user/${currentUser.id}/friends-wishes`
         );
         const data = await response.json();
-
+        console.log(data);
         setWishes(data);
     }
 
