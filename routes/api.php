@@ -38,6 +38,7 @@ Route::get("/comments/{wish_id}", "Api\CommentController@comments");
 Route::get('/wish/{wish_id}/author', 'Api\WishController@author');
 Route::get('/wish/{wish_id}/fulfillers', 'Api\WishController@fulfillers');
 Route::get('/wish/{wish_id}', 'Api\WishController@wish');
+Route::post("/wish/fulfillers/add/{wish_id}/{user_id}", "Api\WishController@addFulfiller");
 Route::post('/add-wish', 'Api\WishController@addWish');
 
 Route::post('/upload/profile-picture', 'Api\UploadController@uploadProfilePic');

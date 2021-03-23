@@ -37,7 +37,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($user_id);
 
-        return $user->wishes()->orderBy('created_at', 'desc')->get();
+        return $user->wishes()->with("fulfillers")->orderBy('created_at', 'desc')->get();
     }
 
     public function update(Request $request, $user_id)
@@ -69,7 +69,7 @@ class UserController extends Controller
         }
 
 
-        $wishes = Wish::whereIn('user_id', $friends_ids)->orderBy('created_at', 'desc')->limit(30)->get();
+        $wishes = Wish::whereIn('user_id', $friends_ids)->with("fulfillers")->orderBy('created_at', 'desc')->limit(30)->get();
 
         return $wishes;
     }
