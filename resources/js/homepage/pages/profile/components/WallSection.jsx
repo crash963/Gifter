@@ -5,10 +5,11 @@ import { CurrentUserContext } from "../Profile.jsx";
 function WallSection() {
     const currentUser = useContext(CurrentUserContext);
     const [wishes, setWishes] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("all-friends");
 
     async function fetchFriendsWishes() {
         const response = await fetch(
-            `/api/user/${currentUser.id}/friends-wishes`
+            `/api/user/${currentUser.id}/friends-wishes/${searchQuery}`
         );
         const data = await response.json();
         console.log(data);
@@ -19,12 +20,21 @@ function WallSection() {
         fetchFriendsWishes();
     }, []);
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetchFriendsWishes();
+    }
+
+    function handleChange(e) {
+        setSearchQuery(e.target.value);
+    }
+
     return (
         <>
             <div>Filter by:</div>
-            <form method="get">
+            <form method="get" onSubmit={handleSubmit}>
                 <label htmlFor="nickname">Nickname</label>
-                <input type="text" name="nickname" />
+                <input type="text" name="nickname" onChange={handleChange} />
                 <button type="submit">Search</button>
             </form>
             <div className="box__container">
