@@ -45,6 +45,7 @@ function AddFriendBox() {
                                 <FriendSearchResults
                                     friend={friendSearchResult}
                                     key={index}
+                                    fetchUsers={fetchUsers}
                                 />
                             ))
                         ) : (

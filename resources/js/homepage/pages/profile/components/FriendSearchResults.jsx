@@ -2,9 +2,16 @@ function FriendSearchResults(props) {
     // console.log(props.friend);
     const { photo, first_name, last_name, nickname, id } = props.friend;
 
-    function handleClick(friendId) {
-        console.log(friendId);
-        fetch(`/api/friendship/${friendId}`);
+    async function addFriend() {
+        const response = await fetch(`/api/friendship/${id}`);
+        const data = await response.json();
+        console.log(data);
+    }
+
+    function handleClick(event) {
+        console.log(id);
+        addFriend();
+        props.fetchUsers();
     }
 
     return (
@@ -23,7 +30,7 @@ function FriendSearchResults(props) {
             </div>
             <div className="friend-search-result__content">
                 <div
-                    onClick={() => handleClick(id)}
+                    onClick={() => handleClick()}
                     className="friend-search-result__add"
                 >
                     +
