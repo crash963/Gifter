@@ -31,7 +31,7 @@ function WallSection() {
     }
 
     return (
-        <>
+        <div className="wall">
             <div>Filter by:</div>
             <form method="get" onSubmit={handleSubmit}>
                 <label htmlFor="nickname">Nickname</label>
@@ -46,7 +46,7 @@ function WallSection() {
                     />
                 )}
             </div>
-        </>
+        </div>
     );
 }
 
