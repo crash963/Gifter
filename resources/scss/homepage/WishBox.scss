@@ -12,10 +12,12 @@
     font-style: oblique;
     color: #0a1417;
     font-style: oblique;
-
+    max-height: 35vw;
     & img {
-        width: 100%;
+        width: 98%;
         overflow: hidden;
+        border-radius: 0.5rem;
+
         // flex-grow: 1;
     }
 }

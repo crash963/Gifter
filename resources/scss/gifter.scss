@@ -12,10 +12,11 @@
     color: #e3648d;
     font-weight: 1000;
     &--big {
-        position: absolute;
-        left: 6rem;
-        top: 3rem;
         font-size: 6vw;
+    }
+    &--tagline {
+        font-size: 1.5vw;
+        letter-spacing: 0.1vw;
     }
     &--small {
         font-size: 1vw;
