@@ -12,17 +12,21 @@
         flex-grow: 1;
         justify-content: space-around;
         align-items: center;
-        font-weight: 900;
+        font-size: 1.3rem;
+        font-weight: 400;
         &__item {
             // border: 0.25rem black solid;
             // border-radius: 0.9rem;
             // padding: 1rem;
             cursor: pointer;
+            padding: 0.5rem 0;
             &:hover {
-                color: lawngreen;
+                color: #e3648d;
             }
             &--active {
                 font-size: 1.3rem;
+                font-weight: 1000;
+                text-decoration: underline;
             }
         }
     }
