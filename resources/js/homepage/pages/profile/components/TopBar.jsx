@@ -21,6 +21,9 @@ function TopBar(props) {
                 <div className="navigation__wall" onClick={changePage}>
                     Wall
                 </div>
+                <div className="navigation__history" onClick={changePage}>
+                    History
+                </div>
             </div>
         </div>
     );

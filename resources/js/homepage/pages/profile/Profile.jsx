@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import FriendsSection from "./components/FriendsSection";
+import HistorySection from "./components/HistorySection";
 import MyProfile from "./components/MyProfile";
 
 import TopBar from "./components/TopBar";
@@ -60,6 +61,9 @@ function Profile() {
                         <FriendsSection />
                     )}
                     {currentUser && currentPage === "wall" && <WallSection />}
+                    {currentUser && currentPage === "history" && (
+                        <HistorySection />
+                    )}
                 </>
             )}
         </CurrentUserContext.Provider>

@@ -39,6 +39,7 @@ Route::get("/comments/{wish_id}", "Api\CommentController@comments");
 Route::get('/wish/{wish_id}/author', 'Api\WishController@author');
 Route::get('/wish/{wish_id}/fulfillers', 'Api\WishController@fulfillers');
 Route::get('/wish/{wish_id}', 'Api\WishController@wish');
+Route::get("/wish/{user_id}/fulfilled", "Api\WishController@fulfilledWishes");
 Route::post("/wish/fulfillers/add/{wish_id}/{user_id}", "Api\WishController@addFulfiller");
 Route::post('/add-wish', 'Api\WishController@addWish');
 
