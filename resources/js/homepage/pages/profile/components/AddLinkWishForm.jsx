@@ -11,6 +11,11 @@ function AddLinkWishForm(props) {
     });
     const [message, setMessage] = useState("");
 
+    function getDate(date) {
+        const currentDate = new Date();
+        console.log(currentDate);
+    }
+
     async function addLinkWish() {
         let request_data = {
             user_id: user_id,
@@ -45,6 +50,7 @@ function AddLinkWishForm(props) {
 
     useEffect(() => {
         console.log(message.errors);
+        getDate();
     }, []);
 
     const handleChange = (event) => {

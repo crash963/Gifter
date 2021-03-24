@@ -90,4 +90,8 @@ class WishController extends Controller
         
         return "fulfiller added";
     }
+
+    public function fulfilledWishes($user_id){
+        
+    }
 };

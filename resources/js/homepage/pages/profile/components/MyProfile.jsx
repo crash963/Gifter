@@ -29,8 +29,8 @@ function MyProfile(props) {
             )}
             <div className="box__container">
                 <UserBox setUserBoxClicked={props.setUserBoxClicked} />
-                <Wishes isNameSet={props.isNameSet} wishes={wishes} />
                 <AddWishBox fetchWishes={fetchWishes} />
+                <Wishes isNameSet={props.isNameSet} wishes={wishes} />
             </div>
         </>
     );
