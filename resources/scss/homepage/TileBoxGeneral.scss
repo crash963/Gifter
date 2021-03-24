@@ -6,4 +6,9 @@
     border-radius: 0.9rem;
     width: 21%;
     height: 43rem;
+    box-shadow: 10px 5px 10px lightblue;
+
+    &:hover {
+        box-shadow: 13px 10px 8px rgb(114, 197, 228);
+    }
 }
