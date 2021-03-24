@@ -43,21 +43,23 @@ function WishBox(props) {
                     }`}
                 >
                     <div className="wish__user__info">
-                        {
-                            <img
-                                src={
-                                    author.photo
-                                        ? `../images/${author.photo}`
-                                        : `../images/profile_pictures/placeholder-profile-pic.jpg`
-                                }
-                                alt={`${author.nickname}'s Profile Picture`}
-                            />
-                        }
-                        <p>
-                            {props.isNameSet
-                                ? `${author.first_name} ${author.last_name}`
-                                : author.nickname}
-                        </p>
+                        <div className="wish__user__info__header">
+                            {
+                                <img
+                                    src={
+                                        author.photo
+                                            ? `../images/${author.photo}`
+                                            : `../images/profile_pictures/placeholder-profile-pic.jpg`
+                                    }
+                                    alt={`${author.nickname}'s Profile Picture`}
+                                />
+                            }
+                            <p>
+                                {props.isNameSet
+                                    ? `${author.first_name} ${author.last_name}`
+                                    : author.nickname}
+                            </p>
+                        </div>
                         {wish.fulfillers.length !== 0 && (
                             <div class="wish__fulfilled__mark">Fulfilled</div>
                         )}

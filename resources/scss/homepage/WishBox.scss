@@ -16,6 +16,7 @@
     & img {
         width: 100%;
         overflow: hidden;
+        // flex-grow: 1;
     }
 }
 
@@ -28,6 +29,10 @@
     align-self: flex-start;
     padding: 0%;
     width: 90%;
+    &__header {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .wish__user__info img {
