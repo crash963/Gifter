@@ -36,7 +36,14 @@ function FriendSearchResults(props) {
                     alt="user-img"
                     className="friend-search-result__photo"
                 />
-                <p className="friend-search-result__nickname">{nickname}</p>
+                <div className="friend-search-result__names">
+                    <p className="friend-search-result__nickname">{nickname}</p>
+                    <p className="friend-search-result__name">
+                        {first_name &&
+                            last_name &&
+                            `${first_name} ${last_name}`}
+                    </p>
+                </div>
             </div>
             <div className="friend-search-result__content">
                 <div
@@ -45,9 +52,6 @@ function FriendSearchResults(props) {
                 >
                     +
                 </div>
-                <p className="friend-search-result__name">
-                    {first_name && last_name && `${first_name} ${last_name}`}
-                </p>
             </div>
         </div>
     );

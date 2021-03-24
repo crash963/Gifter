@@ -9,50 +9,23 @@
 .search-result-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.friend-search-result {
-    display: flex;
-    border-radius: 0.9rem;
-    padding: 1rem;
-    align-items: center;
-    min-width: 35%;
-    max-width: 45%;
-
-    &__heading {
+    .friend-search-result {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        width: 45%;
-        margin-right: 1rem;
-    }
-
-    &__photo {
-        border-radius: 50%;
-        width: 50%;
-    }
-
-    &__nickname {
-        font-size: 0.75rem;
-    }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-    }
-
-    &__add {
-        font-size: 1.5rem;
-        cursor: pointer;
-        &:hover {
-            color: #2b6684;
+        width: 100%;
+        height: 5rem;
+        padding: 0.5rem;
+        p {
+            font-size: 14px;
         }
-    }
+        image {
+            width: 20%;
+        }
+        &__heading {
+            display: flex;
 
-    &__name {
-        font-size: 1rem;
+            img {
+                width: 15%;
+            }
+        }
     }
 }
