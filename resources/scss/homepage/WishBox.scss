@@ -28,6 +28,10 @@
     align-self: flex-start;
     padding: 0%;
     width: 90%;
+    &__header {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .wish__user__info img {
