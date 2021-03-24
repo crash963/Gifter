@@ -46,7 +46,10 @@ function Profile() {
         <CurrentUserContext.Provider value={currentUser}>
             {currentUser && (
                 <>
-                    <TopBar setCurrentPage={setCurrentPage} />
+                    <TopBar
+                        setCurrentPage={setCurrentPage}
+                        currentPage={currentPage}
+                    />
                     {currentUser && currentPage === "my profile" && (
                         <section className="profile">
                             <MyProfile

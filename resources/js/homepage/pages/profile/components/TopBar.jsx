@@ -12,25 +12,41 @@ function TopBar(props) {
             </div>
             <div className="profile-top-section__nav">
                 <div
-                    className="profile-top-section__nav__item profile-top-section__nav__item--active"
+                    className={
+                        props.currentPage === "my profile"
+                            ? "profile-top-section__nav__item profile-top-section__nav__item--active"
+                            : "profile-top-section__nav__item"
+                    }
                     onClick={changePage}
                 >
                     My Profile
                 </div>
                 <div
-                    className="profile-top-section__nav__item"
+                    className={
+                        props.currentPage === "friends"
+                            ? "profile-top-section__nav__item profile-top-section__nav__item--active"
+                            : "profile-top-section__nav__item"
+                    }
                     onClick={changePage}
                 >
                     Friends
                 </div>
                 <div
-                    className="profile-top-section__nav__item"
+                    className={
+                        props.currentPage === "wall"
+                            ? "profile-top-section__nav__item profile-top-section__nav__item--active"
+                            : "profile-top-section__nav__item"
+                    }
                     onClick={changePage}
                 >
                     Wall
                 </div>
                 <div
-                    className="profile-top-section__nav__item"
+                    className={
+                        props.currentPage === "history"
+                            ? "profile-top-section__nav__item profile-top-section__nav__item--active"
+                            : "profile-top-section__nav__item"
+                    }
                     onClick={changePage}
                 >
                     History
