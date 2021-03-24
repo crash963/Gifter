@@ -26,7 +26,7 @@ function AddWishBox(props) {
                                 setWayToAddWish("link");
                             }}
                         >
-                           <button> Create wish from link </button>
+                            <button> Create wish from link </button>
                         </div>
                         <div
                             className="add__my__own__wish"
@@ -34,11 +34,14 @@ function AddWishBox(props) {
                                 setWayToAddWish("own");
                             }}
                         >
-                           <button> Create my own wish   </button>
+                            <button> Create my own wish </button>
                         </div>
                     </div>
                     {wayToAddWish === "link" ? (
-                        <AddLinkWishForm fetchWishes={props.fetchWishes} />
+                        <AddLinkWishForm
+                            fetchWishes={props.fetchWishes}
+                            setIsClicked={setIsClicked}
+                        />
                     ) : (
                         <AddOwnWishForm fetchWishes={props.fetchWishes} />
                     )}

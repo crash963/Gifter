@@ -92,6 +92,12 @@ class WishController extends Controller
     }
 
     public function fulfilledWishes($user_id){
-        
+        $user = User::findOrFail($user_id);
+        $current_date = date("Y-m-d");
+
+
+        $wishes = $user->wishes()->where("resolve_date", "<", $current_date)->with("fulfillers")->get(); 
+
+        return $wishes;
     }
 };

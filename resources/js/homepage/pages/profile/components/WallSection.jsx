@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Wishes from "./Wishes";
 import { CurrentUserContext } from "../Profile.jsx";
+import { set } from "lodash";
 
 function WallSection() {
     const currentUser = useContext(CurrentUserContext);

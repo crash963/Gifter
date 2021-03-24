@@ -13,14 +13,32 @@ function AddLinkWishForm(props) {
 
     function getDate(date) {
         const currentDate = new Date();
-        console.log(currentDate);
+        let targetDate = currentDate.getFullYear() + "-" + date.slice(5, 10);
+        let finishedDate =
+            currentDate < new Date(targetDate)
+                ? targetDate
+                : `${Number(currentDate.getFullYear()) + 1}-${date.slice(
+                      5,
+                      10
+                  )}`;
+
+        return finishedDate;
+    }
+
+    function resetValues() {
+        setValues({
+            user_id: currentUser.id,
+            link: "",
+            resolve_date: null,
+            is_resolved: false,
+        });
     }
 
     async function addLinkWish() {
         let request_data = {
             user_id: user_id,
             link: link,
-            resolve_date: resolve_date,
+            resolve_date: resolve_date && getDate(resolve_date),
             is_resolved: is_resolved,
         };
 
@@ -36,10 +54,11 @@ function AddLinkWishForm(props) {
             },
         });
 
-        console.log(response);
         const response_data = await response.json();
-        console.log(response_data);
         if (response_data.errors) setMessage(response_data.errors);
+
+        props.setIsClicked(false);
+        resetValues();
         props.fetchWishes();
     }
 
@@ -50,7 +69,6 @@ function AddLinkWishForm(props) {
 
     useEffect(() => {
         console.log(message.errors);
-        getDate();
     }, []);
 
     const handleChange = (event) => {

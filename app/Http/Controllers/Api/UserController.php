@@ -36,8 +36,13 @@ class UserController extends Controller
     public function wishes($user_id)
     {
         $user = User::findOrFail($user_id);
+        $current_date = date("Y-m-d");
 
-        return $user->wishes()->with("fulfillers")->orderBy('created_at', 'desc')->get();
+       if($user->resolve_date)
+       { return $user->wishes()->where("resolve_date", ">", $current_date)->with("fulfillers")->orderBy('created_at', 'desc')->get();
+        } else {
+            return $user->wishes()->with("fulfillers")->orderBy('created_at', 'desc')->get();
+        }   
     }
 
     public function update(Request $request, $user_id)
