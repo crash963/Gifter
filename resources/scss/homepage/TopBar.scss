@@ -7,10 +7,6 @@
         margin-left: 0.5rem;
         font-size: 1.3vw;
         width: 5vw;
-        &:hover {
-            animation-name: pulsating-logo;
-            animation-duration: 2s;
-        }
     }
     &__nav {
         display: flex;
@@ -48,14 +44,5 @@
         &:hover {
             font-weight: 1000;
         }
-    }
-}
-
-@keyframes pulsating-logo {
-    from {
-        letter-spacing: initial;
-    }
-    to {
-        letter-spacing: 1.2em;
     }
 }

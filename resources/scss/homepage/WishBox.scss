@@ -27,17 +27,33 @@
 .wish__user__info {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    align-self: flex-start;
     padding: 0%;
+    width: 90%;
 }
 
 .wish__user__info img {
     border-radius: 30%;
-    width: 30%;
+    width: 8rem;
     padding: 2rem;
 }
 
 .wish__box--wish a {
     color: #9cacbf;
+}
+
+.hide_detail_toggle {
+    border: none;
+    box-shadow: 2px 3.5px #888888;
+    background-color: #9cacbf;
+    width: 6.7rem;
+    border-radius: 0.4rem;
+    margin: 0 auto 0.5rem;
+}
+
+.wish__fulfilled__mark {
+    justify-self: flex-end;
 }
