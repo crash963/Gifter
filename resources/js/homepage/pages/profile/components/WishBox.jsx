@@ -62,7 +62,10 @@ function WishBox(props) {
                             <div class="wish__fulfilled__mark">Fulfilled</div>
                         )}
                     </div>
-                    <button onClick={handleClick} className="hide_detail_toggle">
+                    <button
+                        onClick={handleClick}
+                        className="hide_detail_toggle"
+                    >
                         {isBoxClicked ? "hide" : "detail"}
                     </button>
                     {!isBoxClicked && (
@@ -85,7 +88,7 @@ function WishBox(props) {
                                 <p>{wish.description && wish.description}</p>
 
                                 {wish.resolve_date && !isUserAuthor && (
-                                    <p>date: {wish.resolve_date.slice(5)}</p>
+                                    <p>date: {wish.resolve_date}</p>
                                 )}
                             </>
                         )}
