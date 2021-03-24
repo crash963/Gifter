@@ -7,7 +7,7 @@ function TopBar(props) {
 
     return (
         <div className="profile__top__section">
-            <Logout />
+           
             <div className="profile__navigation">
                 <div
                     className="navigation__profile navigation__profile--active"
@@ -24,6 +24,7 @@ function TopBar(props) {
                 <div className="navigation__history" onClick={changePage}>
                     History
                 </div>
+                <Logout />
             </div>
         </div>
     );
