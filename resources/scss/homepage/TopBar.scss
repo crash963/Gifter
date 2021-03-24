@@ -1,14 +1,20 @@
 .profile-top-section {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     &__logo {
+        justify-self: flex-start;
         align-self: center;
         margin-left: 0.5rem;
+        font-size: 1.3vw;
+        width: 5vw;
+        &:hover {
+            animation-name: pulsating-logo;
+            animation-duration: 2s;
+        }
     }
     &__nav {
         display: flex;
-        flex-direction: row;
+        // flex-direction: row;
         flex-grow: 1;
         justify-content: space-around;
         align-items: center;
@@ -29,5 +35,27 @@
                 text-decoration: underline;
             }
         }
+    }
+    &__logout-btn {
+        border: #0a1417 0.12rem solid;
+        border-radius: 0.9rem;
+        background-color: inherit;
+        font-size: 0.9rem;
+        padding: 0 1.2rem;
+        margin: 0.5rem 0;
+        margin-right: 0.5rem;
+        width: 5vw;
+        &:hover {
+            font-weight: 1000;
+        }
+    }
+}
+
+@keyframes pulsating-logo {
+    from {
+        letter-spacing: initial;
+    }
+    to {
+        letter-spacing: 1.2em;
     }
 }
