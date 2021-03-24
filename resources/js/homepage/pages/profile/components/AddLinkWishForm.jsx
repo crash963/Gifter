@@ -85,7 +85,7 @@ function AddLinkWishForm(props) {
 
     return (
         <form method="post" onSubmit={handleSubmit} className="wish_link__box">
-            <label htmlFor="link">Link: </label>
+            <label htmlFor="link">Enter link here: </label>
             <input
                 type="url"
                 name="link"
