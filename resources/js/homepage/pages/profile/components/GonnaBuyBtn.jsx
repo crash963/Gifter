@@ -25,6 +25,8 @@ function GonnaBuyBtn(props) {
                 },
             }
         );
+
+        props.fetchFriendsWishes();
     }
 
     function handleClick() {

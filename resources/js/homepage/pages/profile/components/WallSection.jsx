@@ -31,7 +31,7 @@ function WallSection() {
     }
 
     return (
-        <>
+        <div className="wall">
             <div>Filter by:</div>
             <form method="get" onSubmit={handleSubmit}>
                 <label htmlFor="nickname">Nickname</label>
@@ -39,9 +39,14 @@ function WallSection() {
                 <button type="submit">Search</button>
             </form>
             <div className="box__container">
-                {wishes && <Wishes wishes={wishes} />}
+                {wishes && (
+                    <Wishes
+                        wishes={wishes}
+                        fetchFriendsWishes={fetchFriendsWishes}
+                    />
+                )}
             </div>
-        </>
+        </div>
     );
 }
 

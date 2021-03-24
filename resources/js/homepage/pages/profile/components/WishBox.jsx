@@ -96,7 +96,13 @@ function WishBox(props) {
                         {!isUserAuthor && isBoxClicked && (
                             <>
                                 {wish.fulfillers.length === 0 && (
-                                    <GonnaBuyBtn wish={wish} author={author} />
+                                    <GonnaBuyBtn
+                                        wish={wish}
+                                        author={author}
+                                        fetchFriendsWishes={
+                                            props.fetchFriendsWishes
+                                        }
+                                    />
                                 )}
                                 <Comments wish={wish} />
                             </>
