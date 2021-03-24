@@ -15,7 +15,7 @@ function Logout() {
     }
 
     return (
-        <button className="logout__button" onClick={logout}>
+        <button className="profile-top-section__logout-btn" onClick={logout}>
             Logout
         </button>
     );

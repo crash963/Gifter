@@ -1,7 +1,29 @@
-.profile__navigation {
+.profile-top-section {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    font-weight: 900;
+    justify-content: space-between;
+    &__logo {
+        align-self: center;
+        margin-left: 0.5rem;
+    }
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: 900;
+        &__item {
+            // border: 0.25rem black solid;
+            // border-radius: 0.9rem;
+            // padding: 1rem;
+            cursor: pointer;
+            &:hover {
+                color: lawngreen;
+            }
+            &--active {
+                font-size: 1.3rem;
+            }
+        }
+    }
 }

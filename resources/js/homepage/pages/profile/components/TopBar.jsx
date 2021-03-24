@@ -6,26 +6,37 @@ function TopBar(props) {
     }
 
     return (
-        <div className="profile__top__section">
-            <div className="logo logo--small">Gifter</div>
-            <div className="profile__navigation">
+        <div className="profile-top-section">
+            <div className="logo logo--small profile-top-section__logo">
+                Gifter
+            </div>
+            <div className="profile-top-section__nav">
                 <div
-                    className="navigation__profile navigation__profile--active"
+                    className="profile-top-section__nav__item profile-top-section__nav__item--active"
                     onClick={changePage}
                 >
                     My Profile
                 </div>
-                <div className="navigation__friends" onClick={changePage}>
+                <div
+                    className="profile-top-section__nav__item"
+                    onClick={changePage}
+                >
                     Friends
                 </div>
-                <div className="navigation__wall" onClick={changePage}>
+                <div
+                    className="profile-top-section__nav__item"
+                    onClick={changePage}
+                >
                     Wall
                 </div>
-                <div className="navigation__history" onClick={changePage}>
+                <div
+                    className="profile-top-section__nav__item"
+                    onClick={changePage}
+                >
                     History
                 </div>
-                <Logout />
             </div>
+            <Logout />
         </div>
     );
 }
