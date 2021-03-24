@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/users/search/{search_string}', 'Api\UserController@searchUsersByName');
 Route::get('/user/{user_id}/friends-wishes/{string}', 'Api\UserController@selectedfriendsWishes');
-Route::get('/user/{user_id}/friends-wishes', 'Api\UserController@friendsWishes');
+// Route::get('/user/{user_id}/friends-wishes', 'Api\UserController@friendsWishes');
 Route::get('/user/{user_id}/friends', 'Api\UserController@friends');
 Route::get('/user/{user_id}/wishes', 'Api\UserController@wishes');
 Route::get('/user/{user_id}', 'Api\UserController@show');

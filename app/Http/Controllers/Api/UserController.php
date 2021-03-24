@@ -100,20 +100,26 @@ class UserController extends Controller
         return $users;
     }
 
-    public function selectedfriendsWishes($user_id, $string)
+    public function selectedfriendsWishes($user_id, $string = "all-friends")
     {
 
         $user = User::findOrFail($user_id);
+        $friends_ids = [];
+        $limit = 500;
+
+        if ($string === "all-friends") {
+        $friends = $user->friends()->get();
+        $limit = 30;
+        } else
         $friends = $user->friends()->where('nickname', 'like', "%{$string}%")->get();
         
-        $friends_ids = [];
 
         foreach ($friends as $friend) {
             array_push($friends_ids, $friend->id);
         }
 
 
-        $wishes = Wish::whereIn('user_id', $friends_ids)->orderBy('created_at', 'desc')->get();
+        $wishes = Wish::whereIn('user_id', $friends_ids)->with("fulfillers")->orderBy('created_at', 'desc')->limit($limit)->get();
 
         return $wishes;
     }
