@@ -8,13 +8,18 @@
 }
 
 .logo {
-    position: absolute;
-    left: 6rem;
-    top: 3rem;
     font-family: "Monoton", cursive;
     color: #e3648d;
     font-weight: 1000;
-    font-size: 6vw;
+    &--big {
+        position: absolute;
+        left: 6rem;
+        top: 3rem;
+        font-size: 6vw;
+    }
+    &--small {
+        font-size: 1vw;
+    }
 }
 
 @import "./welcome/BotSection.scss";
