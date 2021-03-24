@@ -62,7 +62,7 @@ function WishBox(props) {
                             <div class="wish__fulfilled__mark">Fulfilled</div>
                         )}
                     </div>
-                    <button onClick={handleClick}>
+                    <button onClick={handleClick} className="hide_detail_toggle">
                         {isBoxClicked ? "hide" : "detail"}
                     </button>
                     {!isBoxClicked && (

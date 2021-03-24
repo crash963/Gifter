@@ -20,9 +20,17 @@ function WallSection() {
     }, []);
 
     return (
-        <div className="box__container">
-            {wishes && <Wishes wishes={wishes} />}{" "}
-        </div>
+        <>
+            <div>Filter by:</div>
+            <form method="get">
+                <label htmlFor="nickname">Nickname</label>
+                <input type="text" name="nickname" />
+                <button type="submit">Search</button>
+            </form>
+            <div className="box__container">
+                {wishes && <Wishes wishes={wishes} />}
+            </div>
+        </>
     );
 }
 
