@@ -13,13 +13,6 @@
     color: #0a1417;
     font-style: oblique;
     max-height: 35vw;
-    & img {
-        width: 98%;
-        overflow: hidden;
-        border-radius: 0.5rem;
-
-        // flex-grow: 1;
-    }
 }
 
 .wish__user__info {
@@ -31,9 +24,13 @@
     align-self: flex-start;
     padding: 0%;
     width: 90%;
+    font-size: 1.25rem;
     &__header {
         display: flex;
         align-items: center;
+        p {
+            margin: 0;
+        }
     }
 }
 
@@ -43,8 +40,32 @@
     padding: 2rem;
 }
 
+.wish__box--wish {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-img {
+        width: 98%;
+        overflow: hidden;
+        border-radius: 0.5rem;
+
+        // flex-grow: 1;
+    }
+    p {
+        font-size: 1.15rem;
+        text-align: justify;
+        margin-bottom: 0.2rem;
+        padding: 0.3rem 0.5rem 0 0.5rem;
+    }
+}
+
 .wish__box--wish a {
     color: #9cacbf;
+    &:hover {
+        color: #e3648d;
+        text-decoration: none;
+    }
 }
 
 .hide_detail_toggle {

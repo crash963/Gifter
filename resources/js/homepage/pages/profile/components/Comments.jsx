@@ -22,7 +22,7 @@ function Comments(props) {
     }, []);
 
     return (
-        <div>
+        <div className="comments__section">
             <CommentsForm wish={props.wish} fetchComments={fetchComments} />
             {comments && (
                 <DisplayComments

@@ -62,7 +62,7 @@ function WishBox(props) {
                         </div>
                         {wish.fulfillers.length !== 0 && (
                             <div className="wish__fulfilled__mark">
-                                Wish granted
+                                Wish granted ✔
                                 {/* by {wish.fulfillers[0].nickname} */}
                             </div>
                         )}
@@ -76,6 +76,7 @@ function WishBox(props) {
                     </button>
                     {!isBoxClicked && (
                         <img
+                            className="wish__box--wish-img"
                             src={
                                 wish.photo
                                     ? `../images/${wish.photo}`
@@ -85,10 +86,8 @@ function WishBox(props) {
                         />
                     )}
                     <div className="wish__box--wish">
-                        <p>
-                            {wish.name}
-                            {wish.link && <a href={wish.link}>Buy NOW</a>}
-                        </p>
+                        <p>{wish.name}</p>
+                        {wish.link && <a href={wish.link}>Buy NOW</a>}
                         {isBoxClicked && (
                             <>
                                 <p>{wish.description && wish.description}</p>
