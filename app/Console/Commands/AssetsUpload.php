@@ -11,7 +11,7 @@ class AssetsUpload extends Command
     protected static $files = [
         '/public/css/*',
         '/public/js/*',
-        '/public/images/*',
+        // '/public/images/*',
         '/public/mix-manifest.json'
     ];
 
