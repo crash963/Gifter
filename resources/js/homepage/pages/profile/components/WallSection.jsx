@@ -27,7 +27,11 @@ function WallSection() {
     }
 
     function handleChange(e) {
-        setSearchQuery(e.target.value);
+        if (e.target.value) {
+            setSearchQuery(e.target.value);
+        } else {
+            setSearchQuery("all-friends");
+        }
     }
 
     return (

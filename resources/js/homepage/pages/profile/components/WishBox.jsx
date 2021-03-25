@@ -60,7 +60,7 @@ function WishBox(props) {
                                     : author.nickname}
                             </p>
                         </div>
-                        {wish.fulfillers.length !== 0 && (
+                        {wish.fulfillers.length !== 0 && !isUserAuthor && (
                             <div className="wish__fulfilled__mark">
                                 Wish granted ✔
                                 {/* by {wish.fulfillers[0].nickname} */}
@@ -80,7 +80,7 @@ function WishBox(props) {
                             src={
                                 wish.photo
                                     ? `../images/${wish.photo}`
-                                    : `../images/test-wish-photo.jpg`
+                                    : `../images/welcome_tile1.jpg`
                             }
                             alt="wish-img"
                         />

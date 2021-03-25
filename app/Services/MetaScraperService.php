@@ -46,16 +46,15 @@ class MetaScraperService
         $data["name"] = trim($h1[0]->text());
 
         // geting and saving description
-        $description = $document->find(".nameextc span");
+        $description = $document->find(".c-product-desc");
         $data["description"] = $description[0]->text();
-        dd($data["description"]);
 
         // getting image
         // $image_array = $document->find("#imgMain");
         // $image_url = $image_array[0]->getAttribute("data-src");
         // $image = file_get_contents($image_url);
         
-        $image_array = $document->find("#imgMain");
+        $image_array = $document->find(".c-gallery-open__thumbnail");
         $image_url = $image_array[0]->getAttribute("src") ?? $image_array[0]->getAttribute("data-src");
         $image = file_get_contents($image_url);
         
