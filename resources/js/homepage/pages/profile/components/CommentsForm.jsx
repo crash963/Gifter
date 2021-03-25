@@ -50,8 +50,13 @@ function CommentsForm(props) {
                 placeholder="Your comment"
                 onChange={handleChange}
                 value={commentText}
+                className="comments__form-textarea"
             ></textarea>
-            <input type="submit" value="comment" />
+            <input
+                type="submit"
+                value="comment"
+                className="comments__form-button"
+            />
         </form>
     );
 }

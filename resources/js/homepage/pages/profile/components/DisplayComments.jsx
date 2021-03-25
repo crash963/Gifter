@@ -5,7 +5,7 @@ function DisplayComments(props) {
                 props.comments.map((comment) => {
                     const user = comment.user;
                     return (
-                        <div key={comment.id} className="comments">
+                        <div key={comment.id} className="comment">
                             <div className="comment__header">
                                 <img
                                     src={
@@ -13,17 +13,20 @@ function DisplayComments(props) {
                                             ? `/images/${comment.user.photo}`
                                             : `/images/profile_pictures/placeholder-profile-pic.jpg`
                                     }
-                                    className="comment_photo"
+                                    className="comment__photo"
                                 />
-                                <p className="comment_user_id">
+                            </div>
+                            <div className="comment__content">
+                                <p className="comment__user-id">
                                     <strong>
                                         {user.first_name && user.last_name
                                             ? `${user.first_name} ${user.last_name}`
-                                            : `${user.nickname}`}
+                                            : `${user.nickname}`}{" "}
+                                        wrote:
                                     </strong>
                                 </p>
+                                <p className="comment__text">{comment.text}</p>
                             </div>
-                            <p className="comment_text">{comment.text}</p>
                         </div>
                     );
                 })}
