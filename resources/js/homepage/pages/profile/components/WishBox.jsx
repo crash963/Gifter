@@ -76,6 +76,7 @@ function WishBox(props) {
                     </button>
                     {!isBoxClicked && (
                         <img
+                            className="wish__box--wish-img"
                             src={
                                 wish.photo
                                     ? `../images/${wish.photo}`

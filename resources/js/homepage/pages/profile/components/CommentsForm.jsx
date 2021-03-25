@@ -38,16 +38,18 @@ function CommentsForm(props) {
     function handleSubmit(e) {
         e.preventDefault();
         addComment();
+        setCommentText("");
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="comments__form" onSubmit={handleSubmit}>
             <textarea
                 name="text"
                 cols="30"
-                rows="8"
+                rows="2"
                 placeholder="Your comment"
                 onChange={handleChange}
+                value={commentText}
             ></textarea>
             <input type="submit" value="comment" />
         </form>
