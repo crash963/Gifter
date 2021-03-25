@@ -43,7 +43,7 @@ Route::get("/wish/{user_id}/fulfilled", "Api\WishController@fulfilledWishes");
 Route::post("/wish/fulfillers/add/{wish_id}/{user_id}", "Api\WishController@addFulfiller");
 Route::post('/add-wish', 'Api\WishController@addWish');
 
-Route::post('/upload/profile-picture/{user_id}', 'Api\UploadController@uploadProfilePic');
+Route::post('/upload/profile-picture', 'Api\UploadController@uploadProfilePic');
 Route::post('/upload/wish-picture', 'Api\UploadController@uploadWishPic');
 
 Route::post('/scrape/url', 'Api\WishController@scrapeUrl');
