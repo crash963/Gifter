@@ -18,17 +18,17 @@
 }
 
 .wish__box__with__comments {
-    // align-items: flex-start;
-    // justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
     // background-color: #457581;
     // margin: 2rem;
-    // display: flex;
-    // flex-direction: column;
-    // padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
     // border-radius: 0.9rem;
     width: 44.7%;
     // height: 43rem;
-    // overflow: auto;
+    overflow: auto;
     // form {
     //     display: flex;
     //     flex-direction: row;
@@ -37,16 +37,32 @@
 
 .hide_detail_toggle {
     align-self: flex-start;
+    margin-left: 1rem;
+    margin-right: 0;
 }
 
 .comments {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__section {
+    align-items: flex-end;
+    &__section-left {
         display: flex;
+        flex-direction: column;
+    }
+    &__section-right {
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-self: flex-end;
+        align-self: flex-end;
+
+        margin-right: 5rem;
     }
     &__form {
+        display: flex;
+        flex-direction: column;
+    }
+    &__container {
         display: flex;
         flex-direction: column;
     }

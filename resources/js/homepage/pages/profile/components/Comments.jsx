@@ -22,16 +22,20 @@ function Comments(props) {
     }, []);
 
     return (
-        <div className="comments__section">
-            <CommentsForm wish={props.wish} fetchComments={fetchComments} />
-            {comments && (
-                <DisplayComments
-                    wish={props.wish}
-                    fetchComments={fetchComments}
-                    comments={comments}
-                />
-            )}
-        </div>
+        <>
+            <div className="comments__section-left">
+                <CommentsForm wish={props.wish} fetchComments={fetchComments} />
+            </div>
+            <div className="comments__section-right">
+                {comments && (
+                    <DisplayComments
+                        wish={props.wish}
+                        fetchComments={fetchComments}
+                        comments={comments}
+                    />
+                )}
+            </div>
+        </>
     );
 }
 
