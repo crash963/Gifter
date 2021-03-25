@@ -60,7 +60,7 @@ function WishBox(props) {
                                     : author.nickname}
                             </p>
                         </div>
-                        {wish.fulfillers.length !== 0 && (
+                        {wish.fulfillers.length !== 0 && !isUserAuthor && (
                             <div className="wish__fulfilled__mark">
                                 Wish granted ✔
                                 {/* by {wish.fulfillers[0].nickname} */}
