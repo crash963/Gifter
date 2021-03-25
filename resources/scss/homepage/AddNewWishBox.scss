@@ -5,6 +5,32 @@
     background-color: #2b6684;
     font-weight: 700;
     font-style: oblique;
+    .wish_method__switch {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .wish__method__switch__btn {
+            border: none;
+            width: 40%;
+            border-radius: 0.6rem;
+            font-weight: 600;
+            background-color: #9cacbf;
+            color: #032e42;
+        }
+    }
+}
+
+.wish_link__box {
+    width: 80%;
+    input {
+        border: none;
+        border-radius: 0.6rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    .add__wish__btn {
+        width: 50%;
+    }
 }
 
 .add__wish__box img {

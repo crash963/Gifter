@@ -113,7 +113,7 @@ function AddLinkWishForm(props) {
                 )}
             </div>
 
-            <input type="submit" value="Add Wish" />
+            <input type="submit" value="Add Wish" className="add__wish__btn" />
         </form>
     );
 }

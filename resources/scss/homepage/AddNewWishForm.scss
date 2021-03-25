@@ -4,18 +4,12 @@
     align-items: center;
 }
 
-.form__box--right {
-    margin-left: 30%;
-}
-
 .add__wish__box__form {
-    align-items: flex-start;
-    justify-content: flex-start;
-    background-color: #e3648d;
-    margin: 2rem;
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #e3648d;
     padding: 2rem;
+    flex-direction: column;
     border-radius: 0.9rem;
     width: 44.7%;
     height: 43rem;
@@ -23,6 +17,24 @@
     form {
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
+        height: 100%;
+        .form__box--left {
+            width: 30%;
+            input {
+                border: none;
+                border-radius: 0.6rem;
+                margin-bottom: 1rem;
+            }
+        }
+        .form__box--right {
+            textarea {
+                height: 40%;
+                border: none;
+                border-radius: 0.6rem;
+                margin-bottom: 1rem;
+            }
+        }
     }
 }
 

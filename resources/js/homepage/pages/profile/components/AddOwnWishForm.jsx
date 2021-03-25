@@ -132,7 +132,7 @@ function AddOwnWishForm(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="resolve_date"></label>
+                    <label htmlFor="resolve_date">Date:</label>
                     <select name="resolve_date" onChange={handleChange}>
                         <option value={currentUser.birthday}>Birthday</option>
                         <option value="other_date">Other Date</option>
@@ -158,8 +158,8 @@ function AddOwnWishForm(props) {
                 <br />
                 <textarea
                     name="description"
-                    cols="45"
-                    rows="20"
+                    cols="40"
+                    rows="10"
                     onChange={handleChange}
                 ></textarea>
                 {message.description && (
