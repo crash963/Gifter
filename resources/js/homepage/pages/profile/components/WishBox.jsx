@@ -80,7 +80,7 @@ function WishBox(props) {
                             src={
                                 wish.photo
                                     ? `../images/${wish.photo}`
-                                    : `../images/test-wish-photo.jpg`
+                                    : `../images/welcome_tile1.jpg`
                             }
                             alt="wish-img"
                         />
