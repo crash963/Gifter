@@ -39,7 +39,6 @@ class MetaScraperService
     public function parseDocument($html)
     {
         $data = [];
-
         $document = new Document($html);
 
         // getting and saving name
@@ -49,6 +48,7 @@ class MetaScraperService
         // geting and saving description
         $description = $document->find(".nameextc span");
         $data["description"] = $description[0]->text();
+        dd($data["description"]);
 
         // getting image
         // $image_array = $document->find("#imgMain");

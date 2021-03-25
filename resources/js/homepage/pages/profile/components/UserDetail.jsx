@@ -21,7 +21,7 @@ function UserDetail(props) {
         const uploadData = new FormData();
         uploadData.append("picture", file);
 
-        const response = await fetch("/api/upload/profile-picture", {
+        const response = await fetch(`/api/upload/profile-picture`, {
             method: "POST",
             body: uploadData,
             headers: {
@@ -68,9 +68,9 @@ function UserDetail(props) {
         } else {
             props.setUserBoxClicked(false);
             props.fetchCurrentUser();
-            if (newPhoto) {
+            /*             if (newPhoto) {
                 window.location.reload(false);
-            }
+            } */
         }
     }
 
