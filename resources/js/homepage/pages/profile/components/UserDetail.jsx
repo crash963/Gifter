@@ -21,16 +21,19 @@ function UserDetail(props) {
         const uploadData = new FormData();
         uploadData.append("picture", file);
 
-        const response = await fetch("/api/upload/profile-picture", {
-            method: "POST",
-            body: uploadData,
-            headers: {
-                Accept: "application/json",
-                "X-CSRF-TOKEN": document
-                    .querySelector('meta[name="csrf-token"]')
-                    .getAttribute("content"),
-            },
-        });
+        const response = await fetch(
+            `/api/upload/profile-picture/${currentUser.id}`,
+            {
+                method: "POST",
+                body: uploadData,
+                headers: {
+                    Accept: "application/json",
+                    "X-CSRF-TOKEN": document
+                        .querySelector('meta[name="csrf-token"]')
+                        .getAttribute("content"),
+                },
+            }
+        );
 
         const response_data = await response.text();
         console.log(response_data);

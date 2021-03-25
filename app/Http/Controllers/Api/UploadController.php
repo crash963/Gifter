@@ -10,7 +10,7 @@ use App\Models\Wish;
 
 class UploadController extends Controller
 {
-    public function uploadProfilePic(Request $request){
+    public function uploadProfilePic(Request $request, $user_id){
 
         if(!$request->file("picture")){
             return;
@@ -25,10 +25,10 @@ class UploadController extends Controller
         //        $request->file('picture')->getClientOriginalExtension(),
         //        $request->file('picture')->getClientMimeType()
         //    ];
-        
+        $current_time = date("H-i-s");
         
             $filename = $request->file('picture')->storeAs('profile_pictures',
-                $user->nickname . '-profile-pic.jpg',
+                $current_time . $user->nickname . '-profile-pic.jpg',
                 'uploads'
             );
         
