@@ -69,7 +69,7 @@ function AddOwnWishForm(props) {
         props.fetchWishes();
     }
 
-    const handleChange = (event) => {
+    const handleChange = (event) => { 
         const allowed_names = [
                 "name",
                 "link",

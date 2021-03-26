@@ -12,14 +12,14 @@ const items = [
         id: 1,
         altText: "Tom P.",
         src: "../images/tom-prejeant-x5I4yCFiZds-unsplash.jpg",
-        caption: "This site is aboslutely amazing. Love it very much.",
+        caption: "The Gifter is absolutely amazing. I can check what my friends want and decide which item to buy for them based on my budget. We can also plan ahead everything with other friends in the chat under each wish! It's really clever!",
     },
     {
         id: 2,
         altText: "Sarah B.",
         src: "../images/sarah-brown-tTdC88_6a_I-unsplash.jpg",
         caption:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis deserunt quia voluptatem, beatae illum dolorem sapiente ea architecto fugiat, eos quasi, quibusdam iste nulla repellendus autem fuga possimus. Neque illo mollitia doloremque distinctio. Facilis animi quisquam culpa, repudiandae aut voluptates expedita deserunt hic iste. Accusamus architecto consectetur laudantium aliquam cumque?",
+            "I never knew what to buy to my in-laws. But ever since we are all using Gifter I can just go and buy exactly what they will love. It's a game changer!",
     },
     {
         id: 3,
