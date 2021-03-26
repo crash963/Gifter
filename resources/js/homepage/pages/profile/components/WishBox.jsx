@@ -54,11 +54,7 @@ function WishBox(props) {
                                     alt={`${author.nickname}'s Profile Picture`}
                                 />
                             }
-                            <p>
-                                {props.isNameSet
-                                    ? `${author.first_name} ${author.last_name}`
-                                    : author.nickname}
-                            </p>
+                            <p>{`${author.first_name} ${author.last_name}`}</p>
                         </div>
                         {wish.fulfillers.length !== 0 &&
                             !isUserAuthor &&

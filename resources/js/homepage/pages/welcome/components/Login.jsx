@@ -54,13 +54,13 @@ function Login() {
     return (
         <div className="login__form">
             <form method="post" onSubmit={handleSubmit}>
-                <label for="email">email: </label>
+                <label htmlFor="email">email: </label>
                 <input type="email" name="email" onChange={handleChange} />
                 {message.email && (
                     <p className="warning__message">{message.email}</p>
                 )}
 
-                <label for="password">password: </label>
+                <label htmlFor="password">password: </label>
                 <input
                     type="password"
                     name="password"

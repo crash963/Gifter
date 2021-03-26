@@ -11,7 +11,6 @@ function Comments(props) {
 
         if (response.status === 200) {
             setComments(data);
-            console.log(data);
         } else {
             console.log("no comments");
         }

@@ -21,8 +21,6 @@ function Register() {
             password_confirmation: password_confirmation,
         };
 
-        console.log(request_data);
-
         const response = await fetch("/register", {
             method: "POST",
             body: JSON.stringify(request_data),
@@ -35,7 +33,6 @@ function Register() {
                 "X-Requested-With": "XMLHttpRequest",
             },
         });
-        console.log(response);
         const response_data = await response.json();
         if (response_data.errors) {
             setMessage(response_data.errors);
@@ -69,19 +66,19 @@ function Register() {
     return (
         <div className="register__form">
             <form method="post" onSubmit={handleSubmit}>
-                <label for="nickname">nickname: </label>
+                <label htmlFor="nickname">nickname: </label>
                 <input type="text" name="nickname" onChange={handleChange} />
                 {message.nickname && (
                     <p className="warning__message">{message.nickname}</p>
                 )}
 
-                <label for="email">email: </label>
+                <label htmlFor="email">email: </label>
                 <input type="email" name="email" onChange={handleChange} />
                 {message.email && (
                     <p className="warning__message">{message.email}</p>
                 )}
 
-                <label for="password">password: </label>
+                <label htmlFor="password">password: </label>
                 <input
                     type="password"
                     name="password"
@@ -92,7 +89,7 @@ function Register() {
                     <p className="warning__message">{message.password}</p>
                 )}
 
-                <label for="password_confirmation">confirm password</label>
+                <label htmlFor="password_confirmation">confirm password</label>
                 <input
                     type="password"
                     name="password_confirmation"

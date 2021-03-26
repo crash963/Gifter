@@ -1,5 +1,4 @@
 function FriendSearchResults(props) {
-    // console.log(props.friend);
     const { photo, first_name, last_name, nickname, id } = props.friend;
 
     async function addFriend() {
@@ -14,11 +13,9 @@ function FriendSearchResults(props) {
             },
         });
         const data = await response.json();
-        console.log(data);
     }
 
     async function handleClick() {
-        console.log(id);
         await addFriend();
         props.fetchCurrentUserFriends();
         props.fetchUsers();

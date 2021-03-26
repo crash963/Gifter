@@ -13,16 +13,11 @@ function AddFriendBox(props) {
         const response = await fetch(`/api/users/search/${nickname}`);
         const searchData = await response.json();
         setSearchResults(searchData);
-        // console.log(searchData);
     }
 
     function handleClick() {
         setIsClicked(true);
     }
-
-    /* useEffect(() => {
-        console.log(searchResults);
-    }, [searchResults]); */
 
     return (
         <div
