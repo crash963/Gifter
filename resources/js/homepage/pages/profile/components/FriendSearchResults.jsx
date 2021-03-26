@@ -17,9 +17,9 @@ function FriendSearchResults(props) {
         console.log(data);
     }
 
-    function handleClick() {
+    async function handleClick() {
         console.log(id);
-        addFriend();
+        await addFriend();
         props.fetchCurrentUserFriends();
         props.fetchUsers();
     }

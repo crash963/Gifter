@@ -8,24 +8,29 @@
 
 .search-result-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     .friend-search-result {
         display: flex;
+        justify-content: space-between;
+        border-radius: 0.6rem;
         width: 100%;
         height: 5rem;
+        margin-bottom: 0.5rem;
         padding: 0.5rem;
         p {
             font-size: 14px;
-        }
-        image {
-            width: 20%;
         }
         &__heading {
             display: flex;
 
             img {
-                width: 15%;
+                width: 3.7rem;
+                margin-right: 1rem;
+                border-radius: 0.6rem;
             }
+        }
+        &__add {
+            cursor: pointer;
         }
     }
 }

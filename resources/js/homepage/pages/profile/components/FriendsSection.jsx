@@ -5,7 +5,7 @@ import UserBox from "./UserBox.jsx";
 
 function FriendsSection(props) {
     const currentUser = useContext(CurrentUserContext);
-    const [friends, setFriends] = useState([]);
+    const [friends, setFriends] = useState(null);
 
     async function fetchCurrentUserFriends() {
         const response = await fetch(`/api/user/${currentUser.id}/friends`);
@@ -25,6 +25,7 @@ function FriendsSection(props) {
 
     return (
         <div className="box__container friends">
+            <AddFriendBox fetchCurrentUserFriends={fetchCurrentUserFriends} />
             {friends &&
                 friends.map((friend, index) => (
                     <UserBox
@@ -34,7 +35,6 @@ function FriendsSection(props) {
                         setSearchQuery={props.setSearchQuery}
                     />
                 ))}
-            <AddFriendBox fetchCurrentUserFriends={fetchCurrentUserFriends} />
         </div>
     );
 }
