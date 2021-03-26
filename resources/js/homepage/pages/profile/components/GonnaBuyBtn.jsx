@@ -4,11 +4,13 @@ import { CurrentUserContext } from "../Profile.jsx";
 function GonnaBuyBtn(props) {
     const currentUser = useContext(CurrentUserContext);
     const [resolve_date, setResolve_date] = useState("own_resolve_date");
+    const [otherDate, setOtherDate] = useState("");
     const [isClicked, setIsClicked] = useState(false);
 
     async function addFulfiller() {
         const request_data = {
-            resolve_date: resolve_date,
+            resolve_date:
+                resolve_date === "own_resolve_date" ? otherDate : resolve_date,
         };
 
         const response = await fetch(
@@ -34,7 +36,11 @@ function GonnaBuyBtn(props) {
     }
 
     function handleChange(e) {
-        setResolve_date(e.target.value);
+        if (e.target.name !== "own_resolve_date") {
+            setResolve_date(e.target.value);
+        } else {
+            setOtherDate(e.target.value);
+        }
     }
 
     function handleSubmit(e) {
@@ -68,7 +74,7 @@ function GonnaBuyBtn(props) {
                         <input
                             className="gonna__buy__date"
                             type="date"
-                            name="resolve_date"
+                            name="own_resolve_date"
                             onChange={handleChange}
                         />
                     )}
