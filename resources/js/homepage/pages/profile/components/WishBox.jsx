@@ -8,7 +8,7 @@ function WishBox(props) {
     const wish = props.wish;
     const [author, setAuthor] = useState(props.wish.user);
     const [isUserAuthor, setIsUserAuthor] = useState(
-        props.wish.user.id === currentUser.id
+        props.wish.user.id ? props.wish.user.id === currentUser.id : ""
     );
     const [isBoxClicked, setIsBoxClicked] = useState(false);
 
