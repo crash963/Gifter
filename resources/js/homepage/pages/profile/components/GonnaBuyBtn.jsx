@@ -51,7 +51,7 @@ function GonnaBuyBtn(props) {
                 </button>
             )}
             {isClicked && (
-                <form onSubmit={handleSubmit}>
+                <form className="gonna__buy__form" onSubmit={handleSubmit}>
                     {props.wish.resolve_date && (
                         <select name="resolve_date" onChange={handleChange}>
                             (
@@ -66,12 +66,17 @@ function GonnaBuyBtn(props) {
                     )}
                     {resolve_date === "own_resolve_date" && (
                         <input
+                            className="gonna__buy__date"
                             type="date"
                             name="resolve_date"
                             onChange={handleChange}
                         />
                     )}
-                    <input type="submit" value="confirm" />
+                    <input
+                        className="gonna__buy__button__submit"
+                        type="submit"
+                        value="confirm"
+                    />
                 </form>
             )}
         </div>
