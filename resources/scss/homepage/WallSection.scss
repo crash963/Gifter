@@ -1,0 +1,10 @@
+.wall-filter__form {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2rem;
+    padding-top: 2rem;
+    align-items: center;
+    &__label {
+        margin-right: 0.2rem;
+    }
+}

@@ -34,11 +34,24 @@ function WallSection(props) {
 
     return (
         <div className="wall">
-            <div>Filter by:</div>
-            <form method="get" onSubmit={handleSubmit}>
-                <label htmlFor="nickname">Nickname</label>
-                <input type="text" name="nickname" onChange={handleChange} />
-                <button type="submit">Search</button>
+            <div className="wall-filter"></div>
+            <form
+                method="get"
+                onSubmit={handleSubmit}
+                className="wall-filter__form"
+            >
+                <label htmlFor="nickname" className="wall-filter__form__label">
+                    Filter by nickname:
+                </label>
+                <input
+                    type="text"
+                    name="nickname"
+                    onChange={handleChange}
+                    className="wall-filter__form__input"
+                />
+                <button type="submit" className="wall-filter__form__submit">
+                    Search
+                </button>
             </form>
             <div className="box__container">
                 {wishes.length !== 0 ? (
