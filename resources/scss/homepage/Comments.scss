@@ -52,6 +52,7 @@
         justify-self: flex-end;
         align-self: flex-end;
         left: 60%;
+        max-width: 35%;
     }
     &__form {
         display: flex;
@@ -93,6 +94,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        max-width: 100%;
     }
     &__user-id {
         margin-bottom: 0;
@@ -100,9 +102,10 @@
     &__text {
         background-color: #9cacbf;
         border-radius: 0.4rem;
-        max-width: 75%;
+
         padding: 0.2rem 0.5rem;
-        flex-grow: 1;
+        // flex-grow: 1;
+        word-wrap: break-word;
     }
 }
 .gonna__buy__container {

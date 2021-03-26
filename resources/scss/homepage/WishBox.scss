@@ -7,11 +7,10 @@
 }
 
 .wish__box {
-    background-color: #2b6684;
+    background-color: rgba(149, 189, 220);
     font-weight: 700;
-    font-style: oblique;
+    font-style: normal;
     color: #0a1417;
-    font-style: oblique;
     max-height: 35vw;
 }
 
@@ -61,7 +60,7 @@
 }
 
 .wish__box--wish a {
-    color: #9cacbf;
+    color: rgba(254, 121, 61);
     &:hover {
         color: #e3648d;
         text-decoration: none;
