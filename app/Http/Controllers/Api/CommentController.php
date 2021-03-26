@@ -41,7 +41,7 @@ class CommentController extends Controller
     }
 
     public function comments($wish_id){
-        $comment_user = Comment::where("wish_id", $wish_id)->with("user")->get();
+        $comment_user = Comment::where("wish_id", $wish_id)->with("user")->orderBy('created_at', 'desc')->get();
         return $comment_user;
     }
 }

@@ -60,9 +60,12 @@ const ReviewSlider = (props) => {
                 onExited={() => setAnimating(false)}
             >
                 <div className="carousel-inside">
-                    <div className="carousel-img">
-                        <img src={item.src} alt="placeholder image" />
-                    </div>
+                    <img
+                        src={item.src}
+                        alt="placeholder image"
+                        className="carousel-img"
+                    />
+
                     <CarouselCaption
                         className="carousel-text"
                         captionText={item.caption}
