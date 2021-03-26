@@ -12,7 +12,6 @@ function FriendsSection(props) {
         const data = await response.json();
 
         setFriends(data);
-        console.log(data);
     }
 
     /*  function findFriend() {

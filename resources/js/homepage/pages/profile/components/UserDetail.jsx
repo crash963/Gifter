@@ -33,7 +33,6 @@ function UserDetail(props) {
         });
 
         const response_data = await response.text();
-        console.log(response_data);
         if (response_data) {
             setValues((prev_values) => {
                 return { ...prev_values, photo: response_data };
@@ -99,7 +98,6 @@ function UserDetail(props) {
     }
 
     function closeWindow(event) {
-        console.log(event.target);
         if (event.target.className === "overlay") {
             props.setUserBoxClicked(false);
         }

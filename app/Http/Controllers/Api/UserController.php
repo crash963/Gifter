@@ -14,9 +14,13 @@ class UserController extends Controller
     {
         $user = Auth::user();
 
-        return [
-            'user' => $user
-        ];
+        if($user){
+            return [
+                'user' => $user
+            ];
+        } else {
+            return null;
+        }
     }
 
     public function show($user_id)
