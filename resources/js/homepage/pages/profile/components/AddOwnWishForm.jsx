@@ -19,6 +19,18 @@ function AddOwnWishForm(props) {
     const [message, setMessage] = useState("");
     const [file, setFile] = useState(null);
 
+    function resetValues() {
+        setValues({
+            user_id: currentUser.id,
+            name: "",
+            link: "",
+            photo: "",
+            description: "",
+            resolve_date: null,
+            is_resolved: false,
+        });
+    }
+
     async function uploadPhoto() {
         const uploadData = new FormData();
         uploadData.append("picture", file);
@@ -65,8 +77,14 @@ function AddOwnWishForm(props) {
             },
         });
         const response_data = await response.json();
-        if (response_data.errors) setMessage(response_data.errors);
-        props.fetchWishes();
+        if (response_data.errors) {
+            setMessage(response_data.errors);
+        } else {
+            props.setIsClicked(false);
+            props.setWayToAddWish("link");
+            resetValues();
+            props.fetchWishes();
+        }
     }
 
     const handleChange = (event) => {
