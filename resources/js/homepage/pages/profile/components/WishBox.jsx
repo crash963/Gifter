@@ -95,7 +95,15 @@ function WishBox(props) {
                                 <p>{wish.description && wish.description}</p>
 
                                 {wish.resolve_date && !isUserAuthor && (
-                                    <p>date: {wish.resolve_date}</p>
+                                    <p>
+                                        date:{" "}
+                                        {`${wish.resolve_date.slice(
+                                            8
+                                        )}. ${wish.resolve_date.slice(
+                                            5,
+                                            7
+                                        )}. ${wish.resolve_date.slice(0, 4)}`}
+                                    </p>
                                 )}
                             </>
                         )}
