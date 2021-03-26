@@ -33,7 +33,11 @@ function UserBox(props) {
                     : user.nickname}
             </p>
             <p className="user__box--birthday">
-                {user.birthday && `Birthday: ${user.birthday.slice(5)}`}
+                {user.birthday &&
+                    `Birthday: ${user.birthday.slice(8)}. ${user.birthday.slice(
+                        5,
+                        7
+                    )}.`}
             </p>
         </div>
     );
