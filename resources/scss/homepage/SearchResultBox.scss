@@ -1,14 +1,35 @@
 .search-result-section {
     display: flex;
     flex-direction: column;
-    form {
+    &__form {
         margin-bottom: 0.6rem;
+        &__label {
+            margin-right: 0.4rem;
+        }
+        &__input {
+            margin-right: 0.4rem;
+            border: none;
+            border-radius: 0.4rem;
+            padding: 0.1rem;
+            padding-left: 0.4rem;
+        }
+        &__submit {
+            border: none;
+            border-radius: 0.4rem;
+            background-color: #9cacbf;
+            color: #032e42;
+            font-weight: 700;
+            padding: 0.1rem 0.3rem;
+        }
     }
 }
 
 .search-result-container {
     display: flex;
     flex-direction: column;
+    &__no-results {
+        text-align: center;
+    }
     .friend-search-result {
         display: flex;
         justify-content: space-between;
@@ -17,6 +38,9 @@
         height: 5rem;
         margin-bottom: 0.5rem;
         padding: 0.5rem;
+        &:hover {
+            box-shadow: none;
+        }
         p {
             font-size: 14px;
         }
