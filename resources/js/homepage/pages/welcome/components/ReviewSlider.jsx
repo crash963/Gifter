@@ -10,8 +10,8 @@ import {
 const items = [
     {
         id: 1,
-        altText: "Laura",
-        src: "../images/sarah-brown-tTdC88_6a_I-unsplash.jpg",
+        altText: "Tom P.",
+        src: "../images/tom-prejeant-x5I4yCFiZds-unsplash.jpg",
         caption: "This site is aboslutely amazing. Love it very much.",
     },
     {
@@ -23,8 +23,10 @@ const items = [
     },
     {
         id: 3,
-        altText: "Slide 3",
-        caption: "Slide 3a",
+        altText: "Laura",
+        src: "../images/woman-918788_640.jpg",
+        caption:
+            "I always get the gifts I really like thanks to this website. Gifter is the BEST!",
     },
 ];
 
