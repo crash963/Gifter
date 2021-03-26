@@ -23,8 +23,16 @@
             width: 30%;
             input {
                 border: none;
-                border-radius: 0.6rem;
+                border-radius: 0.4rem;
                 margin-bottom: 1rem;
+                margin-right: 0.3rem;
+                padding: 0.1rem;
+            }
+            select {
+                border: none;
+                border-radius: 0.4rem;
+                margin-left: 0.3rem;
+                padding: 0.2rem;
             }
         }
         .form__box--right {

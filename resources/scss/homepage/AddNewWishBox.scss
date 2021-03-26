@@ -24,9 +24,16 @@
     width: 80%;
     input {
         border: none;
-        border-radius: 0.6rem;
+        border-radius: 0.4rem;
+        padding: 0.1rem;
+        margin-left: 0.3rem;
         margin-bottom: 1rem;
         margin-top: 1rem;
+    }
+    select {
+        border: none;
+        border-radius: 0.4rem;
+        padding: 0.28rem;
     }
     .add__wish__btn {
         width: 50%;
