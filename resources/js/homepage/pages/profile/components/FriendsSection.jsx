@@ -3,7 +3,7 @@ import { CurrentUserContext } from "../Profile.jsx";
 import AddFriendBox from "./AddFriendBox.jsx";
 import UserBox from "./UserBox.jsx";
 
-function FriendsSection() {
+function FriendsSection(props) {
     const currentUser = useContext(CurrentUserContext);
     const [friends, setFriends] = useState([]);
 
@@ -27,7 +27,12 @@ function FriendsSection() {
         <div className="box__container friends">
             {friends &&
                 friends.map((friend, index) => (
-                    <UserBox user={friend} key={index} />
+                    <UserBox
+                        user={friend}
+                        key={index}
+                        setCurrentPage={props.setCurrentPage}
+                        setSearchQuery={props.setSearchQuery}
+                    />
                 ))}
             <AddFriendBox fetchCurrentUserFriends={fetchCurrentUserFriends} />
         </div>

@@ -10,6 +10,9 @@ function UserBox(props) {
         e.preventDefault();
         if (currentUser === user) {
             props.setUserBoxClicked(true);
+        } else {
+            props.setSearchQuery(user.nickname);
+            props.setCurrentPage("wall");
         }
     }
 

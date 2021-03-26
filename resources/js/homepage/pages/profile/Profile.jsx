@@ -14,6 +14,7 @@ function Profile() {
     const [isNameSet, setIsNameSet] = useState(false);
     const [userBoxClicked, setUserBoxClicked] = useState(false);
     const [currentPage, setCurrentPage] = useState("my profile");
+    const [searchQuery, setSearchQuery] = useState("all-friends");
 
     const [alza, setAlza] = useState("");
 
@@ -61,9 +62,17 @@ function Profile() {
                         </section>
                     )}
                     {currentUser && currentPage === "friends" && (
-                        <FriendsSection />
+                        <FriendsSection
+                            setCurrentPage={setCurrentPage}
+                            setSearchQuery={setSearchQuery}
+                        />
                     )}
-                    {currentUser && currentPage === "wall" && <WallSection />}
+                    {currentUser && currentPage === "wall" && (
+                        <WallSection
+                            setSearchQuery={setSearchQuery}
+                            searchQuery={searchQuery}
+                        />
+                    )}
                     {currentUser && currentPage === "history" && (
                         <HistorySection />
                     )}

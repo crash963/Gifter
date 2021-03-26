@@ -3,14 +3,13 @@ import Wishes from "./Wishes";
 import { CurrentUserContext } from "../Profile.jsx";
 import { set } from "lodash";
 
-function WallSection() {
+function WallSection(props) {
     const currentUser = useContext(CurrentUserContext);
     const [wishes, setWishes] = useState([]);
-    const [searchQuery, setSearchQuery] = useState("all-friends");
 
     async function fetchFriendsWishes() {
         const response = await fetch(
-            `/api/user/${currentUser.id}/friends-wishes/${searchQuery}`
+            `/api/user/${currentUser.id}/friends-wishes/${props.searchQuery}`
         );
         const data = await response.json();
         console.log(data);
@@ -28,9 +27,9 @@ function WallSection() {
 
     function handleChange(e) {
         if (e.target.value) {
-            setSearchQuery(e.target.value);
+            props.setSearchQuery(e.target.value);
         } else {
-            setSearchQuery("all-friends");
+            props.setSearchQuery("all-friends");
         }
     }
 
