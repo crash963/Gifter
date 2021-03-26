@@ -42,11 +42,13 @@ function WallSection(props) {
                 <button type="submit">Search</button>
             </form>
             <div className="box__container">
-                {wishes && (
+                {wishes.length !== 0 ? (
                     <Wishes
                         wishes={wishes}
                         fetchFriendsWishes={fetchFriendsWishes}
                     />
+                ) : (
+                    <h1>Found no wishes 🤔</h1>
                 )}
             </div>
         </div>
