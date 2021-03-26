@@ -26,14 +26,14 @@ function TopSection() {
             </div>
             {window && (
                 <div
-                    onClick={(event) => {
+                    onMouseDown={(event) => {
                         if (event.target.className === "overlay") {
                             setWindow(null);
                         }
                     }}
                     className="overlay"
                 >
-                    <div>{window}</div>
+                    {window}
                 </div>
             )}
         </div>
