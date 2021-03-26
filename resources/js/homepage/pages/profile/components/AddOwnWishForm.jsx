@@ -1,3 +1,4 @@
+import { set } from "lodash";
 import { useContext, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
@@ -18,6 +19,7 @@ function AddOwnWishForm(props) {
     });
     const [message, setMessage] = useState("");
     const [file, setFile] = useState(null);
+    const [otherDate, setOtherDate] = useState("");
 
     function resetValues() {
         setValues({
@@ -62,7 +64,8 @@ function AddOwnWishForm(props) {
             link: link,
             photo: photo,
             description: description,
-            resolve_date: resolve_date,
+            resolve_date:
+                resolve_date === "other_date" ? otherDate : resolve_date,
             is_resolved: is_resolved,
         };
         const response = await fetch(`/api/add-wish`, {
@@ -97,6 +100,11 @@ function AddOwnWishForm(props) {
             ],
             name = event.target.name,
             value = event.target.value;
+
+        if (name === "own_resolve_date") {
+            setOtherDate(value);
+            return;
+        }
 
         if (-1 !== allowed_names.indexOf(name)) {
             setValues((prev_values) => {
@@ -160,7 +168,7 @@ function AddOwnWishForm(props) {
                         <label htmlFor="date"></label>
                         <input
                             type="date"
-                            name="resolve_date"
+                            name="own_resolve_date"
                             onChange={handleChange}
                         />
                     </>
