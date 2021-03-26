@@ -6,10 +6,13 @@ import { useEffect } from "react";
 function Welcome() {
     async function fetchCurrentUser() {
         const response = await fetch("/api/current-user");
-        const data = await response.json();
-        console.log(data);
-        if (data) {
-            window.location.href = "/profile";
+        try {
+            const data = await response.json();
+            if (data) {
+                window.location.href = "/profile";
+            }
+        } catch (err) {
+            console.log("You are logged in already!");
         }
     }
 

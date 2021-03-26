@@ -12,7 +12,6 @@ function WallSection(props) {
             `/api/user/${currentUser.id}/friends-wishes/${props.searchQuery}`
         );
         const data = await response.json();
-        console.log(data);
         setWishes(data);
     }
 
@@ -48,7 +47,9 @@ function WallSection(props) {
                         fetchFriendsWishes={fetchFriendsWishes}
                     />
                 ) : (
-                    <h3 className="no_wish_found">Looks like this friend doesn't have any wishes yet 🤔</h3>
+                    <h3 className="no_wish_found">
+                        Looks like this friend doesn't have any wishes yet 🤔
+                    </h3>
                 )}
             </div>
         </div>

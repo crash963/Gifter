@@ -29,8 +29,6 @@ function CommentsForm(props) {
             },
         });
 
-        console.log(response);
-
         const data = await response.json();
         props.fetchComments();
     }

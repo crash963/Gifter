@@ -13,10 +13,6 @@ function FindUser(props) {
         props.setNickname(e.target.value);
     }
 
-    /* useEffect(() => {
-        console.log(searchResults);
-    }, [searchResults]); */
-
     return (
         <form method="post" onSubmit={handleSubmit}>
             <label htmlFor="nickname">Nickname: </label>

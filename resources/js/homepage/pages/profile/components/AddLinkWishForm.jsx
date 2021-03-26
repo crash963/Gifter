@@ -67,10 +67,6 @@ function AddLinkWishForm(props) {
         addLinkWish();
     }
 
-    useEffect(() => {
-        console.log(message.errors);
-    }, []);
-
     const handleChange = (event) => {
         const allowed_names = ["link", "resolve_date"],
             name = event.target.name,

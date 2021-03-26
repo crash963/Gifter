@@ -16,7 +16,6 @@ function AddOwnWishForm(props) {
         resolve_date: null,
         is_resolved: false,
     });
-    console.log(description);
     const [message, setMessage] = useState("");
     const [file, setFile] = useState(null);
 
@@ -36,7 +35,6 @@ function AddOwnWishForm(props) {
         });
 
         const response_data = await response.text();
-        console.log(response_data);
         if (response_data) {
             setValues((prev_values) => {
                 return { ...prev_values, photo: response_data };
@@ -67,7 +65,6 @@ function AddOwnWishForm(props) {
             },
         });
         const response_data = await response.json();
-        console.log(response_data);
         if (response_data.errors) setMessage(response_data.errors);
         props.fetchWishes();
     }
@@ -91,7 +88,6 @@ function AddOwnWishForm(props) {
     };
     async function handleSubmit(event) {
         event.preventDefault();
-        // console.log("hello");
         let photo = await uploadPhoto();
         addWish(photo);
     }
