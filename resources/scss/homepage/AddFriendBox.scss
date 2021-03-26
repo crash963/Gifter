@@ -5,6 +5,10 @@
     background-color: rgba(251, 76, 31, 0.5);
     font-weight: 700;
     font-style: oblique;
+    box-shadow: 10px 5px 10px #f1967c;
+    &:hover {
+        box-shadow: 13px 10px 8px #f0704d;
+    }
 }
 
 .add__friend__box img {

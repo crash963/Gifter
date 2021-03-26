@@ -4,6 +4,10 @@
     font-weight: 700;
     font-size: 150%;
     font-style: normal;
+    box-shadow: 10px 5px 10px #f1967c;
+    &:hover {
+        box-shadow: 13px 10px 8px #f0704d;
+    }
 }
 
 .wish__profile__img {
