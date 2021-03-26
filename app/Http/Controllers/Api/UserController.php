@@ -43,9 +43,9 @@ class UserController extends Controller
         $current_date = date("Y-m-d");
 
        if($user->resolve_date)
-       { return $user->wishes()->where("resolve_date", ">", $current_date)->with("fulfillers")->orderBy('created_at', 'desc')->get();
+       { return $user->wishes()->where("resolve_date", ">", $current_date)->with("fulfillers")->with("user")->orderBy('created_at', 'desc')->get();
         } else {
-            return $user->wishes()->with("fulfillers")->orderBy('created_at', 'desc')->get();
+            return $user->wishes()->with("fulfillers")->with("user")->orderBy('created_at', 'desc')->get();
         }   
     }
 
@@ -78,7 +78,7 @@ class UserController extends Controller
         }
 
 
-        $wishes = Wish::whereIn('user_id', $friends_ids)->with("fulfillers")->orderBy('created_at', 'desc')->limit(30)->get();
+        $wishes = Wish::whereIn('user_id', $friends_ids)->with("fulfillers")->with("user")->orderBy('created_at', 'desc')->limit(30)->get();
 
         return $wishes;
     }
@@ -128,7 +128,7 @@ class UserController extends Controller
         }
 
 
-        $wishes = Wish::whereIn('user_id', $friends_ids)->with("fulfillers")->orderBy('created_at', 'desc')->limit($limit)->get();
+        $wishes = Wish::whereIn('user_id', $friends_ids)->with("fulfillers")->with("user")->orderBy('created_at', 'desc')->limit($limit)->get();
 
         return $wishes;
     }
