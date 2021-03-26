@@ -96,7 +96,7 @@ class WishController extends Controller
         $current_date = date("Y-m-d");
 
 
-        $wishes = $user->wishes()->where("resolve_date", "<", $current_date)->with("fulfillers")->get(); 
+        $wishes = $user->wishes()->where("resolve_date", "<", $current_date)->with("fulfillers")->with("user")->get(); 
 
         return $wishes;
     }
