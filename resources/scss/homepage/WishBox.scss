@@ -13,6 +13,7 @@
     color: #0a1417;
     max-height: 35vw;
     box-shadow: 10px 5px 10px lightblue;
+    transition: width 0.5s;
     &:hover {
         box-shadow: 13px 10px 8px rgb(114, 197, 228);
     }
