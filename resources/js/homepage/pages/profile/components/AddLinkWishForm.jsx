@@ -10,6 +10,7 @@ function AddLinkWishForm(props) {
         is_resolved: false,
     });
     const [message, setMessage] = useState("");
+    const [otherDate, setOtherDate] = useState("");
 
     function getDate(date) {
         const currentDate = new Date();
@@ -38,7 +39,10 @@ function AddLinkWishForm(props) {
         let request_data = {
             user_id: user_id,
             link: link,
-            resolve_date: resolve_date && getDate(resolve_date),
+            resolve_date:
+                resolve_date && resolve_date === "other_date"
+                    ? getDate(otherDate)
+                    : getDate(resolve_date),
             is_resolved: is_resolved,
         };
 
@@ -72,6 +76,11 @@ function AddLinkWishForm(props) {
             name = event.target.name,
             value = event.target.value;
 
+        if (name === "own_resolve_date") {
+            setOtherDate(value);
+            return;
+        }
+
         if (-1 !== allowed_names.indexOf(name)) {
             setValues((prev_values) => {
                 return { ...prev_values, [name]: value };
@@ -102,7 +111,7 @@ function AddLinkWishForm(props) {
                         <label htmlFor="date"></label>
                         <input
                             type="date"
-                            name="resolve_date"
+                            name="own_resolve_date"
                             onChange={handleChange}
                         />
                     </>
