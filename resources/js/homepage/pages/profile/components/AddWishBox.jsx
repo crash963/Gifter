@@ -47,7 +47,11 @@ function AddWishBox(props) {
                             setIsClicked={setIsClicked}
                         />
                     ) : (
-                        <AddOwnWishForm fetchWishes={props.fetchWishes} />
+                        <AddOwnWishForm
+                            fetchWishes={props.fetchWishes}
+                            setIsClicked={setIsClicked}
+                            setWayToAddWish={setWayToAddWish}
+                        />
                     )}
                 </>
             )}

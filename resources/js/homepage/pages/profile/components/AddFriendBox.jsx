@@ -47,7 +47,9 @@ function AddFriendBox(props) {
                                 />
                             ))
                         ) : (
-                            <div>No results</div>
+                            <div className="search-result-container__no-results">
+                                No results
+                            </div>
                         )}
                     </div>
                 </div>

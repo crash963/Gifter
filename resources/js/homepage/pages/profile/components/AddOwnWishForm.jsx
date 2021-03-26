@@ -1,3 +1,4 @@
+import { set } from "lodash";
 import { useContext, useState } from "react";
 import { CurrentUserContext } from "../Profile.jsx";
 
@@ -18,6 +19,19 @@ function AddOwnWishForm(props) {
     });
     const [message, setMessage] = useState("");
     const [file, setFile] = useState(null);
+    const [otherDate, setOtherDate] = useState("");
+
+    function resetValues() {
+        setValues({
+            user_id: currentUser.id,
+            name: "",
+            link: "",
+            photo: "",
+            description: "",
+            resolve_date: null,
+            is_resolved: false,
+        });
+    }
 
     async function uploadPhoto() {
         const uploadData = new FormData();
@@ -50,7 +64,8 @@ function AddOwnWishForm(props) {
             link: link,
             photo: photo,
             description: description,
-            resolve_date: resolve_date,
+            resolve_date:
+                resolve_date === "other_date" ? otherDate : resolve_date,
             is_resolved: is_resolved,
         };
         const response = await fetch(`/api/add-wish`, {
@@ -65,8 +80,14 @@ function AddOwnWishForm(props) {
             },
         });
         const response_data = await response.json();
-        if (response_data.errors) setMessage(response_data.errors);
-        props.fetchWishes();
+        if (response_data.errors) {
+            setMessage(response_data.errors);
+        } else {
+            props.setIsClicked(false);
+            props.setWayToAddWish("link");
+            resetValues();
+            props.fetchWishes();
+        }
     }
 
     const handleChange = (event) => { 
@@ -79,6 +100,11 @@ function AddOwnWishForm(props) {
             ],
             name = event.target.name,
             value = event.target.value;
+
+        if (name === "own_resolve_date") {
+            setOtherDate(value);
+            return;
+        }
 
         if (-1 !== allowed_names.indexOf(name)) {
             setValues((prev_values) => {
@@ -142,7 +168,7 @@ function AddOwnWishForm(props) {
                         <label htmlFor="date"></label>
                         <input
                             type="date"
-                            name="resolve_date"
+                            name="own_resolve_date"
                             onChange={handleChange}
                         />
                     </>

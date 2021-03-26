@@ -14,10 +14,28 @@ function FindUser(props) {
     }
 
     return (
-        <form method="post" onSubmit={handleSubmit}>
-            <label htmlFor="nickname">Nickname: </label>
-            <input type="text" name="nickname" onChange={handleChange} />
-            <input type="submit" value="Find friends" />
+        <form
+            method="post"
+            onSubmit={handleSubmit}
+            className="search-result-section__form"
+        >
+            <label
+                htmlFor="nickname"
+                className="search-result-section__form__label"
+            >
+                Nickname:{" "}
+            </label>
+            <input
+                type="text"
+                name="nickname"
+                onChange={handleChange}
+                className="search-result-section__form__input"
+            />
+            <input
+                type="submit"
+                value="Find friends"
+                className="search-result-section__form__submit"
+            />
         </form>
     );
 }

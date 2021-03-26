@@ -6,16 +6,18 @@ import GonnaBuyBtn from "./GonnaBuyBtn.jsx";
 function WishBox(props) {
     const currentUser = useContext(CurrentUserContext);
     const wish = props.wish;
-    const [author, setAuthor] = useState(null);
-    const [isUserAuthor, setIsUserAuthor] = useState(true);
+    const [author, setAuthor] = useState(props.wish.user);
+    const [isUserAuthor, setIsUserAuthor] = useState(
+        props.wish.user.id ? props.wish.user.id === currentUser.id : ""
+    );
     const [isBoxClicked, setIsBoxClicked] = useState(false);
 
     async function fetchAuthor() {
         const response = await fetch(`/api/user/${wish.user_id}`);
         const data = await response.json();
 
-        setIsUserAuthor(data.id === currentUser.id);
         setAuthor(data);
+        setIsUserAuthor(data.id === currentUser.id);
     }
 
     function handleClick() {
@@ -27,8 +29,10 @@ function WishBox(props) {
     }
 
     useEffect(() => {
-        fetchAuthor();
-    }, []);
+        if (!author) {
+            fetchAuthor();
+        }
+    });
 
     return (
         <>
@@ -54,11 +58,7 @@ function WishBox(props) {
                                     alt={`${author.nickname}'s Profile Picture`}
                                 />
                             }
-                            <p>
-                                {props.isNameSet
-                                    ? `${author.first_name} ${author.last_name}`
-                                    : author.nickname}
-                            </p>
+                            <p>{`${author.first_name} ${author.last_name}`}</p>
                         </div>
                         {wish.fulfillers.length !== 0 &&
                             !isUserAuthor &&
