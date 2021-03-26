@@ -23,8 +23,13 @@
     }
 }
 
+html {
+    background-color: rgba(254, 121, 61, 0.2);
+}
+
 .friends {
     background-color: rgba(254, 121, 61, 0.2);
+    height: 100%;
 }
 
 .profile {
@@ -52,3 +57,4 @@
 @import "./homepage/Comments.scss";
 @import "./homepage/TopBar.scss";
 @import "./homepage/AddFriendBox.scss";
+@import "./homepage/NoWishFound.scss";

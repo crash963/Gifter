@@ -48,7 +48,7 @@ function WallSection(props) {
                         fetchFriendsWishes={fetchFriendsWishes}
                     />
                 ) : (
-                    <h1>Found no wishes 🤔</h1>
+                    <h3 className="no_wish_found">Looks like this friend doesn't have any wishes yet 🤔</h3>
                 )}
             </div>
         </div>
